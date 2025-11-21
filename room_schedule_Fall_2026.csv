@@ -1,20 +1,17 @@
-Building,Room,M 10:00 AM-10:50 AM,"M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W 03:30 PM-04:45 PM","M,W,F 09:00 AM-09:50 AM","M,W,F 10:00 AM-10:50 AM","M,W,F 11:00 AM-11:50 AM","M,W,F 12:00 PM-12:50 PM","M,W,F 01:00 PM-01:50 PM","T,Th 09:30 AM-10:45 AM","T,Th 12:30 PM-01:45 PM","T,Th 02:00 PM-03:15 PM","T,Th 03:30 PM-04:45 PM"
-BRMB,240,,CS 452-1 (Reynolds),CS 452-2 (Reynolds),,,,,,,,,,,,
-ESC,C285,,,,,,,,,,,,CS 312-1 (Farrell),CS 312-3 (Williams),CS 312-2 (Farrell),CS 312-4 (Williams)
-HBLL,3718,,,,,CS 260-2 (Ventura),CS 256-1 (Hughes),CS 252-2 (Barker),CS 324-1 (Seamons),CS 224-1 (Barker),CS 224-2 (Barker),"CS 324-2 (Dougal, Duane)",CS 235-3 (Crandall),CS 393-1 (Reynolds),CS 260-1 (Clement),"CS 235-6 (Barton, Dylan)"
-JKB,2113,,,"CS 110-4 (Dougal, Duane)",,"CS 110-7 (Jones, Angela)",,,,,,,,,,
-MARB,130,,,,,"CS 111-6 (Giles, Steven)",CS 111-1 (Reynolds),CS 236-3 (Goodrich),CS 236-4 (Mercer),CS 236-1 (Goodrich),CS 460-1 (Deccio),CS 236-2 (Goodrich),CS 111-3 (Richardson),CS 111-4 (Stephens),"CS 111-5 (Cluff, Andrew)",CS 111-2 (Reynolds)
-MCKB,220,,,CS 401R-3 (Hughes),,,,,,,,,CS 574-1 (Snell),"CS 405-1 (Earnshaw, Craig)",CS 301R-4 (Stephens),CS 494R-1 (Harvey)
-MCKB,26,,CS 418-1 (Williams),CS 479-1 (Ringger),CS 401R-4 (Toborg),CS 401R-2 (Team:Grimsman/Killian),CS 401R-1 (Bean),,,,,,"CS 191/2-2 (Dougal, Duane)",CS 101-1 (Clement),CS 101-3 (Seamons),CS 601R-1 (Page)
-MCKB,280,,CS 473-1 (Wingate),CS 653-1 (Ng),CS 670-1 (Archibald),,,,,,,,CS 101-2 (Morse),CS 450-1 (Van Dyke),CS 465-1 (Zappala),CS 250-1 (Van Dyke)
-MCKB,331,,,,,,,,,,,,CS 150-1 (Van Dyke),CS 459R-1 (Egbert),CS 210-1 (Van Dyke),CS 191/2-1 (Zappala)
-SFH,37,,CS 240-6 (Wilkerson),,,,,,,,,,CS 301R-2 (MJ),CS 356-1 (Jones MD),CS 501R-1 (Grimsman),CS 459-1 (Holladay)
-TMCB,104,,,,,,,,,,,,"CS 404-2 (Gates, Darin)","CS 404-1 (Gates, Darin)",CS 482T-1 (MJ),
-TMCB,108,,,,,,,,,,,,,CS 482T-2 (Snell),CS 494R-2 (Holladay),CS 301R-1 (Bean)
-TMCB,111,,,,,,,,,,,,,,CS 474-1 (Jenkins),
-TMCB,112,,,,,,,,,,,,CS 674-1 (Wingate),CS 342-1 (Holladay),,
-TMCB,1170,"CS 428-1 (Webster, Bruce)",,,,,,,,,,,CS 110-2 (Page),CS 110-1 (Bean),"CS 110-5 (Hansen, Bruce)","CS 110-3 (Dougal, Duane)"
-TMCB,120,,,CS 240-3 (Jensen),CS 240-4 (Rodham),CS 240-1 (Jensen),CS 240-2 (Jensen),CS 460-2 (Van Dyke),CS 252-1 (Barker),,,,CS 351-1 (Holladay),CS 580-1 (Warnick),CS 430-1 (Germane),CS 704R-1 (Richardson)
-TMCB,121,,,,,,,,,,,,,CS 301R-3 (Sillito),,
-TMCB,134,,,CS 340-3 (Sillito),CS 340-4 (Wilkerson),CS 340-2 (Rodham),CS 340-1 (Rodham),CS 686-1 (Mercer),"CS 345-1 (Judd, Glenn)",,,,CS 354-1 (Harvey),CS 493-1 (Farrell),CS 601R-2 (Ringger),CS 330-1 (Germane)
-TMCB,135,,,CS 235-2 (Crandall),CS 235-1 (Crandall),CS 235-5 (Stephens),CS 470-1 (Archibald),,,,,,CS 355-1 (Egbert),CS 270-1 (MJ),CS 329-1 (Jensen),CS 270-2 (MJ)
+Building,Room,M 10:00 AM-10:50 AM,"M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W 03:30 PM-04:45 PM","M,W,F 09:00 AM-09:50 AM","M,W,F 10:00 AM-10:50 AM","M,W,F 11:00 AM-11:50 AM","M,W,F 12:00 PM-12:50 PM","M,W,F 01:00 PM-01:50 PM","T,Th 09:30 AM-10:45 AM","T,Th 12:30 PM-01:45 PM","T,Th 02:00 PM-03:15 PM","T,Th 03:30 PM-04:45 PM",Online
+BRMB,240,,CS 452-1 (Reynolds),CS 452-2 (Reynolds),,,,,,,,,,,,,
+ESC,C285,,,,,,,,,,,,CS 312-1 (Farrell),CS 312-2 (Farrell),CS 312-3 (Williams),CS 312-4 (Williams),
+HBLL,3718,,CS 235-1 (Crandall),,,CS 256-1 (Hughes),CS 260-1 (Clement),,,CS 224-1 (Barker),CS 324-1 (Seamons),CS 224-2 (Barker),CS 235-5 (Stephens),CS 355-1 (Egbert),CS 270-1 (MJ),CS 393-1 (Reynolds),
+JFSB,B037,,,,,"CS 110-3 (Dougal, Duane)",,,,,,,,,,,
+JKB,3106,,CS 111-4 (Stephens),"CS 111-5 (Giles, Steven)",CS 111-1 (Reynolds),CS 111-2 (Reynolds),,,,,,,,,,CS 111-3 (Richardson),
+MARB,130,,,,,CS 260-2 (Ventura),CS 470-1 (Archibald),CS 236-4 (Mercer),CS 236-3 (Goodrich),"CS 324-2 (Dougal, Duane)",CS 236-2 (Goodrich),CS 236-1 (Goodrich),CS 270-2 (MJ),"CS 235-6 (Barton, Dylan)",CS 329-1 (Jensen),CS 235-3 (Crandall),
+MCKB,220,,,,,CS 401R-2 (Team:Grimsman/Killian),,,,,,,"CS 405-1 (Earnshaw, Craig)",CS 482T-1 (MJ),CS 704R-1 (Richardson),CS 330-1 (Germane),
+MCKB,26,,CS 418-1 (Williams),CS 670-1 (Archibald),CS 401R-3 (Hughes),CS 653-1 (Ng),CS 479-1 (Ringger),,,,,,CS 430-1 (Germane),CS 191/2-1 (Zappala),CS 493-1 (Farrell),CS 356-1 (Jones MD),
+MCKB,280,,CS 473-1 (Wingate),CS 401R-4 (Toborg),,,CS 401R-1 (Bean),,,,,,CS 574-1 (Snell),CS 601R-1 (Page),CS 580-1 (Warnick),CS 601R-2 (Ringger),
+MCKB,331,,,,,,,,,,,,CS 301R-1 (Bean),CS 301R-4 (Stephens),CS 465-1 (Zappala),CS 301R-2 (MJ),
+TMCB,111,,,,,,,,,,,,CS 474-1 (Jenkins),,,,
+TMCB,1170,"CS 428-1 (Webster, Bruce)",,,,,,,,,,,CS 110-2 (Page),"CS 110-4 (Dougal, Duane)",CS 110-1 (Bean),"CS 110-6 (Jones, Angela)",
+TMCB,120,,,CS 340-1 (Rodham),CS 340-4 (Wilkerson),CS 240-4 (Rodham),CS 240-3 (Jensen),CS 460-1 (Deccio),CS 686-1 (Mercer),,,,CS 501R-1 (Grimsman),CS 240-6 (Wilkerson),"CS 404-1 (Gates, Darin)",CS 482T-2 (Snell),
+TMCB,134,,,CS 240-2 (Jensen),CS 240-1 (Jensen),CS 340-3 (Sillito),CS 340-2 (Rodham),CS 252-1 (Barker),CS 252-2 (Barker),,,,CS 674-1 (Wingate),"CS 404-2 (Gates, Darin)",CS 301R-3 (Sillito),"CS 191/2-2 (Dougal, Duane)",
+TMCB,135,,,,,CS 235-2 (Crandall),,,,,,,,,,,
+Online,Online,,,,,,,,,,,,,,,,"CS 224-3 (Clement); CS 110-5 (Jones, Angela); CS 260-3 (Ventura); CS 235-4 (Crandall); CS 240-5 (Rodham)"
