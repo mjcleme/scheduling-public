@@ -1,6 +1,13 @@
 Semester,Course,Section,Instructor,Enrollment,Building,Room,Capacity,Days,Start Time,End Time,Utilization %
+Summer 2027,110L,1,110Lab,20.0,TMCB,120,41,"T,Th",02:00 PM,03:15 PM,48.8%
 Summer 2027,224,1,Barker,8.0,TMCB,136,40,"M,W,F",02:00 PM,02:50 PM,20.0%
 Summer 2027,236,1,Barker,41.0,TMCB,120,41,"M,W,F",11:00 AM,11:50 AM,100.0%
-Summer 2027,110,1,"Dougal, Duane",24.0,TMCB,136,40,"T,Th",09:30 AM,10:45 AM,60.0%
-Summer 2027,235,1,"Dougal, Duane",40.0,TMCB,136,40,"T,Th",02:00 PM,03:15 PM,100.0%
-Summer 2027,404,1,"Gates, Darin",10.0,TMCB,136,40,"T,Th",12:30 PM,01:45 PM,25.0%
+Summer 2027,110,1,"Dougal, Duane",24.0,TMCB,136,40,"M,W",12:30 PM,01:45 PM,60.0%
+Summer 2027,235,1,"Dougal, Duane",40.0,TMCB,136,40,"M,W",11:00 AM,12:15 PM,100.0%
+Summer 2027,404,1,"Gates, Darin",10.0,TMCB,120,41,"T,Th",09:30 AM,10:45 AM,24.4%
+Summer 2027,110L,2,Lab,20.0,TMCB,136,40,"T,Th",12:30 PM,01:45 PM,50.0%
+Summer 2027,111L,1,Lab,20.0,TMCB,120,41,"T,Th",03:30 PM,04:45 PM,48.8%
+Summer 2027,111L,2,Lab,20.0,TMCB,120,41,"T,Th",12:30 PM,01:45 PM,48.8%
+Summer 2027,111L,3,Lab,20.0,TMCB,136,40,"T,Th",03:30 PM,04:45 PM,50.0%
+Summer 2027,224L,1,Lab,20.0,TMCB,136,40,"T,Th",02:00 PM,03:15 PM,50.0%
+Summer 2027,224L,2,Lab,20.0,TMCB,136,40,"T,Th",09:30 AM,10:45 AM,50.0%
