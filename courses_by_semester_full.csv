@@ -1,4 +1,6 @@
 Course,Fall 2026,Winter 2027,Spring 2027,Summer 2027
+Total 400-level CS courses,20,20,5,1
+Total 500/600-level CS courses,8,9,0,0
 CS 101,"Clement, Morse, Seamons, Seppi",Morse,,
 CS 110,"Bean, Page, Dougal, Duane, Dougal, Duane, Jones, Angela","Bean, Dougal, Duane, Jones, Angela",Bean,"Dougal, Duane"
 CS 110-O,"Jones, Angela","Jones, Angela",,
@@ -95,5 +97,3 @@ CSANM 460R,,Egbert,,
 CSANM 494R,"Harvey, Holladay","Holladay, Van Dyke",Van Dyke,
 DESAN 359,,,Holladay,
 DESAN 460,Van Dyke,,,
-Total 400-level CS courses,15,15,3,1
-Total 500/600-level CS courses,8,9,0,0
