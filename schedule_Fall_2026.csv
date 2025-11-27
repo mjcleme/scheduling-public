@@ -2,8 +2,8 @@ Semester,Course,Section,Instructor,Enrollment,Building,Room,Capacity,Days,Start 
 Fall 2026,110,1,Bean,100.4,JSB,140,858,"M,W",02:00 PM,03:15 PM,11.7%
 Fall 2026,110,2,Page,100.4,JSB,140,858,"M,W",11:00 AM,12:15 PM,11.7%
 Fall 2026,110,3,"Dougal, Duane",100.4,JSB,140,858,"M,W",12:30 PM,01:45 PM,11.7%
-Fall 2026,110,4,"Dougal, Duane",100.4,JSB,140,858,"T,Th",09:30 AM,10:45 AM,11.7%
-Fall 2026,110,6,"Jones, Angela",100.4,TMCB,1170,203,"T,Th",02:00 PM,03:15 PM,49.5%
+Fall 2026,110,4,"Jones, Angela",100.4,JSB,140,858,"T,Th",09:30 AM,10:45 AM,11.7%
+Fall 2026,110,6,"Dougal, Duane",100.4,TMCB,1170,203,"T,Th",02:00 PM,03:15 PM,49.5%
 Fall 2026,110L,1,110Lab,1.0,MCKB,26,30,"T,Th",12:30 PM,01:45 PM,3.3%
 Fall 2026,110L,2,110Lab,1.0,TMCB,134,42,"T,Th",12:30 PM,01:45 PM,2.4%
 Fall 2026,110L,3,110Lab,1.0,MCKB,26,30,"T,Th",09:30 AM,10:45 AM,3.3%
