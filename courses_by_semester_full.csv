@@ -1,14 +1,19 @@
 Course,Fall 2026,Winter 2027,Spring 2027,Summer 2027
-CS 101,"Clement, Morse, Seamons","Morse, Seppi",,
-CS 110,"Bean, Page, Dougal, Duane, Dougal, Duane, Hansen, Bruce, Jones, Angela","Bean, Dougal, Duane, Hansen, Bruce, Jones, Angela",Bean,"Dougal, Duane"
+CS 101,"Clement, Morse, Seamons, Seppi",Morse,,
+CS 110,"Bean, Page, Dougal, Duane, Dougal, Duane, Jones, Angela","Bean, Dougal, Duane, Jones, Angela",Bean,"Dougal, Duane"
 CS 110-O,"Jones, Angela","Jones, Angela",,
-CS 111,"Reynolds, Reynolds, Richardson, Stephens, Cluff, Andrew, Giles, Steven","Richardson, Stephens, Giles, Steven",Stephens,
-CS 111-O,,Stephens,,
+CS 110E,"Hansen, Bruce","Hansen, Bruce",,
+CS 110L,"110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab","110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab, 110Lab",110Lab,110Lab
+CS 111,"Reynolds, Reynolds, Richardson, Giles, Steven","Richardson, Stephens, Giles, Steven",Stephens,
+CS 111-O,Stephens,Stephens,,
+CS 111E,"Cluff, Andrew","Cluff, Andrew",,
+CS 111L,"111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab","111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab",111Lab,
 CS 180,,"Ringger, Ringger",,
 CS 191,"Zappala, Dougal, Duane","Zappala, Dougal, Duane",,
 CS 202,Wilkerson,Wilkerson,,
 CS 224,"Barker, Barker","Archibald, Archibald, Mercer","Barton, Dylan",Barker
 CS 224-O,Clement,Clement,,
+CS 224L,"224Lab, 224Lab, 224Lab, 224Lab, 224Lab, 224Lab","224Lab, 224Lab, 224Lab, 224Lab, 224Lab, 224Lab",224Lab,
 CS 235,"Crandall, Crandall, Crandall, Stephens, Barton, Dylan","MJ, MJ, Stephens, Barton, Dylan, Dougal, Duane",Stephens,"Dougal, Duane"
 CS 235-O,Crandall,Clement,,
 CS 236,"Goodrich, Goodrich, Goodrich, Mercer","Barker, Barker, Barker",,Barker
@@ -26,9 +31,9 @@ CS 324,"Seamons, Dougal, Duane","Deccio, Deccio, Dougal, Duane",,
 CS 329,Jensen,Jensen,,
 CS 330,Germane,Germane,,
 CS 340,"Rodham, Rodham, Sillito, Wilkerson",Wilkerson,,
-CS 345,"Judd, Glenn","Judd, Glenn",,
+CS 345E,"Judd, Glenn","Judd, Glenn",,
 CS 355,Egbert,,,
-CS 356,Jones MD,Larsen,,
+CS 356,Jones MD,,,
 CS 393,Reynolds,"Reynolds, Reynolds",,
 CS 401R,"Bean, Grimsman, Hughes, Killian, Toborg","Bean, Page, Toborg",,
 CS 404,"Gates, Darin, Gates, Darin","Gates, Darin, Gates, Darin","Gates, Darin","Gates, Darin"
@@ -42,7 +47,7 @@ CS 455,,Egbert,,
 CS 460,Deccio,,,
 CS 465,Zappala,"Clift, Fred",,
 CS 466,,Seamons,,
-CS 470,Archibald,Crandall,,
+CS 470,Archibald,,,
 CS 473,Wingate,Wingate,,
 CS 474,Jenkins,"Jenkins, Killian, Ventura",,
 CS 479,Ringger,,,
@@ -90,5 +95,5 @@ CSANM 460R,,Egbert,,
 CSANM 494R,"Harvey, Holladay","Holladay, Van Dyke",Van Dyke,
 DESAN 359,,,Holladay,
 DESAN 460,Van Dyke,,,
-Total 400-level CS courses,16,16,3,1
-Total 500/600-level CS courses,9,11,0,0
+Total 400-level CS courses,15,15,3,1
+Total 500/600-level CS courses,8,9,0,0

@@ -1,9 +1,9 @@
 Building,Room,M 09:00 AM-09:50 AM,"M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W 03:30 PM-04:45 PM","M,W,F 09:00 AM-09:50 AM","M,W,F 10:00 AM-10:50 AM","M,W,F 02:00 PM-02:50 PM","M,W,F 03:00 PM-03:50 PM","M,W,F 04:00 PM-04:50 PM","T,Th 09:30 AM-10:45 AM","T,Th 12:30 PM-01:45 PM","T,Th 02:00 PM-03:15 PM","T,Th 03:30 PM-04:45 PM",Online
 BRMB,240,0,0,0,0,0,0,0,0,0,0,0,CS 452-1 (Reynolds),CS 452-2 (Reynolds),0,0,0
 ESC,C285,0,CS 312-2 (Farrell),0,0,0,CS 355-1 (Egbert),0,0,0,0,0,0,0,0,0,0
-HBLL,3718,X,X,CS 312-1 (Farrell),CS 260-1 (Clement),CS 256-1 (Hughes),CS 270-2 (MJ),CS 324-1 (Seamons),"CS 324-2 (Dougal, Duane)",X,X,X,CS 235-3 (Crandall),"CS 235-6 (Barton, Dylan)",CS 235-1 (Crandall),CS 235-2 (Crandall),
-JSB,140,X,X,CS 110-2 (Page),"CS 110-3 (Dougal, Duane)",CS 110-1 (Bean),CS 111-3 (Richardson),CS 236-4 (Mercer),,X,X,X,"CS 110-4 (Dougal, Duane)",CS 474-1 (Jenkins),CS 111-2 (Reynolds),CS 312-3 (Williams),
-MARB,130,X,X,CS 235-5 (Stephens),CS 393-1 (Reynolds),X,X,CS 224-2 (Barker),CS 224-1 (Barker),CS 236-1 (Goodrich),CS 236-2 (Goodrich),CS 236-3 (Goodrich),CS 329-1 (Jensen),CS 312-4 (Williams),CS 270-1 (MJ),CS 470-1 (Archibald),
+HBLL,3718,,,CS 312-1 (Farrell),CS 260-1 (Clement),CS 256-1 (Hughes),CS 270-2 (MJ),CS 324-1 (Seamons),"CS 324-2 (Dougal, Duane)",,,,CS 235-3 (Crandall),"CS 235-6 (Barton, Dylan)",CS 235-1 (Crandall),CS 235-2 (Crandall),
+JSB,140,,,CS 110-2 (Page),"CS 110-3 (Dougal, Duane)",CS 110-1 (Bean),CS 111-3 (Richardson),CS 236-4 (Mercer),,,,,"CS 110-4 (Dougal, Duane)",CS 474-1 (Jenkins),CS 111-2 (Reynolds),CS 312-3 (Williams),
+MARB,130,,,CS 235-5 (Stephens),CS 393-1 (Reynolds),,,CS 224-2 (Barker),CS 224-1 (Barker),CS 236-1 (Goodrich),CS 236-2 (Goodrich),CS 236-3 (Goodrich),CS 329-1 (Jensen),CS 312-4 (Williams),CS 270-1 (MJ),CS 470-1 (Archibald),
 MCKB,220,0,CS 401R-4 (Toborg),CS 111L-11 (111Lab),CS 301R-1 (Bean),CS 465-1 (Zappala),CS 301R-2 (MJ),0,0,0,0,0,CS 110L-10 (110Lab),CS 224L-1 (224Lab),CS 430-1 (Germane),CS 110L-8 (110Lab),0
 MCKB,26,0,CS 111L-2 (111Lab),CS 111L-5 (111Lab),CS 479-1 (Ringger),CS 653-1 (Ng),CS 111L-12 (111Lab),0,0,0,0,0,CS 110L-3 (110Lab),CS 110L-1 (110Lab),CS 110L-7 (110Lab),CS 110L-9 (110Lab),0
 MCKB,280,0,CS 111L-6 (111Lab),CS 401R-1 (Bean),CS 418-1 (Williams),CS 111L-3 (111Lab),CS 111L-7 (111Lab),0,0,0,0,0,CS 110L-11 (110Lab),CS 110L-6 (110Lab),"CS 191/2-2 (Dougal, Duane)",CS 493-1 (Farrell),0
@@ -14,6 +14,6 @@ TMCB,108,0,0,0,0,CS 340-3 (Sillito),0,0,0,0,0,0,CS 224L-6 (224Lab),CS 482T-1 (MJ
 TMCB,112,0,0,0,0,0,0,0,0,0,0,0,0,CS 110L-5 (110Lab),0,CS 110L-4 (110Lab),0
 TMCB,116,0,0,0,0,0,CS 670-1 (Archibald),0,0,0,0,0,0,CS 574-1 (Snell),0,0,0
 TMCB,1170,"CS 428-1 (Webster, Bruce)",0,0,0,0,0,0,0,0,0,0,CS 260-2 (Ventura),CS 111-1 (Reynolds),"CS 110-6 (Jones, Angela)","CS 111-5 (Giles, Steven)",
-TMCB,120,X,X,"CS 404-2 (Gates, Darin)",CS 340-4 (Wilkerson),CS 240-3 (Jensen),CS 340-2 (Rodham),CS 252-2 (Barker),CS 252-1 (Barker),X,X,X,CS 191/2-1 (Zappala),CS 580-1 (Warnick),CS 704R-1 (Richardson),CS 340-1 (Rodham),
-TMCB,134,X,X,CS 240-6 (Wilkerson),CS 240-2 (Jensen),"CS 404-1 (Gates, Darin)",CS 240-1 (Jensen),CS 686-1 (Mercer),CS 460-1 (Deccio),X,X,X,CS 240-4 (Rodham),CS 110L-2 (110Lab),"CS 405-1 (Earnshaw, Craig)",CS 674-1 (Wingate),
+TMCB,120,,,"CS 404-2 (Gates, Darin)",CS 340-4 (Wilkerson),CS 240-3 (Jensen),CS 340-2 (Rodham),CS 252-2 (Barker),CS 252-1 (Barker),,,,CS 191/2-1 (Zappala),CS 580-1 (Warnick),CS 704R-1 (Richardson),CS 340-1 (Rodham),
+TMCB,134,,,CS 240-6 (Wilkerson),CS 240-2 (Jensen),"CS 404-1 (Gates, Darin)",CS 240-1 (Jensen),CS 686-1 (Mercer),CS 460-1 (Deccio),,,,CS 240-4 (Rodham),CS 110L-2 (110Lab),"CS 405-1 (Earnshaw, Craig)",CS 674-1 (Wingate),
 Online,Online,,,,,,,,,,,,,,,,"CS 224-O (Clement); CS 110-O (Jones, Angela); CS 260-O (Ventura); CS 235-O (Crandall); CS 240-O (Rodham); CS 111-O (Stephens)"
