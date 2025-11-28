@@ -1,4 +1,6 @@
 # Scheduling for Computer Science
+### What Faculty should look at
+[Fall Schedule by instructor](schedule_Fall_2026_by_instructor.csv)
 ### Notation
 - An X in the schedule file indicates that this time has a conflict with another time that is currently scheduled (For example, if there is a MW class scheduled in a room, then MWF would have an X)
 - A 0 in the schedule file indicates that the room does not have priority 1 scheduling for the Computer Science Department.
