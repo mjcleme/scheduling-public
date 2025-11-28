@@ -55,6 +55,95 @@ The phased CSV files (schedule_phased_*.csv) represent an alternative scheduling
   - Priority 1: TMCB 120, TMCB 134, TMCB 136, HBLL 3718, JKB 2111 (preferred)
   - Priority 2: JKB 1102, larger auditoriums (fallback options)
 
+# Course Scheduling via Integer Linear Programming (ILP)
+
+## Goal
+Optimize room assignments and enrollment distribution to maximize capacity utilization while respecting all scheduling constraints.
+
+## Implementation Steps
+
+### 1. Data Parsing Module
+- Parse course data: extract sections per course (count of instructors), individual instructors, total in-person enrollment, meeting pattern preferences
+- Load rooms: building, room number, capacity, priority level, availability windows
+- Parse conflict matrix: identify course pairs that conflict
+- Parse meeting patterns: expand each pattern into (day, start_time, end_time) tuples
+  - MWF 9:00-9:50 → [(Mon,9:00,9:50), (Wed,9:00,9:50), (Fri,9:00,9:50)]
+  - MW 9:30-10:45 → [(Mon,9:30,10:45), (Wed,9:30,10:45)]
+
+### 2. ILP Model Construction (using PuLP or OR-Tools)
+
+#### Decision Variables
+- `x[course, section, room, timeslot]` ∈ {0,1}: binary assignment indicator
+- `enrollment[course, section]` ∈ ℤ⁺: students assigned to each section
+
+#### Objective Function
+Maximize Σ (enrollment[i,s] / capacity[r]) × x[i,s,r,t] across all assignments
+
+#### Hard Constraints
+
+1. **Each section scheduled exactly once:**
+   - Σ(r,t) x[i,s,r,t] = 1 for all courses i, sections s
+
+2. **Room capacity sufficient:**
+   - enrollment[i,s] ≤ capacity[r] when x[i,s,r,t] = 1
+
+3. **Enrollment distribution:**
+   - Σ(s) enrollment[i,s] = total_in_person_enrollment[i]
+   - enrollment[i,s] ≥ 1 for all sections
+
+4. **Room conflicts (day-time granularity):**
+   - For each room r, day d, time pairs (t1,t2) where time ranges overlap:
+     - Σ(i,s) x[i,s,r,t1] + Σ(j,s) x[j,s,r,t2] ≤ 1
+   - Overlap check: start1 < end2 AND start2 < end1
+   - Example: MW 9:30-10:45 blocks MWF 9:00-9:50 and MWF 10:00-10:50 on Mon/Wed
+
+5. **Instructor conflicts (no double-booking):**
+   - For each instructor p, timeslot t (including day-time overlaps):
+     - Σ(i,s,r where instructor[i,s]=p) x[i,s,r,t] ≤ 1
+   - **CRITICAL VALIDATION**: No instructor teaching multiple sections simultaneously
+
+6. **Meeting pattern matching:**
+   - x[i,s,r,t] can only be 1 if timeslot t matches course i's preferred pattern
+
+7. **Course conflicts (student path):**
+   - For conflicting courses i,j: ensure at least one non-overlapping section pair exists
+   - Courses in conflict CAN be scheduled at same time if alternative sections exist
+
+8. **Online sections excluded:**
+   - Sections marked -O don't get room assignments (x = 0 for all r,t)
+
+### 3. Solver Execution
+- Build and solve ILP model with timeout (e.g., 10 minutes)
+- Handle infeasibility with constraint relaxation if needed
+
+### 4. Output Generation
+- CSV: Semester, Course, Section, Instructor, Enrollment, Building, Room, Days, Start Time, End Time, Capacity, Utilization%
+- Summary: total utilization, unscheduled courses, constraint violations
+
+### 5. Validation
+- Verify no instructor double-bookings
+- Check room capacities not exceeded
+- Confirm conflict-free paths exist for students
+- Validate day-time room conflicts resolved
+
+## Tools & Libraries
+- Python with PuLP or OR-Tools for ILP optimization
+- pandas for data parsing and output generation
+
+## Key Input Files
+- `Teaching Assignments True 2015-2026 - 2026-2027.csv` - courses, instructors, enrollments (columns D,F,H,J)
+- `Teaching Assignments True 2015-2026 - Priority 1 Classrooms.csv` - available rooms
+- `Teaching Assignments True 2015-2026 - Meeting Patterns.csv` - time slots
+- `class conflicts - Sheet1.csv` - course conflict matrix
+
+## Important Notes
+- Number of faculty teaching = number of sections desired
+- Student counts are for in-person sections only (exclude online -O sections)
+- Enrollment distribution across sections does NOT need to be uniform
+- Goal is to maximize room capacity utilization
+- Instructor conflicts are the primary validation constraint
+
+
 ## Big-M Linearization Explained
 
 ### The Problem
