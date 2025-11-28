@@ -1,6 +1,4 @@
 Course,Fall 2026,Winter 2027,Spring 2027,Summer 2027
-Total 400-level CS courses,20,20,5,1
-Total 500/600-level CS courses,8,9,0,0
 CS 101,"Clement, Morse, Seamons, Seppi",Morse,,
 CS 110,"Bean, Page, Dougal, Duane, Dougal, Duane, Jones, Angela","Bean, Dougal, Duane, Jones, Angela",Bean,"Dougal, Duane"
 CS 110-O,"Jones, Angela","Jones, Angela",,
@@ -13,11 +11,13 @@ CS 111L,"111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab, 111Lab,
 CS 180,,"Ringger, Ringger",,
 CS 191,"Zappala, Dougal, Duane","Zappala, Dougal, Duane",,
 CS 202,Wilkerson,Wilkerson,,
-CS 224,"Barker, Barker","Archibald, Archibald, Mercer","Barton, Dylan",Barker
+CS 224,"Barker, Barker","Archibald, Archibald, Mercer",,Barker
 CS 224-O,Clement,Clement,,
+CS 224E,,,"Barton, Dylan",
 CS 224L,"224Lab, 224Lab, 224Lab, 224Lab, 224Lab, 224Lab","224Lab, 224Lab, 224Lab, 224Lab, 224Lab, 224Lab",224Lab,
-CS 235,"Crandall, Crandall, Crandall, Stephens, Barton, Dylan","MJ, MJ, Stephens, Barton, Dylan, Dougal, Duane",Stephens,"Dougal, Duane"
+CS 235,"Crandall, Crandall, Crandall, Stephens","MJ, MJ, Stephens, Dougal, Duane",Stephens,"Dougal, Duane"
 CS 235-O,Crandall,Clement,,
+CS 235E,"Barton, Dylan","Barton, Dylan",,
 CS 236,"Goodrich, Goodrich, Goodrich, Mercer","Barker, Barker, Barker",,Barker
 CS 240,"Jensen, Jensen, Jensen, Rodham, Wilkerson","Rodham, Rodham, Wilkerson, Wilkerson",Wilkerson,
 CS 240-O,Rodham,Wilkerson,,Rodham
@@ -37,7 +37,7 @@ CS 345E,"Judd, Glenn","Judd, Glenn",,
 CS 355,Egbert,,,
 CS 356,Jones MD,,,
 CS 393,Reynolds,"Reynolds, Reynolds",,
-CS 401R,"Bean, Grimsman, Hughes, Killian, Toborg","Bean, Page, Toborg",,
+CS 401R,"Bean, Grimsman, Hughes, Killian, Toborg","Bean, Toborg",,
 CS 404,"Gates, Darin, Gates, Darin","Gates, Darin, Gates, Darin","Gates, Darin","Gates, Darin"
 CS 405,"Earnshaw, Craig","Earnshaw, Craig",,
 CS 418,Williams,,,
@@ -51,7 +51,7 @@ CS 465,Zappala,"Clift, Fred",,
 CS 466,,Seamons,,
 CS 470,Archibald,,,
 CS 473,Wingate,Wingate,,
-CS 474,Jenkins,"Jenkins, Killian, Ventura",,
+CS 474,Jenkins,"Jenkins, Killian",,
 CS 479,Ringger,,,
 CS 480T,,"Rodham, Sillito, Baird, Brad",,
 CS 481T,,"Rodham, Sillito, Baird, Brad",,
@@ -71,7 +71,7 @@ CS 653,Ng,,,
 CS 655,,Egbert,,
 CS 665,,Seamons,,
 CS 670,Archibald,,,
-CS 673,,Ventura,,
+CS 673,Ventura,,,
 CS 674,Wingate,,,
 CS 677,,Jenkins,,
 CS 686,Mercer,,,
@@ -97,3 +97,5 @@ CSANM 460R,,Egbert,,
 CSANM 494R,"Harvey, Holladay","Holladay, Van Dyke",Van Dyke,
 DESAN 359,,,Holladay,
 DESAN 460,Van Dyke,,,
+Total 400-level CS courses,20,20,5,1
+Total 500/600-level CS courses,9,8,0,0
