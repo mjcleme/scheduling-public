@@ -18,3 +18,33 @@ Integer Linear Programming (ILP) with:
 
 ### Key Design Decision
 Uses simplified capacity constraints with equal-distribution enrollment assumption, avoiding Big-M linearization complexity while maintaining optimality.
+
+### Implementation
+The phased CSV files (schedule_phased_*.csv) represent an alternative scheduling approach
+  that uses a two-phase strategy based on room priorities:
+
+  Key Differences:
+
+  Phased Scheduling (schedule_phased_*.csv):
+  - Uses Priority 1 and Priority 2 rooms from the "Priority 1 Classrooms" input file
+  - Includes a "Priority" column indicating which tier the room belongs to
+  - Two-Phase Approach:
+    - Phase 1: Schedules courses in Priority 1 rooms only (smaller, preferred rooms)
+    - Phase 2: Schedules remaining courses in Priority 2 rooms only
+  - Generally results in better room utilization - e.g., CS 110-1 in JFSB B037 (120 capacity)
+  at 83.7% utilization
+  - Focuses on filling smaller, preferred classrooms efficiently
+
+  Regular Scheduling (schedule_*.csv):
+  - Uses all available rooms from the comprehensive classrooms file
+  - No priority column
+  - Single-Phase Approach: All rooms considered simultaneously
+  - May result in lower utilization - e.g., CS 110-1 in JSB 140 (858 capacity) at only 11.7%
+  utilization
+  - More flexible but can waste larger rooms on small classes
+
+  Room Priority Examples:
+
+  - Priority 1: TMCB 120, TMCB 134, TMCB 136, HBLL 3718, JKB 2111 (preferred)
+  - Priority 2: JKB 1102, larger auditoriums (fallback options)
+
