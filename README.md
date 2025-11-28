@@ -55,3 +55,253 @@ The phased CSV files (schedule_phased_*.csv) represent an alternative scheduling
   - Priority 1: TMCB 120, TMCB 134, TMCB 136, HBLL 3718, JKB 2111 (preferred)
   - Priority 2: JKB 1102, larger auditoriums (fallback options)
 
+## Big-M Linearization Explained
+
+### The Problem
+
+Big-M is a technique to convert nonlinear products of **binary × continuous** variables into linear constraints.
+
+### What We Have
+
+We have:
+- `x[c,s,r,p]` ∈ {0,1} - binary variable (is this assignment made?)
+- `enrollment[c,s]` ∈ ℤ⁺ - integer variable (how many students?)
+
+We want: `u = enrollment × x` in our objective
+
+But we **can't** multiply variables in ILP (Integer Linear Programming)!
+
+### Why It's Nonlinear
+
+In ILP, we can only have **linear** expressions:
+- Variable × constant ✓ (e.g., `3x`)
+- Variable + variable ✓ (e.g., `x + y`)
+- Variable × variable ✗ (e.g., `x × y`) - **NONLINEAR!**
+
+## The Big-M Solution
+
+Create a new auxiliary variable `u[c,s,r,p]` that represents the product.
+
+We want `u` to behave like:
+- When `x = 0`: `u = 0` (no assignment → no students in that room)
+- When `x = 1`: `u = enrollment[c,s]` (assignment → students go to that room)
+
+## The Constraints
+
+Let `M` = a large constant (e.g., max possible enrollment = 500)
+
+Add these **linear** constraints:
+
+```
+1. u ≤ M × x
+   # If x=0, then u≤0 (combined with #2, forces u=0)
+   # If x=1, then u≤M (doesn't constrain u much)
+
+2. u ≥ 0
+   # u is non-negative
+
+3. u ≤ enrollment
+   # u can't exceed actual enrollment
+
+4. u ≥ enrollment - M(1 - x)
+   # If x=1: u ≥ enrollment - 0, so u ≥ enrollment
+   # Combined with constraint #3: u = enrollment when x=1
+   # If x=0: u ≥ enrollment - M (not constraining since u≥0)
+```
+
+## Example Walkthrough
+
+Suppose `enrollment[CS235,section1] = 90` and `M = 500`:
+
+### Case 1: x = 0 (not assigned to this room)
+
+- Constraint 1: `u ≤ 500 × 0 = 0`
+- Constraint 2: `u ≥ 0`
+- Constraint 3: `u ≤ 90`
+- Constraint 4: `u ≥ 90 - 500(1-0) = 90 - 500 = -410`
+
+**Combined effect**: `0 ≤ u ≤ 0`
+
+**Result**: `u = 0` ✓
+
+### Case 2: x = 1 (assigned to this room)
+
+- Constraint 1: `u ≤ 500 × 1 = 500`
+- Constraint 2: `u ≥ 0`
+- Constraint 3: `u ≤ 90`
+- Constraint 4: `u ≥ 90 - 500(1-1) = 90 - 0 = 90`
+
+**Combined effect**: `90 ≤ u ≤ 90`
+
+**Result**: `u = 90` ✓
+
+## Our Objective Becomes Linear
+
+Original (nonlinear):
+```python
+maximize Σ (enrollment[c,s] × x[c,s,r,p] / capacity[r])
+```
+
+After Big-M linearization:
+```python
+maximize Σ (u[c,s,r,p] / capacity[r])
+```
+
+This is now **linear**! (dividing by constant capacity is fine)
+
+## Choosing M
+
+### Requirements
+
+**M should be:**
+- **Large enough**: `M ≥ max(enrollment[c,s])` for all courses
+- **Small as possible**: Too large causes numerical instability
+
+### For Our Scheduling Problem
+
+Looking at the course data:
+- Maximum single course enrollment: ~270 students (CS 235)
+- Safe choice: `M = 500` or `M = 1000`
+
+### Why Not Just Use M = 1,000,000?
+
+**Numerical Precision Issues:**
+- ILP solvers use floating-point arithmetic internally
+- Very large M values can cause:
+  - Rounding errors
+  - Poor branching decisions in branch-and-bound
+  - Slower convergence
+  - Numerical instability
+
+**Best Practice:** Use the smallest M that satisfies constraints
+
+## Complexity Analysis
+
+### Additional Variables
+
+For each potential assignment, we add one `u` variable:
+- Number of `u` variables = Number of `x` variables
+- For our problem: ~42 sections × 18 rooms × 35 patterns ≈ 26,000 variables
+
+### Additional Constraints
+
+For each `u` variable, we add 4 constraints:
+- Total new constraints ≈ 4 × 26,000 = 104,000 constraints
+
+### Is This Manageable?
+
+**Yes, for modern ILP solvers:**
+- Commercial solvers (Gurobi, CPLEX) handle millions of constraints
+- Open-source CBC can handle 100k+ constraints
+- Will take longer than simplified version but still reasonable
+
+**Typical solving time:**
+- Simple problems: seconds
+- Our problem: likely 1-10 minutes
+- Complex problems: could timeout
+
+## Trade-offs
+
+### Pros
+- ✅ **Exact formulation** - preserves true objective
+- ✅ Uses existing PuLP/CBC solver (no new dependencies)
+- ✅ Well-studied, proven technique
+- ✅ Guaranteed to find optimal solution (if one exists)
+
+### Cons
+- ❌ Adds many variables (~26,000 for our problem)
+- ❌ Adds many constraints (~104,000 for our problem)
+- ❌ Slower solving time than simplified objective
+- ❌ Large M values can cause numerical precision issues
+- ❌ May not find solution within time limit for very large problems
+
+## Alternative: Simplified Linear Objective
+
+Instead of Big-M, use a simpler objective that's already linear:
+
+```python
+# Prioritize smaller rooms (inverse capacity weighting)
+weight = (1.0 / room.capacity) * 1000 + 1
+maximize Σ weight × x[c,s,r,p]
+```
+
+**Pros:**
+- ✅ Much faster to solve
+- ✅ Simpler formulation
+- ✅ No numerical issues
+- ✅ Guaranteed to find solution quickly
+
+**Cons:**
+- ❌ Doesn't explicitly maximize capacity utilization
+- ❌ Enrollment distribution arbitrary (any feasible solution)
+- ❌ May assign large sections to unnecessarily large rooms
+
+## Comparison Summary
+
+| Aspect | Big-M Linearization | Simplified Objective |
+|--------|-------------------|---------------------|
+| **Optimization Goal** | Maximize capacity utilization | Prefer smaller rooms |
+| **Formulation** | Exact | Approximation |
+| **Variables** | 2× (add `u` vars) | 1× (just `x` vars) |
+| **Constraints** | 4× more | Normal |
+| **Solve Time** | Minutes | Seconds |
+| **Solution Quality** | Optimal utilization | Good assignments |
+| **Complexity** | High | Low |
+
+## Implementation in Python (PuLP)
+
+```python
+# Create auxiliary variables
+u_vars = {}
+for (c_idx, s_idx, r_idx, p_idx) in x_vars.keys():
+    u_vars[(c_idx, s_idx, r_idx, p_idx)] = LpVariable(
+        f"u_c{c_idx}_s{s_idx}_r{r_idx}_p{p_idx}",
+        lowBound=0,
+        cat='Continuous'
+    )
+
+# Add Big-M constraints
+M = 1000  # Large constant
+
+for (c_idx, s_idx, r_idx, p_idx) in x_vars.keys():
+    x = x_vars[(c_idx, s_idx, r_idx, p_idx)]
+    u = u_vars[(c_idx, s_idx, r_idx, p_idx)]
+    enrollment = enrollment_vars[(c_idx, s_idx)]
+
+    # 1. u <= M * x
+    problem += u <= M * x
+
+    # 2. u >= 0 (already in variable definition)
+
+    # 3. u <= enrollment
+    problem += u <= enrollment
+
+    # 4. u >= enrollment - M(1 - x)
+    problem += u >= enrollment - M * (1 - x)
+
+# Objective: maximize utilization
+objective = lpSum([
+    u_vars[(c_idx, s_idx, r_idx, p_idx)] / rooms[r_idx].capacity
+    for (c_idx, s_idx, r_idx, p_idx) in x_vars.keys()
+])
+
+problem += objective
+```
+
+## References
+
+- **Linear Programming**: Foundations and Extensions by Vanderbei
+- **Integer Programming** by Wolsey
+- **Modeling with Linear Programming** - Big-M technique is covered in most operations research textbooks
+
+## Recommendation for Our Project
+
+**Try Big-M first** because:
+1. Our problem size (~26k variables) is manageable
+2. We want true capacity utilization optimization
+3. Can fall back to simplified objective if too slow
+
+**If Big-M times out or causes issues:**
+- Increase time limit
+- Use simpler objective
+- Consider heuristic approaches
