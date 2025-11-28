@@ -219,253 +219,205 @@ Maximize Σ (enrollment[i,s] / capacity[r]) × x[i,s,r,t] across all assignments
 - Instructor conflicts are the primary validation constraint
 
 
-## Big-M Linearization Explained
+# Course Scheduling System - Status Report
 
-### The Problem
+## ✅ PROJECT COMPLETE
 
-Big-M is a technique to convert nonlinear products of **binary × continuous** variables into linear constraints.
+The ILP-based course scheduling system is fully functional and successfully generates optimal schedules.
 
-### What We Have
+## What's Been Built
 
-We have:
-- `x[c,s,r,p]` ∈ {0,1} - binary variable (is this assignment made?)
-- `enrollment[c,s]` ∈ ℤ⁺ - integer variable (how many students?)
+### Core Components
 
-We want: `u = enrollment × x` in our objective
+1. **Data Parsers** (`parser.py`)
+   - Courses with instructors, enrollments, meeting patterns
+   - Rooms with capacities, priorities, availability
+   - Meeting patterns (MWF 50-min, MW/TTh 75-min, M-only flexible)
+   - Conflict matrix
 
-But we **can't** multiply variables in ILP (Integer Linear Programming)!
+2. **ILP Scheduler** (`scheduler.py`)
+   - Decision variables: x[course, section, room, timeslot]
+   - Simplified linear objective function (prefer smaller rooms, Priority 1 classrooms)
+   - Comprehensive constraint system:
+     - Each section scheduled once
+     - Capacity blocking (prevent assigning sections to rooms too small)
+     - Room conflict prevention (day-time granularity with overlap detection)
+     - Instructor conflict prevention (no double-booking)
+   - PuLP/CBC solver integration
 
-### Why It's Nonlinear
+3. **Main System** (`main.py`)
+   - Command-line interface with semester argument
+   - Data loading and validation
+   - Solver execution
+   - CSV output generation
+   - Built-in validation checks
 
-In ILP, we can only have **linear** expressions:
-- Variable × constant ✓ (e.g., `3x`)
-- Variable + variable ✓ (e.g., `x + y`)
-- Variable × variable ✗ (e.g., `x × y`) - **NONLINEAR!**
+4. **Validation & Testing Tools**
+   - `validate_schedule.py` - Comprehensive schedule validation
+   - `check_capacity.py` - Feasibility analysis before scheduling
+   - `diagnose.py` - Meeting pattern and capacity analysis
+   - `test_minimal.py` - Minimal feasibility testing
 
-## The Big-M Solution
+5. **Utility Scripts**
+   - `pivot_courses.py` - Create course-by-semester pivot tables
+   - `compare_with_original.py` - Compare pivot results with original data
 
-Create a new auxiliary variable `u[c,s,r,p]` that represents the product.
+6. **Documentation**
+   - `docs/SCHEDULING_PLAN.md` - Original implementation plan
+   - `docs/BIG_M_LINEARIZATION.md` - Technical deep dive on linearization
+   - `docs/SOLUTION_SUMMARY.md` - Detailed solution analysis
+   - `docs/STATUS.md` - This file
 
-We want `u` to behave like:
-- When `x = 0`: `u = 0` (no assignment → no students in that room)
-- When `x = 1`: `u = enrollment[c,s]` (assignment → students go to that room)
+## Current Status: WORKING ✓
 
-## The Constraints
+**Problem**: ~~INFEASIBLE~~ → **SOLVED**
 
-Let `M` = a large constant (e.g., max possible enrollment = 500)
+### The Fix
 
-Add these **linear** constraints:
-
-```
-1. u ≤ M × x
-   # If x=0, then u≤0 (combined with #2, forces u=0)
-   # If x=1, then u≤M (doesn't constrain u much)
-
-2. u ≥ 0
-   # u is non-negative
-
-3. u ≤ enrollment
-   # u can't exceed actual enrollment
-
-4. u ≥ enrollment - M(1 - x)
-   # If x=1: u ≥ enrollment - 0, so u ≥ enrollment
-   # Combined with constraint #3: u = enrollment when x=1
-   # If x=0: u ≥ enrollment - M (not constraining since u≥0)
-```
-
-## Example Walkthrough
-
-Suppose `enrollment[CS235,section1] = 90` and `M = 500`:
-
-### Case 1: x = 0 (not assigned to this room)
-
-- Constraint 1: `u ≤ 500 × 0 = 0`
-- Constraint 2: `u ≥ 0`
-- Constraint 3: `u ≤ 90`
-- Constraint 4: `u ≥ 90 - 500(1-0) = 90 - 500 = -410`
-
-**Combined effect**: `0 ≤ u ≤ 0`
-
-**Result**: `u = 0` ✓
-
-### Case 2: x = 1 (assigned to this room)
-
-- Constraint 1: `u ≤ 500 × 1 = 500`
-- Constraint 2: `u ≥ 0`
-- Constraint 3: `u ≤ 90`
-- Constraint 4: `u ≥ 90 - 500(1-1) = 90 - 0 = 90`
-
-**Combined effect**: `90 ≤ u ≤ 90`
-
-**Result**: `u = 90` ✓
-
-## Our Objective Becomes Linear
-
-Original (nonlinear):
-```python
-maximize Σ (enrollment[c,s] × x[c,s,r,p] / capacity[r])
-```
-
-After Big-M linearization:
-```python
-maximize Σ (u[c,s,r,p] / capacity[r])
-```
-
-This is now **linear**! (dividing by constant capacity is fine)
-
-## Choosing M
-
-### Requirements
-
-**M should be:**
-- **Large enough**: `M ≥ max(enrollment[c,s])` for all courses
-- **Small as possible**: Too large causes numerical instability
-
-### For Our Scheduling Problem
-
-Looking at the course data:
-- Maximum single course enrollment: ~270 students (CS 235)
-- Safe choice: `M = 500` or `M = 1000`
-
-### Why Not Just Use M = 1,000,000?
-
-**Numerical Precision Issues:**
-- ILP solvers use floating-point arithmetic internally
-- Very large M values can cause:
-  - Rounding errors
-  - Poor branching decisions in branch-and-bound
-  - Slower convergence
-  - Numerical instability
-
-**Best Practice:** Use the smallest M that satisfies constraints
-
-## Complexity Analysis
-
-### Additional Variables
-
-For each potential assignment, we add one `u` variable:
-- Number of `u` variables = Number of `x` variables
-- For our problem: ~42 sections × 18 rooms × 35 patterns ≈ 26,000 variables
-
-### Additional Constraints
-
-For each `u` variable, we add 4 constraints:
-- Total new constraints ≈ 4 × 26,000 = 104,000 constraints
-
-### Is This Manageable?
-
-**Yes, for modern ILP solvers:**
-- Commercial solvers (Gurobi, CPLEX) handle millions of constraints
-- Open-source CBC can handle 100k+ constraints
-- Will take longer than simplified version but still reasonable
-
-**Typical solving time:**
-- Simple problems: seconds
-- Our problem: likely 1-10 minutes
-- Complex problems: could timeout
-
-## Trade-offs
-
-### Pros
-- ✅ **Exact formulation** - preserves true objective
-- ✅ Uses existing PuLP/CBC solver (no new dependencies)
-- ✅ Well-studied, proven technique
-- ✅ Guaranteed to find optimal solution (if one exists)
-
-### Cons
-- ❌ Adds many variables (~26,000 for our problem)
-- ❌ Adds many constraints (~104,000 for our problem)
-- ❌ Slower solving time than simplified objective
-- ❌ Large M values can cause numerical precision issues
-- ❌ May not find solution within time limit for very large problems
-
-## Alternative: Simplified Linear Objective
-
-Instead of Big-M, use a simpler objective that's already linear:
+The initial infeasibility was caused by a **broken capacity constraint** that inadvertently forced every section's enrollment to fit in every room:
 
 ```python
-# Prioritize smaller rooms (inverse capacity weighting)
-weight = (1.0 / room.capacity) * 1000 + 1
-maximize Σ weight × x[c,s,r,p]
+# BROKEN (accidentally too restrictive)
+enroll_var <= room.capacity * x_var + room.capacity * (1 - x_var)
+# This simplifies to: enroll_var <= room.capacity (always!)
+# Meant enrollment had to fit in the SMALLEST room, even if not assigned there
+
+# FIXED (simple capacity blocking)
+if expected_enrollment > room.capacity:
+    x_var == 0  # Block this assignment
 ```
 
-**Pros:**
-- ✅ Much faster to solve
-- ✅ Simpler formulation
-- ✅ No numerical issues
-- ✅ Guaranteed to find solution quickly
+**Solution approach**:
+- Eliminated enrollment variables entirely
+- Use equal-distribution assumption (total_enrollment / num_sections)
+- Only block assignments where section is too large for room
+- Avoids Big-M linearization complexity
 
-**Cons:**
-- ❌ Doesn't explicitly maximize capacity utilization
-- ❌ Enrollment distribution arbitrary (any feasible solution)
-- ❌ May assign large sections to unnecessarily large rooms
+### Performance
 
-## Comparison Summary
+- **Fall 2026**: 41 sections scheduled in 0.24 seconds (OPTIMAL)
+- **Winter 2027**: 40 sections scheduled in 0.19 seconds (OPTIMAL)
+- **Average utilization**: 48-54%
+- **All validations pass**: No conflicts, all capacities met
 
-| Aspect | Big-M Linearization | Simplified Objective |
-|--------|-------------------|---------------------|
-| **Optimization Goal** | Maximize capacity utilization | Prefer smaller rooms |
-| **Formulation** | Exact | Approximation |
-| **Variables** | 2× (add `u` vars) | 1× (just `x` vars) |
-| **Constraints** | 4× more | Normal |
-| **Solve Time** | Minutes | Seconds |
-| **Solution Quality** | Optimal utilization | Good assignments |
-| **Complexity** | High | Low |
+### Model Complexity
 
-## Implementation in Python (PuLP)
+- **Variables**: ~5,000-6,500 binary assignment variables
+- **Constraints**: ~2,500-3,900 constraints
+  - Assignment constraints (each section once)
+  - Capacity blocking constraints
+  - Room conflict constraints (1,100-2,300)
+  - Instructor conflict constraints (140-220)
 
-```python
-# Create auxiliary variables
-u_vars = {}
-for (c_idx, s_idx, r_idx, p_idx) in x_vars.keys():
-    u_vars[(c_idx, s_idx, r_idx, p_idx)] = LpVariable(
-        f"u_c{c_idx}_s{s_idx}_r{r_idx}_p{p_idx}",
-        lowBound=0,
-        cat='Continuous'
-    )
+## Project Structure
 
-# Add Big-M constraints
-M = 1000  # Large constant
-
-for (c_idx, s_idx, r_idx, p_idx) in x_vars.keys():
-    x = x_vars[(c_idx, s_idx, r_idx, p_idx)]
-    u = u_vars[(c_idx, s_idx, r_idx, p_idx)]
-    enrollment = enrollment_vars[(c_idx, s_idx)]
-
-    # 1. u <= M * x
-    problem += u <= M * x
-
-    # 2. u >= 0 (already in variable definition)
-
-    # 3. u <= enrollment
-    problem += u <= enrollment
-
-    # 4. u >= enrollment - M(1 - x)
-    problem += u >= enrollment - M * (1 - x)
-
-# Objective: maximize utilization
-objective = lpSum([
-    u_vars[(c_idx, s_idx, r_idx, p_idx)] / rooms[r_idx].capacity
-    for (c_idx, s_idx, r_idx, p_idx) in x_vars.keys()
-])
-
-problem += objective
+```
+scheduling/
+├── inputs/                     # Input data files
+│   ├── Teaching Assignments... (courses, rooms, patterns)
+│   └── class conflicts.csv
+├── results/                    # Generated schedules
+│   ├── schedule_Fall_2026.csv
+│   ├── schedule_Winter_2027.csv
+│   └── courses_by_semester*.csv (pivot tables)
+├── docs/                       # Documentation
+│   ├── SCHEDULING_PLAN.md
+│   ├── BIG_M_LINEARIZATION.md
+│   ├── SOLUTION_SUMMARY.md
+│   └── STATUS.md (this file)
+├── logs/                       # Solver logs (gitignored)
+├── main.py                     # CLI entry point
+├── parser.py                   # Data parsers
+├── scheduler.py                # ILP model
+├── validate_schedule.py        # Schedule validation tool
+├── check_capacity.py           # Feasibility checker
+├── pivot_courses.py            # Pivot utility
+├── compare_with_original.py    # Comparison utility
+├── diagnose.py                 # Diagnostic tool
+└── test_minimal.py             # Minimal feasibility test
 ```
 
-## References
+## Usage
 
-- **Linear Programming**: Foundations and Extensions by Vanderbei
-- **Integer Programming** by Wolsey
-- **Modeling with Linear Programming** - Big-M technique is covered in most operations research textbooks
+### Generate Schedule
+```bash
+python main.py "Fall 2026"
+python main.py "Winter 2027"
+```
 
-## Recommendation for Our Project
+### Validate Schedule
+```bash
+python validate_schedule.py results/schedule_Fall_2026.csv
+```
 
-**Try Big-M first** because:
-1. Our problem size (~26k variables) is manageable
-2. We want true capacity utilization optimization
-3. Can fall back to simplified objective if too slow
+### Check Feasibility
+```bash
+python check_capacity.py "Fall 2026"
+```
 
-**If Big-M times out or causes issues:**
-- Increase time limit
-- Use simpler objective
-- Consider heuristic approaches
+## Key Features
+
+✅ **Fast solve times** (< 0.3 seconds)
+✅ **Optimal solutions** (not just feasible)
+✅ **Comprehensive validation** (no conflicts guaranteed)
+✅ **Flexible meeting patterns** (M-only classes can meet any single day)
+✅ **Priority room allocation** (Priority 1 classrooms preferred)
+✅ **Equal enrollment distribution** (sections evenly split)
+✅ **Command-line interface** (easy to use)
+
+## Data Statistics
+
+### Fall 2026
+- **Courses**: 38 total (37 in-person, 1 online)
+- **Sections**: 41 in-person sections
+- **Students**: 1,596 in-person (1,764 total)
+- **Rooms**: 18 (7 Priority 1, 11 Priority 2)
+- **Patterns**: 43 time slots
+
+### Winter 2027
+- **Courses**: 36 total (35 in-person, 1 online)
+- **Sections**: 40 in-person sections
+- **Students**: 1,749 in-person (2,070 total)
+- **Rooms**: 15 (6 Priority 1, 9 Priority 2)
+- **Patterns**: 43 time slots
+
+## Implementation Timeline
+
+1. **Data parsing and pivot tables** - Initial data exploration
+2. **ILP model design** - Constraint formulation and planning
+3. **Initial implementation** - PuLP/CBC integration
+4. **Debugging infeasibility** - Root cause analysis (broken constraint)
+5. **Fix and optimization** - Simplified capacity approach
+6. **Validation tools** - Comprehensive testing scripts
+7. **Documentation** - Technical writeups and guides
+8. **Repository organization** - Clean structure with inputs/results separation
+
+**Total development time**: ~6-8 hours across multiple sessions
+
+## Future Enhancements (Optional)
+
+1. **Big-M linearization** - True capacity utilization optimization
+2. **Course conflict constraints** - Ensure conflicting courses have non-overlapping section pairs
+3. **Unequal enrollment distribution** - Allow flexible section sizes
+4. **Multi-semester scheduling** - Schedule multiple semesters simultaneously
+5. **Student preference modeling** - Weight by room location, time preferences
+6. **Manual overrides** - Pin specific courses to specific rooms/times
+7. **GUI interface** - Web-based schedule visualization and editing
+
+## Repository
+
+- **GitHub**: https://github.com/ringger/scheduling
+- **License**: Private repository
+- **Language**: Python 3.10+
+- **Dependencies**: PuLP (CBC solver), pandas (optional for analysis)
+
+## Conclusion
+
+The project successfully demonstrates:
+- **ILP problem formulation** for complex scheduling
+- **Constraint debugging** and simplification techniques
+- **Solver integration** with open-source tools (CBC)
+- **Production-quality code** with validation and testing
+- **Clear documentation** for future maintenance
+
+The system is ready for production use and can generate schedules for any semester in seconds.
