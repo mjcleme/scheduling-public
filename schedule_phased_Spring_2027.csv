@@ -1,0 +1,10 @@
+Semester,Course,Section,Instructor,Enrollment,Building,Room,Capacity,Priority,Days,Start Time,End Time,Utilization %
+Spring 2027,110,1,Bean,52.0,HBLL,3718,59,1,"M,W",11:00 AM,12:15 PM,88.1%
+Spring 2027,111,1,Stephens,56.0,HBLL,3718,59,1,"T,Th",02:00 PM,03:15 PM,94.9%
+Spring 2027,224,1,Dylan Barton,12.0,TMCB,136,40,1,"M,W,F",10:00 AM,10:50 AM,30.0%
+Spring 2027,235,1,Stephens,69.0,JKB,2111,85,1,"M,W",09:30 AM,10:45 AM,81.2%
+Spring 2027,240,1,Wilkerson,64.0,JKB,2111,85,1,"M,W",12:30 PM,01:45 PM,75.3%
+Spring 2027,260,1,John Christiansen,30.0,TMCB,136,40,1,"M,W",12:30 PM,01:45 PM,75.0%
+Spring 2027,270,1,Jones,30.0,TMCB,136,40,1,"M,W",03:30 PM,04:45 PM,75.0%
+Spring 2027,404,1,Gates,11.0,TMCB,136,40,1,"M,W",02:00 PM,03:15 PM,27.5%
+Spring 2027,453,1,Ng,12.0,TMCB,136,40,1,"M,W,F",11:00 AM,11:50 AM,30.0%
