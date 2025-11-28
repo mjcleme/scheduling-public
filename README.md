@@ -6,6 +6,7 @@
 - [Summer Schedule by instructor](schedule_Spring_2027_by_instructor.csv)
 
 ### Notation
+The room schedule files show when rooms are used ([Fall](room_schedule_Fall_2026.csv), [Winter](room_schedule_Winter_2027.csv), [Spring](room_schedule_Spring_2027.csv), [Summer](room_schedule_Summer_2027.csv)
 - An X in the schedule file indicates that this time has a conflict with another time that is currently scheduled (For example, if there is a MW class scheduled in a room, then MWF would have an X)
 - A 0 in the schedule file indicates that the room does not have priority 1 scheduling for the Computer Science Department.
 ### Algorithm
