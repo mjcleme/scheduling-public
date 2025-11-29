@@ -1,14 +1,14 @@
-Building,Room,F 12:00 PM-12:50 PM,"M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W 03:30 PM-04:45 PM","M,W,F 09:00 AM-09:50 AM","M,W,F 10:00 AM-10:50 AM","M,W,F 02:00 PM-02:50 PM","M,W,F 03:00 PM-03:50 PM","M,W,F 04:00 PM-04:50 PM","T,Th 09:30 AM-10:45 AM","T,Th 12:30 PM-01:45 PM","T,Th 02:00 PM-03:15 PM","T,Th 03:30 PM-04:45 PM","T,Th 05:00 PM-06:15 PM","T,Th 06:30 PM-07:45 PM","T,Th 08:00 PM-09:15 PM",Online
+Building,Room,F 11:00 AM-11:50 AM,"M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W 03:30 PM-04:45 PM","M,W,F 09:00 AM-09:50 AM","M,W,F 10:00 AM-10:50 AM","M,W,F 02:00 PM-02:50 PM","M,W,F 03:00 PM-03:50 PM","M,W,F 04:00 PM-04:50 PM","T,Th 09:30 AM-10:45 AM","T,Th 12:30 PM-01:45 PM","T,Th 02:00 PM-03:15 PM","T,Th 03:30 PM-04:45 PM","T,Th 05:00 PM-06:15 PM","T,Th 06:30 PM-07:45 PM","T,Th 08:00 PM-09:15 PM",Online
 BRMB,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-HBLL,3718,,X,CS 111L-1 (111Lab),CS 393-1 (Reynolds),X,X,"CS 324-2 (Dougal, Duane)",CS 324-1 (Seamons),CS 224-2 (Barker),CS 224-1 (Barker),CS 252B-2 (Barker),CS 111L-9 (111Lab),CS 110L-1 (110Lab),CS 355-1 (Egbert),CS 111L-4 (111Lab),,,,
+HBLL,3718,,X,CS 110L-8 (110Lab),CS 110L-2 (110Lab),X,X,CS 252B-2 (Barker),CS 324-1 (Seamons),CS 224-2 (Barker),CS 252B-1 (Barker),CS 224-1 (Barker),CS 240-4 (Rodham),CS 340-2 (Rodham),CS 111L-7 (111Lab),CS 340-1 (Rodham),,,,
 JKB,3106,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-JSB,140,,"CS 110-6 (Jones, Angela)",CS 670-1 (Archibald),CS 111-3 (Richardson),CS 110L-8 (110Lab),CS 110-1 (Bean),X,X,X,X,X,CS 401R-2 (Team:Grimsman/Killian),CS 401R-3 (Hughes),CS 110-2 (Page),CS 401R-4 (Toborg),,,,
-MARB,130,,X,"CS 404-2 (Gates, Darin)",CS 240-4 (Rodham),X,X,CS 252B-1 (Barker),CS 236-3 (Goodrich),CS 236-4 (Mercer),CS 236-2 (Goodrich),CS 236-1 (Goodrich),CS 418-1 (Williams),"CS 191/2-2 (Dougal, Duane)",CS 256-1 (Hughes),CS 260-2 (Ventura),,,,
+JSB,140,,CS 235-2 (Crandall),"CS 111-5 (Giles, Steven)",CS 301R-4 (Stephens),CS 235-3 (Crandall),CS 111-1 (Reynolds),X,X,X,X,X,"CS 110-6 (Jones, Angela)",CS 355-1 (Egbert),CS 401R-2 (Team:Grimsman/Killian),CS 224L-1 (224Lab),,,,
+MARB,130,,X,CS 418-1 (Williams),CS 470-1 (Archibald),X,X,"CS 324-2 (Dougal, Duane)",CS 236-2 (Goodrich),CS 236-1 (Goodrich),CS 236-4 (Mercer),CS 236-3 (Goodrich),CS 329-1 (Jensen),CS 260-2 (Ventura),CS 110L-11 (110Lab),CS 110L-5 (110Lab),,,,
 MCKB,220,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 MCKB,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 MCKB,280,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 MCKB,331,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-TMCB,1170,,CS 235-1 (Crandall),CS 111-1 (Reynolds),CS 270-1 (MJ),"CS 110-4 (Dougal, Duane)",CS 110L-4 (110Lab),X,X,X,X,X,"CS 110-3 (Dougal, Duane)",CS 235-5 (Stephens),"CS 111-5 (Giles, Steven)",CS 111-2 (Reynolds),,,,
-TMCB,120,"CS 428-1 (Webster, Bruce)",X,CS 110L-3 (110Lab),CS 330-1 (Germane),"CS 405-1 (Earnshaw, Craig)",CS 240-3 (Jensen),CS 460-1 (Deccio),CS 686-1 (Mercer),X,X,X,CS 465-1 (Zappala),CS 110L-10 (110Lab),CS 240-1 (Jensen),CS 340-2 (Rodham),"CS 235E-1 (Barton, Dylan)","CS 345E-1 (Judd, Glenn)","CS 111E-1 (Cluff, Andrew)",
-TMCB,134,,X,CS 301R-2 (MJ),CS 479-1 (Ringger),"CS 404-1 (Gates, Darin)",CS 110L-6 (110Lab),CS 312B-1 (Williams),CS 312B-2 (Williams),X,X,X,CS 601R-2 (Ringger),CS 240-2 (Jensen),CS 340-1 (Rodham),CS 110L-13 (110Lab),"CS 110E-1 (Hansen, Bruce)",,,
+TMCB,1170,,CS 501R-1 (Grimsman),CS 110-1 (Bean),CS 270-1 (MJ),CS 110-2 (Page),CS 111L-6 (111Lab),X,X,X,X,X,CS 111-2 (Reynolds),CS 111-3 (Richardson),"CS 110-4 (Dougal, Duane)","CS 110-3 (Dougal, Duane)",,,,
+TMCB,120,"CS 428-1 (Webster, Bruce)",X,CS 580-1 (Warnick),CS 110L-4 (110Lab),CS 224L-3 (224Lab),CS 111L-3 (111Lab),CS 460-1 (Deccio),CS 312B-2 (Williams),X,X,X,CS 704R-1 (Richardson),CS 601R-1 (Page),CS 224L-6 (224Lab),"CS 404-2 (Gates, Darin)","CS 235E-1 (Barton, Dylan)","CS 111E-1 (Cluff, Andrew)","CS 110E-1 (Hansen, Bruce)",
+TMCB,134,,X,CS 340-4 (Wilkerson),CS 674-1 (Wingate),CS 111L-5 (111Lab),CS 111L-9 (111Lab),CS 312B-1 (Williams),CS 686-1 (Mercer),X,X,X,CS 312-2 (Farrell),CS 224L-4 (224Lab),CS 240-1 (Jensen),CS 110L-3 (110Lab),"CS 345E-1 (Judd, Glenn)",,,
 Online,Online,,,,,,,,,,,,,,,,,,,"CS 224-O (Clement); CS 110-O (Jones, Angela); CS 260-O (Ventura); CS 235-O (Crandall); CS 240-O (Rodham); CS 111-O (Stephens); CS 202/3/4-O (Wilkerson)"
