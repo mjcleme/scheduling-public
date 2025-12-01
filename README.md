@@ -20,10 +20,15 @@ Please check the conflicts files for [Fall](conflicts_Fall_2026.csv), [Winter](c
 The ILP scheduler successfully generated a feasible and optimal schedule for Fall 2026.
 
 ## Solution Quality
+Total Classes Scheduled by Semester:
 
+  - Fall 2026: 119 classes
+  - Winter 2027: 113 classes
+  - Spring 2027: 13 classes
+  - Summer 2027: 11 classes
+
+  Total across all semesters: 256 classes
 - **Status**: Optimal
-- **Solve Time**: 0.24 seconds
-- **Sections Scheduled**: 41/41 in-person sections
 - **Students Scheduled**: 1,596 / 1,764 total (90.5%)
   - Note: 168 students are in online course 202/3/4
 - **Average Room Utilization**: 53.7%
