@@ -1,4 +1,5 @@
-Building,Room,"M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W 03:30 PM-04:45 PM","M,W,F 02:00 PM-02:50 PM","M,W,F 04:00 PM-04:50 PM","T,Th 09:30 AM-10:45 AM","T,Th 12:30 PM-01:45 PM","T,Th 02:00 PM-03:15 PM","T,Th 03:30 PM-04:45 PM",Online
-JFSB,B037,,,,X,X,CS 236-1 (Barker),CS 224A-1 (Barker),,,,,
-TMCB,136,"CS 404-1 (Gates, Darin)","CS 235-1 (Dougal, Duane)",CS 110L-1 (110Lab),CS 111L-1 (Lab),CS 111L-3 (Lab),X,X,CS 224L-2 (Lab),CS 224L-1 (Lab),"CS 110-1 (Dougal, Duane)",CS 111L-2 (Lab),
+Building,Room,"M,T,W,Th 09:30 AM-10:45 AM","M,T,W,Th 01:00 PM-02:50 PM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W 03:30 PM-04:45 PM","M,W,F 09:00 AM-09:50 AM","M,W,F 02:00 PM-03:50 PM","T,Th 12:30 PM-01:45 PM","T,Th 01:00 PM-03:50 PM","T,Th 03:30 PM-04:45 PM",Online
+JFSB,B037,X,X,,,,,CS 224A-1 (Barker),,X,"CS 404-1 (Gates, Darin)",X,
+JKB,2111,,X,,,X,X,,CS 236-1 (Barker),,,,
+TMCB,136,"CS 110-1 (Dougal, Duane)","CS 235-1 (Dougal, Duane)",CS 111L-3 (Lab),CS 111L-2 (Lab),CS 110L-1 (110Lab),CS 224L-1 (Lab),X,X,CS 111L-1 (Lab),X,CS 224L-2 (Lab),
 Online,Online,,,,,,,,,,,,CS 240-O (Rodham)
