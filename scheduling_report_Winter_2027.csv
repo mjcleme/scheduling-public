@@ -1,0 +1,108 @@
+Status,Course,Section,Instructor,Enrollment,Meeting Pattern,Reason
+SCHEDULED,224B,1,Archibald,24,"T,Th 03:30 PM-04:45 PM",Source: template
+SCHEDULED,224B,2,Archibald,59,"T,Th 02:00 PM-03:15 PM",Source: template
+SCHEDULED,236,1,Barker,78,"M,W,F 10:00 AM-10:50 AM",Source: template
+SCHEDULED,236,2,Barker,66,"M,W,F 02:00 PM-02:50 PM",Source: template
+SCHEDULED,236,3,Barker,95,"M,W,F 11:00 AM-11:50 AM",Source: template
+SCHEDULED,110,1,Bean,36,"M,W 08:00 AM-09:15 AM",Source: template
+SCHEDULED,110,2,"Dougal, Duane",41,"M,W 10:00 AM-11:15 AM",Source: template
+SCHEDULED,110,4,"Jones, Angela",101,"M,W 09:30 AM-10:45 AM",Source: template
+SCHEDULED,312,1,Bean,31,"T,Th 03:30 PM-04:45 PM",Source: template
+SCHEDULED,312,2,Grimsman,35,"T,Th 08:00 AM-09:15 AM",Source: template
+SCHEDULED,312,3,Grimsman,72,"T,Th 09:30 AM-10:45 AM",Source: template
+SCHEDULED,401R,1,Bean,6,"M,W 01:00 PM-02:15 PM",Source: template
+SCHEDULED,401R,2,Toborg,32,"T,Th 02:00 PM-03:15 PM",Source: template
+SCHEDULED,455,1,Egbert,30,"T,Th 09:30 AM-10:45 AM",Source: template
+SCHEDULED,655,1,Egbert,8,"T,Th 08:00 AM-09:15 AM",Source: template
+SCHEDULED,330,1,Germane,25,"T,Th 03:30 PM-04:45 PM",Source: template
+SCHEDULED,575,1,Goodrich,12,"T,Th 02:00 PM-03:15 PM",Source: template
+SCHEDULED,256,1,Hughes,32,"M,W 09:00 AM-09:50 AM",Source: template
+SCHEDULED,556,1,Hughes,16,"M,W 09:30 AM-10:45 AM",Source: template
+SCHEDULED,452,1,Jenkins,26,"M,W 08:00 AM-09:15 AM",Source: template
+SCHEDULED,452,2,Reynolds,64,"M,W 09:30 AM-10:45 AM",Source: template
+SCHEDULED,677,1,Jenkins,26,"T,Th 03:30 PM-04:45 PM",Source: template
+SCHEDULED,240,1,Jensen,56,"M,W 03:30 PM-04:45 PM",Source: template
+SCHEDULED,240,2,Rodham,76,"M,W 02:00 PM-03:15 PM",Source: template
+SCHEDULED,240,3,Rodham,57,"T,Th 09:30 AM-10:45 AM",Source: template
+SCHEDULED,260,1,Jensen,53,"T,Th 08:00 AM-09:15 AM",Source: template
+SCHEDULED,260,2,Jensen,68,"T,Th 09:30 AM-10:45 AM",Source: template
+SCHEDULED,329,1,Jensen,100,"T,Th 02:00 PM-03:15 PM",Source: template
+SCHEDULED,483T,1,Team:MJ/Snell,21,"T,Th 09:30 AM-10:45 AM",Source: template
+SCHEDULED,224A,1,Mercer,33,"M,W,F 01:00 PM-01:50 PM",Source: template
+SCHEDULED,486,1,Mercer,17,"M,W,F 02:00 PM-02:50 PM",Source: template
+SCHEDULED,252A,1,Ng,39,"T,Th 02:00 PM-03:15 PM",Source: template
+SCHEDULED,252A,2,Ng,28,"T,Th 03:30 PM-04:45 PM",Source: template
+SCHEDULED,393,1,Reynolds,57,"M,W 12:30 PM-01:45 PM",Source: template
+SCHEDULED,393,2,Reynolds,39,"M,W 02:00 PM-03:15 PM",Source: template
+SCHEDULED,601R,1,Richardson,10,"M,W 02:00 PM-03:15 PM",Source: template
+SCHEDULED,111,1,Richardson,58,"M,W 09:30 AM-10:45 AM",Source: template
+SCHEDULED,111,2,Stephens,99,"M,W 12:30 PM-01:45 PM",Source: template
+SCHEDULED,111,4,"Giles, Steven",10,"M,W 08:00 AM-09:15 AM",Source: template
+SCHEDULED,180,1,Ringger,0,"T,Th 09:30 AM-10:45 AM",Source: template
+SCHEDULED,180,2,Ringger,0,"T,Th 12:30 PM-01:45 PM",Source: template
+SCHEDULED,480T,1,"Team:Rodham/Sillito/Baird, Brad",50,"M,W,F 10:00 AM-10:50 AM",Source: template
+SCHEDULED,481T,1,"Team:Rodham/Sillito/Baird, Brad",50,"M,W,F 11:00 AM-11:50 AM",Source: template
+SCHEDULED,466,1,Seamons,15,"T,Th 02:00 PM-03:15 PM",Source: template
+SCHEDULED,665,1,Seamons,8,"T,Th 03:30 PM-04:45 PM",Source: template
+SCHEDULED,513,1,Warnick,11,"T,Th 03:30 PM-04:45 PM",Source: template
+SCHEDULED,405,1,"Earnshaw, Craig",27,"T,Th 12:30 PM-01:45 PM",Source: template
+SCHEDULED,404,1,"Gates, Darin",32,"T,Th 03:30 PM-04:45 PM",Source: template
+SCHEDULED,404,2,"Gates, Darin",53,"T,Th 12:30 PM-01:45 PM",Source: template
+SCHEDULED,428,1,"Webster, Bruce",69,M 03:00 PM-05:50 PM,Source: template
+SCHEDULED,301R,1,Bean,5,"M,W 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,301R,2,MJ,5,"M,W 02:00 PM-03:15 PM",Source: ilp
+SCHEDULED,301R,3,Stephens,6,"T,Th 09:30 AM-10:45 AM",Source: ilp
+SCHEDULED,235,2,MJ,30,"M,W 11:00 AM-12:15 PM",Source: ilp
+SCHEDULED,235,3,MJ,30,"M,W 09:30 AM-10:45 AM",Source: ilp
+SCHEDULED,235,4,Stephens,180,"T,Th 03:30 PM-04:45 PM",Source: ilp
+SCHEDULED,235,5,"Dougal, Duane",30,"T,Th 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,324,1,Deccio,57,"M,W,F 10:00 AM-10:50 AM",Source: ilp
+SCHEDULED,324,2,Deccio,72,"M,W,F 09:00 AM-09:50 AM",Source: ilp
+SCHEDULED,324,3,"Dougal, Duane",30,"M,W,F 03:00 PM-03:50 PM",Source: ilp
+SCHEDULED,493,1,Farrell,30,"T,Th 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,630,1,Germane,30,"T,Th 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,474,1,Jenkins,64,"T,Th 02:00 PM-03:15 PM",Source: ilp
+SCHEDULED,474,2,Killian,30,"M,W 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,704R,1,Morse,10,"T,Th 03:30 PM-04:45 PM",Source: ilp
+SCHEDULED,270,1,Snell,56,"M,W 11:00 AM-12:15 PM",Source: ilp
+SCHEDULED,270,2,Snell,36,"M,W 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,712,1,Warnick,30,"T,Th 02:00 PM-03:15 PM",Source: ilp
+SCHEDULED,340,1,Wilkerson,59,"M,W 03:30 PM-04:45 PM",Source: ilp
+SCHEDULED,340,2,Wilkerson,40,"M,W 02:00 PM-03:15 PM",Source: ilp
+SCHEDULED,340,3,Wilkerson,42,"M,W 09:30 AM-10:45 AM",Source: ilp
+SCHEDULED,473,1,Wingate,32,"M,W 11:00 AM-12:15 PM",Source: ilp
+SCHEDULED,191/291T,1,"Team:Zappala/Dougal, Duane",30,"T,Th 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,235E,1,"Barton, Dylan",30,"T,Th 06:30 PM-07:45 PM",Source: ilp
+SCHEDULED,111E,1,"Cluff, Andrew",30,"T,Th 05:00 PM-06:15 PM",Source: ilp
+SCHEDULED,110E,1,"Hansen, Bruce",30,"T,Th 06:30 PM-07:45 PM",Source: ilp
+SCHEDULED,345E,1,"Judd, Glenn",30,"T,Th 05:00 PM-06:15 PM",Source: ilp
+SCHEDULED,110L,1,110Lab,1,"T,Th 02:00 PM-03:15 PM",Source: ilp
+SCHEDULED,110L,2,110Lab,1,"M,W 02:00 PM-03:15 PM",Source: ilp
+SCHEDULED,110L,3,110Lab,1,"T,Th 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,110L,4,110Lab,1,"M,W 02:00 PM-03:15 PM",Source: ilp
+SCHEDULED,110L,5,110Lab,1,"M,W 02:00 PM-03:15 PM",Source: ilp
+SCHEDULED,110L,6,110Lab,1,"T,Th 02:00 PM-03:15 PM",Source: ilp
+SCHEDULED,110L,7,110Lab,1,"T,Th 03:30 PM-04:45 PM",Source: ilp
+SCHEDULED,110L,8,110Lab,1,"M,W 03:30 PM-04:45 PM",Source: ilp
+SCHEDULED,110L,9,110Lab,1,"M,W 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,110L,10,110Lab,1,"M,W 03:30 PM-04:45 PM",Source: ilp
+SCHEDULED,110L,11,110Lab,1,"T,Th 09:30 AM-10:45 AM",Source: ilp
+SCHEDULED,110L,12,110Lab,1,"M,W 03:30 PM-04:45 PM",Source: ilp
+SCHEDULED,111L,1,111Lab,1,"M,W 03:30 PM-04:45 PM",Source: ilp
+SCHEDULED,111L,2,111Lab,1,"T,Th 09:30 AM-10:45 AM",Source: ilp
+SCHEDULED,111L,3,111Lab,1,"M,W 11:00 AM-12:15 PM",Source: ilp
+SCHEDULED,111L,4,111Lab,1,"M,W 09:30 AM-10:45 AM",Source: ilp
+SCHEDULED,111L,5,111Lab,1,"M,W 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,111L,6,111Lab,1,"T,Th 03:30 PM-04:45 PM",Source: ilp
+SCHEDULED,111L,7,111Lab,1,"T,Th 09:30 AM-10:45 AM",Source: ilp
+SCHEDULED,111L,8,111Lab,1,"M,W 09:30 AM-10:45 AM",Source: ilp
+SCHEDULED,111L,9,111Lab,1,"T,Th 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,111L,10,111Lab,1,"M,W 11:00 AM-12:15 PM",Source: ilp
+SCHEDULED,111L,11,111Lab,1,"M,W 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,111L,12,111Lab,1,"M,W 11:00 AM-12:15 PM",Source: ilp
+SCHEDULED,224L,1,224Lab,1,"T,Th 09:30 AM-10:45 AM",Source: ilp
+SCHEDULED,224L,2,224Lab,1,"M,W 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,224L,3,224Lab,1,"M,W 09:30 AM-10:45 AM",Source: ilp
+SCHEDULED,224L,4,224Lab,1,"M,W 03:30 PM-04:45 PM",Source: ilp
+SCHEDULED,224L,5,224Lab,5,"T,Th 12:30 PM-01:45 PM",Source: ilp
+SCHEDULED,224L,6,224Lab,1,"M,W 11:00 AM-12:15 PM",Source: ilp
