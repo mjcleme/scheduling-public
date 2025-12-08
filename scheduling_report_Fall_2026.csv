@@ -28,9 +28,6 @@ SCHEDULED,236,4,Mercer,42,"M,W,F 01:00 PM-01:50 PM",Source: template
 SCHEDULED,501R,1,Grimsman,7,"T,Th 02:00 PM-03:15 PM",Source: template
 SCHEDULED,256,1,Hughes,39,"M,W 09:00 AM-09:50 AM",Source: template
 SCHEDULED,474,1,Jenkins,74,"T,Th 09:30 AM-10:45 AM",Source: template
-SCHEDULED,240,1,Jensen,49,"T,Th 09:30 AM-10:45 AM",Source: template
-SCHEDULED,240,2,Jensen,52,"M,W 02:00 PM-03:15 PM",Source: template
-SCHEDULED,240,3,Wilkerson,42,"T,Th 02:00 PM-03:15 PM",Source: template
 SCHEDULED,329,1,Jensen,69,"T,Th 03:30 PM-04:45 PM",Source: template
 SCHEDULED,356,1,Jones MD,11,"T,Th 05:00 PM-06:15 PM",Source: template
 SCHEDULED,482T,1,Team:MJ/Snell,26,"T,Th 09:30 AM-10:45 AM",Source: template
@@ -46,8 +43,8 @@ SCHEDULED,452,2,Reynolds,25,"M,W 02:00 PM-03:15 PM",Source: template
 SCHEDULED,479,1,Ringger,20,"M,W 03:30 PM-04:45 PM",Source: template
 SCHEDULED,601R,1,Ringger,15,Th 11:00 AM-11:50 AM,Source: template
 SCHEDULED,340,1,Rodham,55,"M,W 03:00 PM-04:50 PM",Source: template
-SCHEDULED,340,2,Rodham,40,"M,W 01:00 PM-02:50 PM",Source: template
-SCHEDULED,340,3,Wilkerson,56,"M,W 01:00 PM-02:50 PM",Source: template
+SCHEDULED,340,2,Wilkerson,56,"M,W 01:00 PM-02:50 PM",Source: template
+SCHEDULED,340,3,Wilkerson,40,"M,W 01:00 PM-02:50 PM",Source: template
 SCHEDULED,324,1,Seamons,79,"M,W,F 10:00 AM-10:50 AM",Source: template
 SCHEDULED,324,2,"Dougal, Duane",32,"M,W,F 11:00 AM-11:50 AM",Source: template
 SCHEDULED,574,1,Snell,29,"T,Th 03:30 PM-04:45 PM",Source: template
@@ -60,37 +57,31 @@ SCHEDULED,404,1,"Gates, Darin",51,"T,Th 12:30 PM-01:45 PM",Source: template
 SCHEDULED,404,2,"Gates, Darin",30,"T,Th 03:30 PM-04:45 PM",Source: template
 SCHEDULED,428,1,"Webster, Bruce",32,M 02:00 PM-04:50 PM,Source: template
 SCHEDULED,235E,1,"Barton, Dylan",30,"T,Th 06:30 PM-07:45 PM",Source: ilp
-SCHEDULED,111E,1,"Cluff, Andrew",30,"T,Th 05:00 PM-06:15 PM",Source: ilp
-SCHEDULED,110E,1,"Hansen, Bruce",30,"T,Th 06:30 PM-07:45 PM",Source: ilp
+SCHEDULED,111E,1,"Cluff, Andrew",30,"T,Th 06:30 PM-07:45 PM",Source: ilp
+SCHEDULED,110E,1,"Hansen, Bruce",30,"T,Th 05:00 PM-06:15 PM",Source: ilp
 SCHEDULED,345E,1,"Judd, Glenn",30,"T,Th 05:00 PM-06:15 PM",Source: ilp
-SCHEDULED,110L,1,110Lab,1,"T,Th 09:30 AM-10:45 AM",Source: ilp
-SCHEDULED,110L,2,110Lab,1,"M,W 11:00 AM-12:15 PM",Source: ilp
-SCHEDULED,110L,3,110Lab,1,"M,W 03:30 PM-04:45 PM",Source: ilp
-SCHEDULED,110L,4,110Lab,1,"M,W 11:00 AM-12:15 PM",Source: ilp
-SCHEDULED,110L,5,110Lab,1,"M,W 11:00 AM-12:15 PM",Source: ilp
-SCHEDULED,110L,6,110Lab,1,"M,W 11:00 AM-12:15 PM",Source: ilp
-SCHEDULED,110L,7,110Lab,1,"T,Th 09:30 AM-10:45 AM",Source: ilp
-SCHEDULED,110L,8,110Lab,1,"M,W 11:00 AM-12:15 PM",Source: ilp
-SCHEDULED,110L,9,110Lab,1,"M,W 02:00 PM-03:15 PM",Source: ilp
-SCHEDULED,110L,10,110Lab,1,"M,W 02:00 PM-03:15 PM",Source: ilp
-SCHEDULED,110L,11,110Lab,1,"M,W 03:30 PM-04:45 PM",Source: ilp
-SCHEDULED,110L,12,110Lab,1,"M,W 03:30 PM-04:45 PM",Source: ilp
-SCHEDULED,110L,13,110Lab,1,"M,W 03:30 PM-04:45 PM",Source: ilp
-SCHEDULED,111L,1,111Lab,1,"M,W 09:30 AM-10:45 AM",Source: ilp
-SCHEDULED,111L,2,111Lab,1,"T,Th 12:30 PM-01:45 PM",Source: ilp
-SCHEDULED,111L,3,111Lab,1,"M,W 12:30 PM-01:45 PM",Source: ilp
-SCHEDULED,111L,4,111Lab,1,"T,Th 12:30 PM-01:45 PM",Source: ilp
-SCHEDULED,111L,5,111Lab,1,"M,W 09:30 AM-10:45 AM",Source: ilp
-SCHEDULED,111L,6,111Lab,1,"T,Th 03:30 PM-04:45 PM",Source: ilp
-SCHEDULED,111L,7,111Lab,1,"T,Th 03:30 PM-04:45 PM",Source: ilp
-SCHEDULED,111L,8,111Lab,1,"T,Th 12:30 PM-01:45 PM",Source: ilp
-SCHEDULED,111L,9,111Lab,1,"M,W 12:30 PM-01:45 PM",Source: ilp
-SCHEDULED,111L,10,111Lab,1,"M,W 12:30 PM-01:45 PM",Source: ilp
-SCHEDULED,111L,11,111Lab,1,"T,Th 09:30 AM-10:45 AM",Source: ilp
-SCHEDULED,111L,12,111Lab,1,"T,Th 03:30 PM-04:45 PM",Source: ilp
-SCHEDULED,224L,1,224Lab,1,"M,W 02:00 PM-03:15 PM",Source: ilp
-SCHEDULED,224L,2,224Lab,1,"M,W 09:30 AM-10:45 AM",Source: ilp
-SCHEDULED,224L,3,224Lab,1,"M,W 12:30 PM-01:45 PM",Source: ilp
-SCHEDULED,224L,4,224Lab,1,"M,W 12:30 PM-01:45 PM",Source: ilp
-SCHEDULED,224L,5,224Lab,1,"M,W 03:30 PM-04:45 PM",Source: ilp
-SCHEDULED,224L,6,224Lab,5,"T,Th 09:30 AM-10:45 AM",Source: ilp
+UNSCHEDULED,301R,1,Bean,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,301R,2,MJ,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,301R,3,Stephens,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,235,1,Crandall,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,235,2,Crandall,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,235,3,Crandall,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,235,4,Crandall,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,235,5,Stephens,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,493,1,Farrell,N/A,"T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,401RT,1,Team:Grimsman/Killian,N/A,"T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,240,1,Jensen,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,240,2,Jensen,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,240,3,Jensen,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,240,4,Rodham,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,240,5,Rodham,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,240,6,Wilkerson,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,270,1,MJ,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,270,2,MJ,N/A,"M, W, ,,  , T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,601RB,1,Page,N/A,"T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,704R,1,Richardson,N/A,"T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,673,1,Ventura,N/A,"T, T, h",ILP solver could not find feasible assignment
+UNSCHEDULED,312B,1,Williams,N/A,"M, W, F",ILP solver could not find feasible assignment
+UNSCHEDULED,312B,2,Williams,N/A,"M, W, F",ILP solver could not find feasible assignment
+UNSCHEDULED,418,1,Williams,N/A,"M, W, F",ILP solver could not find feasible assignment
+UNSCHEDULED,191/291T,1,"Team:Zappala/Dougal, Duane",N/A,"T, T, h",ILP solver could not find feasible assignment

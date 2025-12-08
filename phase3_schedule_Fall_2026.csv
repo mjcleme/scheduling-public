@@ -1,0 +1,20 @@
+Semester,Course,Section,Instructor,Enrollment,Building,Room,Capacity,Priority,Days,Start Time,End Time,Utilization %
+Fall 2026,110,1,Bean,85,JKB,2113,85,3,"M,W",12:30 PM,01:45 PM,100.0%
+Fall 2026,110,2,Page,85,JKB,2113,85,3,"M,W",09:30 AM,10:45 AM,100.0%
+Fall 2026,110,3,"Dougal, Duane",0,SFH,37,34,4,"T,Th",03:30 PM,04:45 PM,0.0%
+Fall 2026,110,4,"Dougal, Duane",0,SFH,37,34,4,"M,W",03:30 PM,04:45 PM,0.0%
+Fall 2026,110,6,"Jones, Angela",0,SFH,37,34,4,"T,Th",09:30 AM,10:45 AM,0.0%
+Fall 2026,111,1,Reynolds,85,JKB,2113,85,3,"M,W",03:30 PM,04:45 PM,100.0%
+Fall 2026,111,2,Reynolds,77,TMCB,111,77,4,"T,Th",09:30 AM,10:45 AM,100.0%
+Fall 2026,111,3,Richardson,77,TMCB,111,77,4,"M,W",02:00 PM,03:15 PM,100.0%
+Fall 2026,111,5,"Giles, Steven",0,SFH,37,34,4,"T,Th",12:30 PM,01:45 PM,0.0%
+Fall 2026,235,1,Crandall,40,TMCB,111,77,4,"M,W",12:30 PM,01:45 PM,51.9%
+Fall 2026,235,2,Crandall,20,TMCB,111,77,4,"M,W",09:30 AM,10:45 AM,26.0%
+Fall 2026,235,5,Stephens,85,JKB,2113,85,3,"M,W",02:00 PM,03:15 PM,100.0%
+Fall 2026,240,1,Jensen,0,TMCB,111,77,4,"M,W",11:00 AM,12:15 PM,0.0%
+Fall 2026,240,2,Jensen,0,TMCB,135,69,4,"T,Th",09:30 AM,10:45 AM,0.0%
+Fall 2026,240,3,Jensen,7,TMCB,135,69,4,"M,W",09:30 AM,10:45 AM,10.1%
+Fall 2026,240,4,Rodham,77,TMCB,111,77,4,"T,Th",03:30 PM,04:45 PM,100.0%
+Fall 2026,240,6,Wilkerson,77,TMCB,111,77,4,"M,W",03:30 PM,04:45 PM,100.0%
+Fall 2026,260,1,Clement,60,TMCB,111,77,4,"T,Th",02:00 PM,03:15 PM,77.9%
+Fall 2026,260,2,Ventura,0,TMCB,111,77,4,"T,Th",12:30 PM,01:45 PM,0.0%
