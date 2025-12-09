@@ -5,6 +5,9 @@
 - [Spring Schedule by instructor](schedule_Spring_2027_by_instructor.csv)
 - [Summer Schedule by instructor](schedule_Spring_2027_by_instructor.csv)
 
+- See if the classes you are scheduled to teach are what you expected.
+= See if the time and location will work for you.
+
 ### Notation
 The room schedule files show when rooms are used ([Fall](room_schedule_Fall_2026.csv), [Winter](room_schedule_Winter_2027.csv), [Spring](room_schedule_Spring_2027.csv), [Summer](room_schedule_Summer_2027.csv))
 - An X in the schedule file indicates that this time has a conflict with another time that is currently scheduled (For example, if there is a MW class scheduled in a room, then MWF would have an X)
@@ -15,417 +18,422 @@ Please check the conflicts files for [Fall](conflicts_Fall_2026.csv), [Winter](c
 
 # Course Scheduling Solution - Fall 2026
 
-## Success! ✓
+# Course Scheduling System Documentation
 
-The ILP scheduler successfully generated a feasible and optimal schedule for Fall 2026.
+## Overview
 
-## Solution Quality
-Total Classes Scheduled by Semester:
+This system schedules university courses to rooms and time slots using Integer Linear Programming (ILP) with the PuLP library and CBC solver. It handles complex constraints including room capacities, instructor availability, student enrollment, and various faculty preferences.
 
-  - Fall 2026: 119 classes
-  - Winter 2027: 113 classes
-  - Spring 2027: 13 classes
-  - Summer 2027: 11 classes
+---
 
-  Total across all semesters: 256 classes
-- **Status**: Optimal
-- **Students Scheduled**: 1,596 / 1,764 total (90.5%)
-  - Note: 168 students are in online course 202/3/4
-- **Average Room Utilization**: 53.7%
+## Constraint Handling
 
-## Validation Results
+The system categorizes constraints into **Hard** (must be satisfied) and **Soft** (preferences that influence the objective function).
 
-✓ **No instructor conflicts**: All instructors have non-overlapping schedules
-✓ **No room conflicts**: No double-booking of classrooms
-✓ **All capacity constraints met**: Every section fits in its assigned room
-✓ **Meeting patterns respected**: All courses scheduled in compatible time slots
+### Hard Constraints
 
-## Key Features
+Hard constraints must be satisfied for a valid schedule. If any hard constraint cannot be satisfied, the solver reports the schedule as infeasible.
 
-1. **Priority 1 Rooms Used Heavily**: TMCB classrooms (priority 1) are well-utilized
-2. **Time Distribution**: Classes spread from 8:00 AM to 9:15 PM
-3. **Monday-only Classes Handled**: CS 191, 291, and 428 properly scheduled on single days
-4. **Equal Enrollment Distribution**: Students evenly split across multi-section courses
+| Constraint | Weight | Description |
+|------------|--------|-------------|
+| **Each Section Scheduled Once** | 100 | Every in-person section must be assigned to exactly one room-pattern combination |
+| **Room Conflicts** | 100 | No room can be double-booked at the same day/time |
+| **Instructor Conflicts** | 100 | No instructor can teach multiple overlapping sections |
+| **Enrollment Conservation** | 100 | Sum of section enrollments must equal the course total enrollment |
+| **Linearized Capacity** | 95 | Enrollment in a section cannot exceed the assigned room's capacity |
+| **Fixed Enrollment** | 85 | When `--equal-sections` mode is enabled, enforce specific enrollment values per section |
+| **Same-Course Section Conflicts** | 80 | Different sections of the same course must be at different times |
+| **Equal Enrollment (Same Instructor)** | 75 | Sections taught by the same instructor must have similar enrollment (within ±20 students) |
+| **Instructor Building Restrictions** | 70 | Specific instructors cannot teach in certain buildings |
+| **Same-Course Same-Day Pattern** | 40 | Multiple sections by the same instructor must use the same day pattern (MW, TTh, etc.) |
+| **Same-Course Same-Room** | 35 | Sections of the same course should use the same room when preferences indicate |
+| **Large Section Preference** | 25 | Instructors with `prefers_large=TRUE` get higher enrollment allocation |
+| **Evening Time Restrictions** | Hard | Evening classes (ending with 'E') scheduled only at/after 5pm; daytime classes before 5pm |
 
-## Model Statistics
+### Individual Instructor Constraints
 
-- **Decision Variables**: 6,498 assignment variables
-- **Constraints**: 2,490 total constraints
-  - 41 assignment constraints (each section scheduled once)
-  - ~200 capacity blocking constraints
-  - 1,116 room conflict constraints
-  - 140 instructor conflict constraints
-- **Objective Value**: 4,936.15 (maximizing weighted room assignments)
+Specific constraints are hardcoded for certain instructors:
 
-## Example Assignments
+- **Angela Jones**: MW or TTh pattern only, exactly 9:30 AM start
+- **Fred Clift**: 2:00 PM or 3:00 PM start time
+- **Deccio**: 9:00 AM or 10:00 AM start
+- **Crandall (Course 235)**: MW pattern only
+- **Goodrich**: Must end by 3:00 PM
+- **Seamons**: Must end by 3:00 PM
+- **Page**: 9:00 AM - 12:30 PM time window (except Course 601RB)
+- **Mercer (Course 236)**: MWF 1:00 PM - 4:00 PM only
+- **Courses 191/291**: 200+ capacity room, 3:00 PM or 4:00 PM start
 
-| Course | Instructor | Enrollment | Room | Days | Time | Utilization |
-|--------|------------|------------|------|------|------|-------------|
-| 180 | Tim Kapp | 117 | TMCB 1170 (203) | TTh | 8:00-9:15 AM | 57.6% |
-| 191 | Zappala | 85 | TMCB 1170 (203) | M | 8:00-8:50 AM | 41.9% |
-| 256 | Hughes | 58 | HBLL 3718 (59) | MW | 8:00-9:15 AM | 98.3% |
-| 329 | Jensen | 69 | MARB 130 (72) | TTh | 8:00-9:15 AM | 95.8% |
+### Soft Constraints
 
-## Root Cause of Initial Infeasibility
+Soft constraints are incorporated into the objective function as bonuses or penalties:
 
-The problem was initially infeasible due to a **broken capacity constraint** that was accidentally too restrictive:
+| Constraint | Weight | Bonus | Description |
+|------------|--------|-------|-------------|
+| **Template Room/Time Preference** | 95 | Positive | Prefer matching historical template assignments |
+| **Template Instructor Preference** | 90 | Positive | Prefer matching template for instructor schedules |
+| **Priority 1 Room Slot Coverage** | 60 | +8,000 | Encourage filling high-priority room slots |
+| **Faculty Teaching Preferences** | 50 | +50,000 | Same room preference bonus |
+| **Same Pattern Preference** | 50 | +25,000 | Same day pattern bonus |
+| **Adjacent Time Slots** | 45 | +15,000 | Encourage consecutive time slots for same-course sections |
+| **Course Conflicts** | 20 | Variable | Ensure non-overlapping times for courses with student conflicts |
 
-```python
-# BROKEN (was enforcing enroll_var <= capacity for ALL rooms, even unassigned ones)
-enroll_var <= room.capacity * x_var + room.capacity * (1 - x_var)
-# This simplifies to: enroll_var <= room.capacity (always!)
+### Constraint Configuration
 
-# FIXED (only block assignments where enrollment > capacity)
-if expected_enrollment > room.capacity:
-    x_var == 0  # Cannot assign this section to this room
+Constraints are configured via `inputs/constraint_weights.csv`:
+
+```csv
+Constraint Name,Weight,Type,Description,Currently Active
+Room Conflicts,100,Hard,Prevent room double-booking,Yes
+Priority Room Restrictions,30,Hard,Labs → P3/P4 only; Regular → P1/P2 only,No
 ```
 
-The fix eliminated enrollment variables entirely and used simple equal-distribution enrollment, avoiding the Big-M linearization complexity.
+Constraints can be enabled/disabled by setting the "Currently Active" column to "Yes" or "No".
 
-## Files Generated
+---
 
-- `schedule_Fall_2026.csv` - Complete schedule with all 41 sections
-- `logs/scheduler_fixed_capacity.log` - Detailed solver output
+# Course Scheduling System Documentation
 
-## Next Steps (Optional Enhancements)
+## Overview
 
-1. **Optimize enrollment distribution**: Use Big-M linearization to allow unequal section sizes for better capacity utilization
-2. **Add course conflict constraints**: Ensure conflicting courses have at least one non-overlapping section pair
-3. **Student preference modeling**: Weight assignments based on room locations, times, etc.
-4. **Multi-semester planning**: Extend to schedule multiple semesters simultaneously
-5. **Manual override support**: Allow pinning specific courses to specific rooms/times
+This system schedules university courses to rooms and time slots using **Integer Linear Programming (ILP)** with the PuLP library and CBC solver. The default execution uses pure ILP optimization without any template-based matching.
 
-## Technical Achievement
+---
 
-This project demonstrates:
-- Successful Integer Linear Programming (ILP) formulation
-- Constraint debugging and simplification
-- PuLP/CBC solver integration
-- Data parsing and validation
-- CSV output generation
-- Comprehensive testing and diagnostics
+## How the System Actually Works
 
-**Total implementation time**: ~4-5 hours across multiple sessions
-**Final model complexity**: 6,498 variables, 2,490 constraints, solved in <0.3 seconds
+### Default Mode (ILP-Only)
 
+When you run `python main.py "Fall 2026"` without any flags, the system:
 
-### Implementation
-The phased CSV files (schedule_phased_*.csv) represent an alternative scheduling approach
-  that uses a two-phase strategy based on room priorities:
+1. **Parses input data**: Courses, rooms, meeting patterns, and conflicts
+2. **Creates an ILP model** with:
+   - Binary assignment variables `x[course, section, room, pattern]`
+   - Integer enrollment variables `enrollment[course, section]`
+   - Auxiliary preference tracking variables
+3. **Optimizes** using CBC solver (up to 3600 seconds)
+4. **Outputs** a CSV schedule with room assignments
 
-  Key Differences:
+**There is no template matching in default mode.** The ILP solver makes all room/time assignments from scratch based on constraints and objective function weights.
 
-  Phased Scheduling (schedule_phased_*.csv):
-  - Uses Priority 1 and Priority 2 rooms from the "Priority 1 Classrooms" input file
-  - Includes a "Priority" column indicating which tier the room belongs to
-  - Two-Phase Approach:
-    - Phase 1: Schedules courses in Priority 1 rooms only (smaller, preferred rooms)
-    - Phase 2: Schedules remaining courses in Priority 2 rooms only
-  - Generally results in better room utilization - e.g., CS 110-1 in JFSB B037 (120 capacity)
-  at 83.7% utilization
-  - Focuses on filling smaller, preferred classrooms efficiently
+### Alternative Modes (Optional)
 
-  Regular Scheduling (schedule_*.csv):
-  - Uses all available rooms from the comprehensive classrooms file
-  - No priority column
-  - Single-Phase Approach: All rooms considered simultaneously
-  - May result in lower utilization - e.g., CS 110-1 in JSB 140 (858 capacity) at only 11.7%
-  utilization
-  - More flexible but can waste larger rooms on small classes
+- `--use-template`: Template-based scheduling with historical data (not used by default)
+- `--use-phased`: Three-phase approach combining templates and ILP (not used by default)
+- `--equal-sections`: Forces equal enrollment distribution across sections
 
-  Room Priority Examples:
+---
 
-  - Priority 1: TMCB 120, TMCB 134, TMCB 136, HBLL 3718, JKB 2111 (preferred)
-  - Priority 2: JKB 1102, larger auditoriums (fallback options)
+## Constraint Handling
 
-# Course Scheduling via Integer Linear Programming (ILP)
+### Hard Constraints
 
-## Goal
-Optimize room assignments and enrollment distribution to maximize capacity utilization while respecting all scheduling constraints.
+Hard constraints are enforced by the ILP solver - if any cannot be satisfied, the model is infeasible.
 
-## Implementation Steps
+| Constraint | Weight | Description |
+|------------|--------|-------------|
+| **Each Section Scheduled Once** | 100 | Every in-person section assigned to at most one room-pattern combination |
+| **Room Conflicts** | 100 | No room double-booked at same day/time (via constraint grouping) |
+| **Instructor Conflicts** | 100 | No instructor teaching multiple overlapping sections |
+| **Enrollment Conservation** | 100 | Sum of section enrollments ≤ course total enrollment |
+| **Linearized Capacity** | 95 | Enrollment ≤ assigned room's capacity (Big-M linearization) |
+| **Maximum Class Size** | - | No section exceeds 200 students |
+| **Same-Course Section Conflicts** | 80 | Different sections of same course at different times |
+| **Equal Enrollment (Same Instructor)** | 75 | Sections by same instructor within ±20 students |
+| **Instructor Building Restrictions** | 70 | Specific instructors banned from specific buildings |
 
-### 1. Data Parsing Module
-- Parse course data: extract sections per course (count of instructors), individual instructors, total in-person enrollment, meeting pattern preferences
-- Load rooms: building, room number, capacity, priority level, availability windows
-- Parse conflict matrix: identify course pairs that conflict
-- Parse meeting patterns: expand each pattern into (day, start_time, end_time) tuples
-  - MWF 9:00-9:50 → [(Mon,9:00,9:50), (Wed,9:00,9:50), (Fri,9:00,9:50)]
-  - MW 9:30-10:45 → [(Mon,9:30,10:45), (Wed,9:30,10:45)]
+### Time-Based Constraints (Applied During Variable Creation)
 
-### 2. ILP Model Construction (using PuLP or OR-Tools)
+These constraints filter which room-pattern combinations are even considered:
 
-#### Decision Variables
-- `x[course, section, room, timeslot]` ∈ {0,1}: binary assignment indicator
-- `enrollment[course, section]` ∈ ℤ⁺: students assigned to each section
+| Constraint | Effect |
+|------------|--------|
+| **No 8am classes** | Patterns starting before 9am excluded |
+| **No classes after 8pm** | Patterns ending after 20:00 excluded |
+| **Evening classes (E suffix)** | Only scheduled at/after 5pm |
+| **Daytime classes** | Only scheduled before 5pm |
+| **Labs (L suffix)** | Only MW or TTh patterns allowed |
 
-#### Objective Function
-Maximize Σ (enrollment[i,s] / capacity[r]) × x[i,s,r,t] across all assignments
+### Individual Instructor Constraints (Hardcoded)
 
-#### Hard Constraints
+| Instructor | Constraint |
+|------------|------------|
+| **Angela Jones** | MW or TTh at exactly 9:30 AM only |
+| **Fred Clift** | 2:00 PM or 3:00 PM start only |
+| **Deccio** | 9:00 AM or 10:00 AM start only |
+| **Crandall (235)** | MW pattern only |
+| **Goodrich** | Must end by 3:00 PM |
+| **Seamons** | Must end by 3:00 PM |
+| **Page** | 9:00 AM - 12:30 PM window (exception: 601RB can use F-LONG2) |
+| **Mercer (236)** | MWF 1:00 PM - 4:00 PM only |
+| **191/291** | 200+ capacity room, 3:00 PM or 4:00 PM start |
 
-1. **Each section scheduled exactly once:**
-   - Σ(r,t) x[i,s,r,t] = 1 for all courses i, sections s
+### CSV-Configurable Constraints
 
-2. **Room capacity sufficient:**
-   - enrollment[i,s] ≤ capacity[r] when x[i,s,r,t] = 1
+Additional constraints loaded from CSV files:
 
-3. **Enrollment distribution:**
-   - Σ(s) enrollment[i,s] = total_in_person_enrollment[i]
-   - enrollment[i,s] ≥ 1 for all sections
+- `inputs/faculty_constraints.csv`: Per-instructor building restrictions, time ranges, preferences
+- `inputs/course_constraints.csv`: Per-course time ranges, room requirements
+- `inputs/constraint_weights.csv`: Enable/disable constraints, adjust weights
 
-4. **Room conflicts (day-time granularity):**
-   - For each room r, day d, time pairs (t1,t2) where time ranges overlap:
-     - Σ(i,s) x[i,s,r,t1] + Σ(j,s) x[j,s,r,t2] ≤ 1
-   - Overlap check: start1 < end2 AND start2 < end1
-   - Example: MW 9:30-10:45 blocks MWF 9:00-9:50 and MWF 10:00-10:50 on Mon/Wed
+---
 
-5. **Instructor conflicts (no double-booking):**
-   - For each instructor p, timeslot t (including day-time overlaps):
-     - Σ(i,s,r where instructor[i,s]=p) x[i,s,r,t] ≤ 1
-   - **CRITICAL VALIDATION**: No instructor teaching multiple sections simultaneously
+## Scheduling Algorithm
 
-6. **Meeting pattern matching:**
-   - x[i,s,r,t] can only be 1 if timeslot t matches course i's preferred pattern
-
-7. **Course conflicts (student path):**
-   - For conflicting courses i,j: ensure at least one non-overlapping section pair exists
-   - Courses in conflict CAN be scheduled at same time if alternative sections exist
-
-8. **Online sections excluded:**
-   - Sections marked -O don't get room assignments (x = 0 for all r,t)
-
-### 3. Solver Execution
-- Build and solve ILP model with timeout (e.g., 10 minutes)
-- Handle infeasibility with constraint relaxation if needed
-
-### 4. Output Generation
-- CSV: Semester, Course, Section, Instructor, Enrollment, Building, Room, Days, Start Time, End Time, Capacity, Utilization%
-- Summary: total utilization, unscheduled courses, constraint violations
-
-### 5. Validation
-- Verify no instructor double-bookings
-- Check room capacities not exceeded
-- Confirm conflict-free paths exist for students
-- Validate day-time room conflicts resolved
-
-## Tools & Libraries
-- Python with PuLP or OR-Tools for ILP optimization
-- pandas for data parsing and output generation
-
-## Key Input Files
-- `Teaching Assignments True 2015-2026 - 2026-2027.csv` - courses, instructors, enrollments (columns D,F,H,J)
-- `Teaching Assignments True 2015-2026 - Priority 1 Classrooms.csv` - available rooms
-- `Teaching Assignments True 2015-2026 - Meeting Patterns.csv` - time slots
-- `class conflicts - Sheet1.csv` - course conflict matrix
-
-## Important Notes
-- Number of faculty teaching = number of sections desired
-- Student counts are for in-person sections only (exclude online -O sections)
-- Enrollment distribution across sections does NOT need to be uniform
-- Goal is to maximize room capacity utilization
-- Instructor conflicts are the primary validation constraint
-
-
-# Course Scheduling System - Status Report
-
-## ✅ PROJECT COMPLETE
-
-The ILP-based course scheduling system is fully functional and successfully generates optimal schedules.
-
-## What's Been Built
-
-### Core Components
-
-1. **Data Parsers** (`parser.py`)
-   - Courses with instructors, enrollments, meeting patterns
-   - Rooms with capacities, priorities, availability
-   - Meeting patterns (MWF 50-min, MW/TTh 75-min, M-only flexible)
-   - Conflict matrix
-
-2. **ILP Scheduler** (`scheduler.py`)
-   - Decision variables: x[course, section, room, timeslot]
-   - Simplified linear objective function (prefer smaller rooms, Priority 1 classrooms)
-   - Comprehensive constraint system:
-     - Each section scheduled once
-     - Capacity blocking (prevent assigning sections to rooms too small)
-     - Room conflict prevention (day-time granularity with overlap detection)
-     - Instructor conflict prevention (no double-booking)
-   - PuLP/CBC solver integration
-
-3. **Main System** (`main.py`)
-   - Command-line interface with semester argument
-   - Data loading and validation
-   - Solver execution
-   - CSV output generation
-   - Built-in validation checks
-
-4. **Validation & Testing Tools**
-   - `validate_schedule.py` - Comprehensive schedule validation
-   - `check_capacity.py` - Feasibility analysis before scheduling
-   - `diagnose.py` - Meeting pattern and capacity analysis
-   - `test_minimal.py` - Minimal feasibility testing
-
-5. **Utility Scripts**
-   - `pivot_courses.py` - Create course-by-semester pivot tables
-   - `compare_with_original.py` - Compare pivot results with original data
-
-6. **Documentation**
-   - `docs/SCHEDULING_PLAN.md` - Original implementation plan
-   - `docs/BIG_M_LINEARIZATION.md` - Technical deep dive on linearization
-   - `docs/SOLUTION_SUMMARY.md` - Detailed solution analysis
-   - `docs/STATUS.md` - This file
-
-## Current Status: WORKING ✓
-
-**Problem**: ~~INFEASIBLE~~ → **SOLVED**
-
-### The Fix
-
-The initial infeasibility was caused by a **broken capacity constraint** that inadvertently forced every section's enrollment to fit in every room:
-
-```python
-# BROKEN (accidentally too restrictive)
-enroll_var <= room.capacity * x_var + room.capacity * (1 - x_var)
-# This simplifies to: enroll_var <= room.capacity (always!)
-# Meant enrollment had to fit in the SMALLEST room, even if not assigned there
-
-# FIXED (simple capacity blocking)
-if expected_enrollment > room.capacity:
-    x_var == 0  # Block this assignment
-```
-
-**Solution approach**:
-- Eliminated enrollment variables entirely
-- Use equal-distribution assumption (total_enrollment / num_sections)
-- Only block assignments where section is too large for room
-- Avoids Big-M linearization complexity
-
-### Performance
-
-- **Fall 2026**: 41 sections scheduled in 0.24 seconds (OPTIMAL)
-- **Winter 2027**: 40 sections scheduled in 0.19 seconds (OPTIMAL)
-- **Average utilization**: 48-54%
-- **All validations pass**: No conflicts, all capacities met
-
-### Model Complexity
-
-- **Variables**: ~5,000-6,500 binary assignment variables
-- **Constraints**: ~2,500-3,900 constraints
-  - Assignment constraints (each section once)
-  - Capacity blocking constraints
-  - Room conflict constraints (1,100-2,300)
-  - Instructor conflict constraints (140-220)
-
-## Project Structure
+### ILP Model Structure
 
 ```
-scheduling/
-├── inputs/                     # Input data files
-│   ├── Teaching Assignments... (courses, rooms, patterns)
-│   └── class conflicts.csv
-├── results/                    # Generated schedules
-│   ├── schedule_Fall_2026.csv
-│   ├── schedule_Winter_2027.csv
-│   └── courses_by_semester*.csv (pivot tables)
-├── docs/                       # Documentation
-│   ├── SCHEDULING_PLAN.md
-│   ├── BIG_M_LINEARIZATION.md
-│   ├── SOLUTION_SUMMARY.md
-│   └── STATUS.md (this file)
-├── logs/                       # Solver logs (gitignored)
-├── main.py                     # CLI entry point
-├── parser.py                   # Data parsers
-├── scheduler.py                # ILP model
-├── validate_schedule.py        # Schedule validation tool
-├── check_capacity.py           # Feasibility checker
-├── pivot_courses.py            # Pivot utility
-├── compare_with_original.py    # Comparison utility
-├── diagnose.py                 # Diagnostic tool
-└── test_minimal.py             # Minimal feasibility test
+MAXIMIZE:
+  Σ (capacity_weight + priority_bonus + prime_time_bonus +
+     course_type_bonus + large_section_bonus + capacity_match_bonus) * x[c,s,r,p]
+  + slot_coverage_weight * slot_used[r,p]
+  + large_enrollment_weight * enrollment[c,s]  (for prefers_large instructors)
+  + same_room_bonus * same_room[i,c1,c2]
+  + same_pattern_bonus * same_pattern[i,c1,c2]
+  + adjacent_slots_bonus * adjacent[i,c,s1,s2]
+
+SUBJECT TO:
+  1. Each section scheduled at most once
+  2. Enrollment ≤ room capacity (linearized)
+  3. Total enrollment ≤ course enrollment
+  4. No room conflicts (same room, overlapping times)
+  5. No instructor conflicts (same instructor, overlapping times)
+  6. Same-course sections at different times
+  7. Equal enrollment for same-instructor sections
+  8. Building restrictions
+  9. Time proximity constraints
+  10. Faculty preference linking constraints
 ```
+
+### Objective Function Weights
+
+The objective function prioritizes assignments using these weights:
+
+| Component | Weight Range | Purpose |
+|-----------|--------------|---------|
+| **Capacity Match** | -200,000 to +100,000 | Match class size to room size |
+| **Priority 1 Room** | +10,000 | Prefer Priority 1 rooms |
+| **Priority 2 Room** | +5,000 | Allow Priority 2 when needed |
+| **Prime Time (P1)** | +15,000 | Fill P1 rooms during 9am-4pm |
+| **Slot Coverage** | +8,000 | Encourage using P1 slots |
+| **Same Room** | +50,000 | Reward instructor same-room preference |
+| **Same Pattern** | +25,000 | Reward instructor same-pattern preference |
+| **Adjacent Slots** | +15,000 | Encourage consecutive sections |
+
+### Capacity Matching Logic
+
+```
+Large class (≥150 students):
+  - Large room (≥200): +100,000
+  - Medium room (100-199): -20,000
+  - Small room (<100): -50,000
+
+Medium class (80-149):
+  - Large room: -10,000
+  - Medium room: +80,000
+  - Small room: -30,000
+
+Small class (<80):
+  - Large room: -200,000 (heavy penalty!)
+  - Medium room: -50,000
+  - Small room: +50,000
+```
+
+### Algorithm Flow
+
+```
+1. PARSE DATA
+   ├── Load courses (name, sections, instructors, enrollment)
+   ├── Load rooms (building, capacity, priority, availability)
+   ├── Load meeting patterns (days, times)
+   └── Load conflict pairs
+
+2. CREATE VARIABLES
+   ├── x[c,s,r,p] for each valid (course, section, room, pattern)
+   │   └── Filter out: invalid patterns, time violations, instructor constraints
+   ├── enrollment[c,s] for each in-person section
+   ├── slot_used[r,p] for Priority 1 room slots
+   └── Preference tracking variables (same_room, same_pattern, adjacent)
+
+3. BUILD MODEL
+   ├── Set objective function (maximize weighted assignments)
+   └── Add constraints
+
+4. SOLVE
+   ├── Use PuLP + CBC solver
+   ├── Time limit: 3600 seconds
+   └── Find optimal or best feasible solution
+
+5. EXTRACT SOLUTION
+   ├── For each x[c,s,r,p] = 1: record assignment
+   ├── Get enrollment[c,s] values
+   └── Calculate utilization
+
+6. OUTPUT
+   └── Write results/schedule_<semester>.csv
+```
+
+---
+
+## Results Analysis (Fall 2026)
+
+### Schedule Statistics
+
+Based on `results/schedule_Fall_2026.csv`:
+
+| Metric | Value |
+|--------|-------|
+| **Total Sections Scheduled** | 78 |
+| **Total Students** | 3,830 |
+| **Average Room Utilization** | 44.6% |
+| **Rooms Used** | 12 |
+
+### Room Utilization by Building
+
+| Building | Room | Capacity | Priority | Classes | Avg Utilization |
+|----------|------|----------|----------|---------|-----------------|
+| TMCB | 1170 | 203 | 1 | 13 | 47.5% |
+| TMCB | 120 | 41 | 1 | 8 | 35.4% |
+| TMCB | 134 | 42 | 1 | 9 | 55.7% |
+| JKB | 3108 | 306 | 2 | 9 | 21.4% |
+| JKB | 1102 | 285 | 2 | 5 | 15.5% |
+| ESC | C215 | 170 | 2 | 10 | 31.3% |
+| MARB | 130 | 72 | 1 | 11 | 62.2% |
+| HBLL | 3718 | 59 | 1 | 8 | 57.0% |
+
+### Key Observations
+
+1. **High Utilization Rooms**: MARB 130 (62.2%) and HBLL 3718 (57.0%) are efficiently used
+2. **Underutilized Large Rooms**: JKB 3108 (306 seats) at 21.4% - many small classes placed here
+3. **Priority 1 Usage**: Most Priority 1 rooms are well-utilized except TMCB 120
+4. **Capacity Mismatch**: Several small classes (30 students) in 200+ seat rooms
+
+### Sample Assignments
+
+```
+Course  Section  Instructor       Enroll  Room         Capacity  Util%
+110     1        Bean             200     TMCB 1170    203       98.5%
+110     2        Page             200     JKB 3108     306       65.4%
+111     3        Richardson       200     TMCB 1170    203       98.5%
+236     4        Mercer           169     TMCB 1170    203       83.3%
+329     1        Jensen           69      MARB 130     72        95.8%
+401R    1        Bean             42      TMCB 134     42        100.0%
+```
+
+---
+
+## Input/Output Files
+
+### Input Files
+
+| File | Purpose |
+|------|---------|
+| `inputs/Teaching Assignments True 2015-2026 - 2026-2027 Faculty.csv` | Instructor-course assignments |
+| `inputs/Teaching Assignments True 2015-2026 - 2026-2027.csv` | Course sections and enrollment |
+| `inputs/Teaching Assignments True 2015-2026 - Priority 1 Classrooms.csv` | Room information |
+| `inputs/Teaching Assignments True 2015-2026 - Meeting Patterns Extended.csv` | Time slot patterns |
+| `inputs/class conflicts - Sheet1.csv` | Course conflict pairs |
+| `inputs/constraint_weights.csv` | Constraint configuration |
+| `inputs/faculty_constraints.csv` | Per-instructor constraints |
+| `inputs/course_constraints.csv` | Per-course constraints |
+
+### Output Files
+
+| File | Purpose |
+|------|---------|
+| `results/schedule_<semester>.csv` | Final schedule with all assignments |
+| `results/schedule_<semester>_by_instructor.csv` | Schedule sorted by instructor |
+| `results/equal_schedule_<semester>.csv` | Output when using `--equal-sections` |
+
+---
 
 ## Usage
 
-### Generate Schedule
 ```bash
+# Default: Pure ILP optimization (recommended)
 python main.py "Fall 2026"
-python main.py "Winter 2027"
+
+# With equal enrollment distribution
+python main.py "Fall 2026" --equal-sections
+
+# Template-based (uses historical data)
+python main.py "Fall 2026" --use-template
+
+# Phased (template + ILP for remaining)
+python main.py "Fall 2026" --use-phased
 ```
 
-### Validate Schedule
-```bash
-python validate_schedule.py results/schedule_Fall_2026.csv
+---
+
+## Technical Details
+
+### Solver Configuration
+
+- **Solver**: COIN-OR Branch and Cut (CBC) via PuLP
+- **Time Limit**: 3600 seconds (1 hour)
+- **Model Size** (typical): ~5,000 rows, ~17,000 columns, ~230,000 elements
+
+### Key Algorithms
+
+**Time Overlap Detection:**
+```python
+def times_overlap(start1, end1, start2, end2):
+    s1, e1 = to_minutes(start1), to_minutes(end1)
+    s2, e2 = to_minutes(start2), to_minutes(end2)
+    return s1 < e2 and s2 < e1
 ```
 
-### Check Feasibility
-```bash
-python check_capacity.py "Fall 2026"
+**Pattern Matching:**
+- MW courses match MW patterns
+- TTh courses match TTh patterns
+- MWF courses match MWF patterns
+- Single-day courses match only single-day patterns
+- Special patterns (F-LONG, F-LONG2) require exact match
+
+**Big-M Linearization:**
 ```
+enrollment[c,s] <= Σ(capacity[r] * x[c,s,r,p])
+```
+Ensures enrollment fits in whichever room is assigned.
 
-## Key Features
+---
 
-✅ **Fast solve times** (< 0.3 seconds)
-✅ **Optimal solutions** (not just feasible)
-✅ **Comprehensive validation** (no conflicts guaranteed)
-✅ **Flexible meeting patterns** (M-only classes can meet any single day)
-✅ **Priority room allocation** (Priority 1 classrooms preferred)
-✅ **Equal enrollment distribution** (sections evenly split)
-✅ **Command-line interface** (easy to use)
+## Constraint Weights Configuration
 
-## Data Statistics
+From `inputs/constraint_weights.csv`:
 
-### Fall 2026
-- **Courses**: 38 total (37 in-person, 1 online)
-- **Sections**: 41 in-person sections
-- **Students**: 1,596 in-person (1,764 total)
-- **Rooms**: 18 (7 Priority 1, 11 Priority 2)
-- **Patterns**: 43 time slots
+| Constraint | Weight | Type | Active |
+|------------|--------|------|--------|
+| Each Section Scheduled Once | 100 | Hard | Yes |
+| Room Conflicts | 100 | Hard | Yes |
+| Instructor Conflicts | 100 | Hard | Yes |
+| Enrollment Conservation | 100 | Hard | Yes |
+| Linearized Capacity | 95 | Hard | Yes |
+| Template Room/Time Preference | 95 | Soft | Yes |
+| Template Instructor Preference | 90 | Soft | Yes |
+| Fixed Enrollment | 85 | Hard | Yes |
+| Same-Course Section Conflicts | 80 | Hard | Yes |
+| Equal Enrollment Same Instructor | 75 | Hard | Yes |
+| Instructor Building Restrictions | 70 | Hard | Yes |
+| Priority 1 Room Slot Coverage | 60 | Soft | Yes |
+| Faculty Teaching Preferences | 50 | Soft | Yes |
+| Adjacent Time Slots Preference | 45 | Soft | Yes |
+| Same-Course Same-Day Pattern | 40 | Hard | Yes |
+| Same-Course Same-Room | 35 | Hard | Yes |
+| Priority Room Restrictions | 30 | Hard | **No** |
+| Large Section Preference | 25 | Hard | Yes |
+| Course Conflicts | 20 | Soft | Yes |
 
-### Winter 2027
-- **Courses**: 36 total (35 in-person, 1 online)
-- **Sections**: 40 in-person sections
-- **Students**: 1,749 in-person (2,070 total)
-- **Rooms**: 15 (6 Priority 1, 9 Priority 2)
-- **Patterns**: 43 time slots
+---
 
-## Implementation Timeline
+## Summary
 
-1. **Data parsing and pivot tables** - Initial data exploration
-2. **ILP model design** - Constraint formulation and planning
-3. **Initial implementation** - PuLP/CBC integration
-4. **Debugging infeasibility** - Root cause analysis (broken constraint)
-5. **Fix and optimization** - Simplified capacity approach
-6. **Validation tools** - Comprehensive testing scripts
-7. **Documentation** - Technical writeups and guides
-8. **Repository organization** - Clean structure with inputs/results separation
+The scheduling system uses **pure Integer Linear Programming** in default mode to:
 
-**Total development time**: ~6-8 hours across multiple sessions
+1. Assign each course section to exactly one room and time slot
+2. Distribute enrollment across sections to fit room capacities
+3. Respect all hard constraints (no conflicts, capacity limits)
+4. Optimize for preferences (same room for instructor, good capacity fit)
 
-## Future Enhancements (Optional)
+The solver finds optimal or near-optimal solutions within the 1-hour time limit, producing schedules that balance room utilization with instructor preferences and student needs.
 
-1. **Big-M linearization** - True capacity utilization optimization
-2. **Course conflict constraints** - Ensure conflicting courses have non-overlapping section pairs
-3. **Unequal enrollment distribution** - Allow flexible section sizes
-4. **Multi-semester scheduling** - Schedule multiple semesters simultaneously
-5. **Student preference modeling** - Weight by room location, time preferences
-6. **Manual overrides** - Pin specific courses to specific rooms/times
-7. **GUI interface** - Web-based schedule visualization and editing
-
-## Repository
-
-- **GitHub**: https://github.com/ringger/scheduling
-- **License**: Private repository
-- **Language**: Python 3.10+
-- **Dependencies**: PuLP (CBC solver), pandas (optional for analysis)
-
-## Conclusion
-
-The project successfully demonstrates:
-- **ILP problem formulation** for complex scheduling
-- **Constraint debugging** and simplification techniques
-- **Solver integration** with open-source tools (CBC)
-- **Production-quality code** with validation and testing
-- **Clear documentation** for future maintenance
-
-The system is ready for production use and can generate schedules for any semester in seconds.
