@@ -6,7 +6,7 @@
 - [Summer Schedule by instructor](schedule_Spring_2027_by_instructor.csv)
 
 - See if the classes you are scheduled to teach are what you expected.
-= See if the time and location will work for you.
+- See if the time and location will work for you.
 
 ### Notation
 The room schedule files show when rooms are used ([Fall](room_schedule_Fall_2026.csv), [Winter](room_schedule_Winter_2027.csv), [Spring](room_schedule_Spring_2027.csv), [Summer](room_schedule_Summer_2027.csv))
