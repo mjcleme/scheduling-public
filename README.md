@@ -279,7 +279,7 @@ Small class (<80):
 
 ### Schedule Statistics
 
-Based on `results/schedule_Fall_2026.csv`:
+Based on `schedule_Fall_2026.csv`:
 
 | Metric | Value |
 |--------|-------|
