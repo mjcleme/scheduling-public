@@ -1,6 +1,5 @@
-================================================================================
-COURSE SCHEDULING SYSTEM - SUMMARY REPORT
-================================================================================
+
+###COURSE SCHEDULING SYSTEM - SUMMARY REPORT
 Generated: 2025-12-10 14:57:01
 
 1. OVERALL SUMMARY
