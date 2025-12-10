@@ -1,12 +1,10 @@
-Building,Room,Priority,F 02:00 PM-04:30 PM,"M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W 03:30 PM-04:45 PM","M,W,F 09:00 AM-09:50 AM","M,W,F 10:00 AM-10:50 AM","M,W,F 02:00 PM-02:50 PM","M,W,F 03:00 PM-03:50 PM","M,W,F 04:00 PM-04:50 PM","T,Th 09:30 AM-10:45 AM","T,Th 12:30 PM-01:45 PM","T,Th 02:00 PM-03:15 PM","T,Th 03:30 PM-04:45 PM","T,Th 05:00 PM-06:15 PM","T,Th 06:30 PM-07:45 PM",Online
-BRMB,240,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-HBLL,3718,1,,CS 452-1 (Jenkins),"CS 405-1 (Earnshaw, Craig)",CS 330-1 (Germane),CS 301R-1 (Bean),CS 452-2 (Reynolds),X,X,X,X,X,CS 224B-2 (Archibald),CS 393-2 (Reynolds),CS 493-1 (Farrell),CS 180-1 (Ringger),,,
-JFSB,B092,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-JKB,3106,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-MARB,130,1,"CS 428-1 (Webster, Bruce)",X,CS 466-1 (Seamons),CS 340-1 (Rodham),CS 601R-1 (Richardson),CS 180-2 (Ringger),CS 324-1 (Deccio),CS 324-2 (Deccio),X,X,X,CS 270-1 (Snell),CS 474-1 (Jenkins),"CS 481T-1 (Team:Rodham/Sillito/Baird, Brad)",CS 312-1 (Bean),,,
-MCKB,26,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-MCKB,331,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-TMCB,1170,1,,,,,,,,,,,,CS 111-2 (Stephens),,CS 110-1 (Bean),"CS 191/291T-1 (Team:Zappala/Dougal, Duane)",,,
-TMCB,120,1,,CS 301R-3 (Stephens),"CS 404-1 (Gates, Darin)",CS 665-1 (Seamons),CS 473-1 (Wingate),CS 340-2 (Wilkerson),X,X,X,X,X,CS 483T-1 (Team:MJ/Snell),CS 704R-1 (Morse),CS 712-1 (Warnick),CS 224B-1 (Archibald),"CS 235E-1 (Barton, Dylan)","CS 110E-1 (Hansen, Bruce)",
-TMCB,134,1,,CS 556-1 (Hughes),CS 393-1 (Reynolds),CS 270-2 (Snell),CS 677-1 (Jenkins),CS 256-1 (Hughes),X,X,X,X,X,CS 630-1 (Germane),CS 252A-1 (Ng),CS 312-3 (Grimsman),CS 260-1 (Jensen),"CS 111E-1 (Cluff, Andrew)","CS 345E-1 (Judd, Glenn)",
-Online,Online,,,,,,,,,,,,,,,,,,,"CS 110-O (Jones, Angela); CS 235-O (Clement); CS 260-O (Jensen); CS 111-O (Stephens); CS 240-O (Rodham); CS 240-O (Wilkerson)"
+Building,Room,Priority,F 02:00 PM-04:30 PM,"M,W 09:00 AM-10:50 AM","M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 11:00 AM-12:50 AM","M,W 12:30 PM-01:45 PM","M,W 01:00 PM-02:50 PM","M,W 02:00 PM-03:15 PM","M,W 03:30 PM-04:45 PM","M,W,F 09:00 AM-09:50 AM","M,W,F 10:00 AM-10:50 AM","M,W,F 11:00 AM-11:50 AM","M,W,F 12:00 PM-12:50 PM","M,W,F 01:00 PM-01:50 PM","M,W,F 04:00 PM-04:50 PM","T,Th 09:30 AM-10:45 AM","T,Th 10:00 AM-11:50 AM","T,Th 12:00 PM-01:50 PM","T,Th 12:30 PM-01:45 PM","T,Th 02:00 PM-03:15 PM","T,Th 03:30 PM-04:45 PM","T,Th 05:00 PM-06:15 PM","T,Th 06:30 PM-07:45 PM",Online
+HBLL,3718,1,,X,X,X,,,,,,CS 486-1 (Mercer),,CS 224A-1 (Mercer),,,,X,"CS 480T-1 (Team:Rodham/Sillito/Baird, Brad)",X,CS 655-1 (Egbert),CS 224B-2 (Archibald),CS 455-1 (Egbert),,,
+JFSB,B092,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+JKB,1102,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+JKB,3108,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+MARB,130,1,,X,CS 301R-2 (MJ),CS 256-1 (Hughes),CS 330-1 (Germane); CS 401R-1 (Bean); CS 466-1 (Seamons); CS 513-1 (Warnick); CS 556-1 (Hughes); CS 575-1 (Goodrich); CS 601R-1 (Richardson); CS 665-1 (Seamons); CS 677-1 (Jenkins); CS 704R-1 (Morse),CS 301R-1 (Bean),X,CS 473-1 (Wingate),CS 301R-3 (Stephens),X,X,X,X,X,X,CS 712-1 (Warnick),X,"CS 481T-1 (Team:Rodham/Sillito/Baird, Brad)",X,CS 260-2 (Jensen),CS 260-1 (Jensen),,,
+TMCB,1170,1,,,,,,,,,,,,,,,,"CS 110-4 (Jones, Angela)",X,X,"CS 111-4 (Giles, Steven)","CS 110-2 (Dougal, Duane)","CS 235-5 (Dougal, Duane)",,,
+TMCB,120,1,"CS 428-1 (Webster, Bruce)",,,,"CS 401R-2 (Toborg); CS 405-1 (Earnshaw, Craig)",,,,,,,,,,X,CS 630-1 (Germane),X,,,"CS 465-1 (Clift, Fred)",CS 224B-1 (Archibald),"CS 235E-1 (Barton, Dylan)","CS 345E-1 (Judd, Glenn)",
+TMCB,134,1,,,,,,,,,,,,,,,,X,CS 252A-1 (Ng),X,CS 493-1 (Farrell),CS 252A-2 (Ng),CS 483T-1 (Team:MJ/Snell),"CS 110E-1 (Hansen, Bruce)","CS 111E-1 (Cluff, Andrew)",
+Online,Online,,,,,,,,,,,,,,,,,,,,,,,,,"CS 110-O (Jones, Angela); CS 235-O (Clement); CS 260-O (Jensen); CS 111-O (Stephens); CS 240-O (Rodham); CS 240-O (Wilkerson)"
