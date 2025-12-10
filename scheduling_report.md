@@ -1,7 +1,7 @@
 ================================================================================
 COURSE SCHEDULING SYSTEM - SUMMARY REPORT
 ================================================================================
-Generated: 2025-12-10 14:29:09
+Generated: 2025-12-10 14:34:39
 
 1. OVERALL SUMMARY
 --------------------------------------------------------------------------------
@@ -202,11 +202,17 @@ Generated: 2025-12-10 14:29:09
 10. OUTPUT FILES GENERATED
 --------------------------------------------------------------------------------
 
-   Schedule files (detailed section assignments):
+   Schedule files (sorted by course):
      - results/schedule_Fall_2026.csv
      - results/schedule_Winter_2027.csv
      - results/schedule_Spring_2027.csv
      - results/schedule_Summer_2027.csv
+
+   Schedule files (sorted by instructor):
+     - results/schedule_Fall_2026_by_instructor.csv
+     - results/schedule_Winter_2027_by_instructor.csv
+     - results/schedule_Spring_2027_by_instructor.csv
+     - results/schedule_Summer_2027_by_instructor.csv
 
    Room schedule grids (visual room-by-time matrices):
      - results/room_schedule_Fall_2026.csv
