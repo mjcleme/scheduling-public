@@ -1,18 +1,18 @@
 ================================================================================
 COURSE SCHEDULING SYSTEM - SUMMARY REPORT
 ================================================================================
-Generated: 2025-12-10 14:34:39
+Generated: 2025-12-10 14:57:01
 
 1. OVERALL SUMMARY
 --------------------------------------------------------------------------------
    Total sections scheduled:  176
-   Total students enrolled:   7,642
-   Average room utilization:  35.4%
+   Total students enrolled:   7,644
+   Average room utilization:  35.2%
 
    Semester        Sections   Students   Utilization
    --------------------------------------------------
-   Fall 2026             84      3,796         38.0%
-   Winter 2027           77      3,433         33.8%
+   Fall 2026             84      3,798         39.4%
+   Winter 2027           77      3,433         31.8%
    Spring 2027           10        354         37.7%
    Summer 2027            5         59         12.5%
 
@@ -118,34 +118,37 @@ Generated: 2025-12-10 14:34:39
 
    Priority   Sections   Students   Avg Utilization
    --------------------------------------------------
-          1        130      4,492             35.5%
-          2         46      3,150             35.2%
+          1        112      3,114             37.9%
+          2         60      3,954             29.9%
+          3          4        576             42.1%
 
 6. ROOM USAGE DETAILS (All Semesters Combined)
 --------------------------------------------------------------------------------
 
    Room              Priority   Sections   Students   Capacity
    ------------------------------------------------------------
-   MARB 130                  1         50      1,402         72
-   TMCB 1170                 1         30      2,081        203
-   JFSB B092                 2         19        905        125
-   JKB 3108                  2         14      1,633        306
-   TMCB 120                  1         13         60         41
+   TMCB 134                  1         22        419         42
+   JKB 3108                  2         21      1,846        306
+   TMCB 120                  1         21        223         41
+   HBLL 3718                 1         20        592         59
+   MARB 130                  1         19        597         72
+   JKB 1102                  2         15        954        285
+   TMCB 1170                 1         15        870        203
    JKB 3104                  1         12        413         94
    ESC C215                  2         11        552        170
-   TMCB 134                  1         11        217         42
-   HBLL 3718                 1         11        319         59
+   JFSB B092                 2          9        403        125
+   CB 377                    3          4        576        342
+   JKB 3106                  2          3        169         92
    TMCB 136                  1          3          0         40
    JFSB B037                 2          1         30        120
-   JKB 1102                  2          1         30        285
 
 7. MEETING PATTERN DISTRIBUTION
 --------------------------------------------------------------------------------
 
    Pattern              Sections
    ------------------------------
-   M,W                        89  (50.6%)
-   T,Th                       57  (32.4%)
+   T,Th                       78  (44.3%)
+   M,W                        68  (38.6%)
    M,W,F                      26  (14.8%)
    F                           4  (2.3%)
 
@@ -161,8 +164,8 @@ Generated: 2025-12-10 14:34:39
    Total: 490 students across 5 sections
    Equal distribution would be: 98 per section
    Optimized distribution:
-     Section 1: 200 students [################### ] 98% util
-     Section 2: 200 students [################### ] 98% util
+     Section 1: 200 students [##############      ] 70% util
+     Section 2: 200 students [#############       ] 65% util
      Section 3:  30 students [##                  ] 15% util
      Section 4:  30 students [##                  ] 15% util
      Section 6:  30 students [##                  ] 15% util
@@ -173,7 +176,7 @@ Generated: 2025-12-10 14:34:39
    Optimized distribution:
      Section 3: 200 students [################### ] 98% util
      Section 2: 110 students [##########          ] 54% util
-     Section 1:  90 students [########            ] 44% util
+     Section 1:  90 students [######              ] 32% util
      Section 5:  30 students [##                  ] 15% util
 
    224A (Fall 2026):
@@ -188,14 +191,14 @@ Generated: 2025-12-10 14:34:39
 
    Instructor                      Sections   Students
    -------------------------------------------------------
-   Bean                                    9        565
+   Bean                                    9        571
    Reynolds                                9        529
    Barker                                  9        470
    Dougal, Duane                           8        180
-   Stephens                                7        645
+   Stephens                                7        685
    Jensen                                  7        319
    Wilkerson                               7        255
-   MJ                                      7        240
+   MJ                                      7        220
    Gates, Darin                            6        187
    Richardson                              4        452
 
