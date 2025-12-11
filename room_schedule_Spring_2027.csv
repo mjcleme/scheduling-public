@@ -1,8 +1,4 @@
-Building,Room,Priority,"M,T,W,Th 09:30 AM-10:45 AM","M,T,W,Th 12:00 PM-01:15 PM","M,T,W,Th 12:30 PM-01:45 PM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W,F 10:00 AM-11:50 AM","T,Th 01:00 PM-03:50 PM","T,Th 02:00 PM-03:15 PM","T,Th 05:00 PM-06:15 PM","T,W,Th,F 09:30 AM-10:45 AM",Online
-JFSB,B092,,0,0,0,0,0,0,0,0,0,0,
-JFSB,B135,,0,0,0,0,0,0,0,0,0,0,
-JKB,2111,1,,X,CS 452-1 (Reynolds),,X,,X,,,,
-JKB,3104,1,,X,X,CS 270-1 (MJ),CS 240-1 (Wilkerson),X,X,CS 312-1 (Bean),,,
-TMCB,1170,,0,0,0,0,0,0,0,0,0,0,
-TMCB,134,1,X,,,X,,CS 453-1 (Ng),,,,X,
-TMCB,136,1,,,,,,,,,"CS 224E-1 (Barton, Dylan)",,
+Building,Room,Priority,"M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W,F 03:00 PM-03:50 PM","T,Th 09:30 AM-10:45 AM","T,Th 12:30 PM-01:45 PM","T,Th 02:00 PM-03:15 PM","T,Th 06:30 PM-07:45 PM",Online
+JFSB,B106,1,,,CS 235-1 (Stephens),CS 270-1 (MJ),X,,,,,
+JKB,3104,1,CS 240-1 (Wilkerson),CS 111-1 (Stephens),"CS 404-1 (Gates, Darin)",X,CS 453-1 (Ng),CS 312-1 (Bean),CS 452-1 (Reynolds),CS 110-1 (Bean),,
+TMCB,136,1,,,,,,,,,"CS 224E-1 (Barton, Dylan)",
