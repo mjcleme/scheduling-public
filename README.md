@@ -3,7 +3,7 @@
 - [Fall Schedule by instructor](schedule_Fall_2026_by_instructor.csv)
 - [Winter Schedule by instructor](schedule_Winter_2027_by_instructor.csv)
 - [Spring Schedule by instructor](schedule_Spring_2027_by_instructor.csv)
-- [Summer Schedule by instructor](schedule_Spring_2027_by_instructor.csv)
+- [Summer Schedule by instructor](schedule_Summer_2027_by_instructor.csv)
 
 - See if the classes you are scheduled to teach are what you expected.
 - See if the time and location will work for you.
