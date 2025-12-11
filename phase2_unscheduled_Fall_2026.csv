@@ -1,8 +1,11 @@
 Course,Section,Instructor,Enrollment,Meeting Pattern
 110,5,"Jones, Angela",N/A,"MW, TTh"
 111,4,Stephens,N/A,"MW, TTh"
-191/291T,1,"Team:Zappala/Dougal, Duane",N/A,"M, F"
+191/291T,1,"Team:Zappala/Dougal, Duane",N/A,F-LONG
+235,1,Crandall,N/A,"MW, TTh"
+235,2,Crandall,N/A,"MW, TTh"
+235,3,Crandall,N/A,"MW, TTh"
 235,4,Crandall,N/A,"MW, TTh"
 240,5,Rodham,N/A,"MW, TTh"
-260,3,Ventura,N/A,TTh
+260,2,Ventura,N/A,TTh
 601RB,1,Page,N/A,TTh
