@@ -1,5 +1,6 @@
 Course,Section,Instructor,Enrollment,Meeting Pattern
 110,3,"Jones, Angela",N/A,"MW, TTh"
+110E,1,"Hansen, Bruce",N/A,TTh
 111,3,Stephens,N/A,"MW, TTh"
 191/291T,1,"Team:Zappala/Dougal, Duane",N/A,F-LONG
 235,1,Clement,N/A,"MW, TTh"
@@ -7,6 +8,7 @@ Course,Section,Instructor,Enrollment,Meeting Pattern
 235,3,MJ,N/A,"MW, TTh"
 235,4,Stephens,N/A,"MW, TTh"
 235,5,"Dougal, Duane",N/A,"MW, TTh"
+235E,1,"Barton, Dylan",N/A,TTh
 240,2,Rodham,N/A,"MW, TTh"
 240,4,Wilkerson,N/A,"MW, TTh"
 260,3,Jensen,N/A,TTh

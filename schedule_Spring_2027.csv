@@ -1,7 +1,7 @@
 Semester,Course,Section,Instructor,Enrollment,Building,Room,Capacity,Priority,Days,Start Time,End Time,Utilization %
 Spring 2027,110,1,Bean,52,TMCB,1170,79,100,"T,W,Th,F",09:30 AM,10:45 AM,65.8%
 Spring 2027,111,1,Stephens,56,JFSB,B092,66,100,"M,T,W,Th",09:30 AM,10:45 AM,84.8%
-Spring 2027,224E,1,"Barton, Dylan",12,JKB,2104,22,100,"M,T,Th",04:00 PM,05:50 PM,54.5%
+Spring 2027,224E,1,"Barton, Dylan",0,TMCB,136,40,1,"T,Th",05:00 PM,06:15 PM,0.0%
 Spring 2027,235,1,Stephens,69,TMCB,1170,79,100,"M,T,W,Th",12:00 PM,01:15 PM,87.3%
 Spring 2027,240,1,Wilkerson,64,JKB,3104,94,1,"M,W",12:30 PM,01:45 PM,68.1%
 Spring 2027,270,1,MJ,30,JKB,3104,94,1,"M,W",11:00 AM,12:15 PM,31.9%
