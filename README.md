@@ -5,7 +5,7 @@
 - [Spring Schedule by instructor](schedule_Spring_2027_by_instructor.csv)
 - [Summer Schedule by instructor](schedule_Summer_2027_by_instructor.csv)
 
-- See if the [classes](courses_by_semester_full.csv) you are scheduled to teach are what you expected.
+- See if the [classes](faculty_teaching_summary.csv) you are scheduled to teach are what you expected.
 - See if the time and location will work for you.
 
 ### Notation
