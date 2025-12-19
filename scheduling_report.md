@@ -1,17 +1,17 @@
 ================================================================================
 COURSE SCHEDULING SYSTEM - SUMMARY REPORT
 ================================================================================
-Generated: 2025-12-19 13:51:10
+Generated: 2025-12-19 14:24:01
 
 1. OVERALL SUMMARY
 --------------------------------------------------------------------------------
-   Total sections scheduled:  83
-   Total students enrolled:   3,753
-   Average room utilization:  39.1%
+   Total sections scheduled:  77
+   Total students enrolled:   3,403
+   Average room utilization:  31.3%
 
    Semester        Sections   Students   Utilization   Conflicts
    --------------------------------------------------------------
-   Fall 2026             83       3753        39.1%         379
+   Winter 2027           77       3403        31.3%         317
 
 2. GLOBAL CONSTRAINTS
 --------------------------------------------------------------------------------
@@ -67,442 +67,380 @@ Generated: 2025-12-19 13:51:10
 
 5. INSTRUCTOR CONFLICTS
 --------------------------------------------------------------------------------
-   Total conflicts: 379
+   Total conflicts: 317
 
-   Fall 2026:
-     - Unknown: 110 conflicts with 111
+   Winter 2027:
+     - Unknown: 110 conflicts with 110A
      - Unknown: 110 conflicts with 224A
-     - Unknown: 110 conflicts with 235
-     - Unknown: 110 conflicts with 256
-     - Unknown: 110 conflicts with 301R
-     - Unknown: 110 conflicts with 404
-     - Unknown: 110 conflicts with 470
-     - Unknown: 110 conflicts with 479
-     - Unknown: 110 conflicts with 240
-     - Unknown: 110 conflicts with 260
-     - Unknown: 110 conflicts with 270
-     - Unknown: 110 conflicts with 301R
-     - Unknown: 110 conflicts with 312
+     - Unknown: 110 conflicts with 324
+     - Unknown: 110 conflicts with 324
      - Unknown: 110 conflicts with 340
-     - Unknown: 110 conflicts with 355
-     - Unknown: 110 conflicts with 405
-     - Unknown: 110 conflicts with 465
-     - Unknown: 110 conflicts with 674
-     - Unknown: 110 conflicts with 111
-     - Unknown: 110 conflicts with 240
-     - Unknown: 110 conflicts with 270
-     - Unknown: 110 conflicts with 312
-     - Unknown: 110 conflicts with 340
-     - Unknown: 110 conflicts with 401RT
-     - Unknown: 110 conflicts with 418
-     - Unknown: 110 conflicts with 430
-     - Unknown: 110 conflicts with 653
-     - Unknown: 110 conflicts with 673
-     - Unknown: 110 conflicts with 235
-     - Unknown: 110 conflicts with 240
-     - Unknown: 110 conflicts with 340
-     - Unknown: 110 conflicts with 452
-     - Unknown: 110 conflicts with 482T
-     - Unknown: 110 conflicts with 493
-     - Unknown: 110 conflicts with 501R
-     - Unknown: 110 conflicts with 601RB
+     - Unknown: 110 conflicts with 393
+     - Unknown: 110 conflicts with 401R
+     - Unknown: 110 conflicts with 486
+     - Unknown: 110 conflicts with 556
      - Unknown: 110 conflicts with 704R
-     - Unknown: 110A conflicts with 235
-     - Unknown: 110A conflicts with 236
-     - Unknown: 110A conflicts with 236
-     - Unknown: 110A conflicts with 240
-     - Unknown: 110A conflicts with 252B
+     - Unknown: 110 conflicts with 235
+     - Unknown: 110 conflicts with 252A
+     - Unknown: 110 conflicts with 260
+     - Unknown: 110 conflicts with 312
+     - Unknown: 110 conflicts with 404
+     - Unknown: 110 conflicts with 452
+     - Unknown: 110 conflicts with 455
+     - Unknown: 110 conflicts with 465
+     - Unknown: 110 conflicts with 481T
+     - Unknown: 110A conflicts with 224A
      - Unknown: 110A conflicts with 324
+     - Unknown: 110A conflicts with 324
+     - Unknown: 110A conflicts with 340
      - Unknown: 110A conflicts with 393
      - Unknown: 110A conflicts with 401R
-     - Unknown: 110A conflicts with 460
-     - Unknown: 110A conflicts with 473
-     - Unknown: 110A conflicts with 474
-     - Unknown: 110A conflicts with 601R
-     - Unknown: 111 conflicts with 224A
-     - Unknown: 111 conflicts with 235
+     - Unknown: 110A conflicts with 486
+     - Unknown: 110A conflicts with 556
+     - Unknown: 110A conflicts with 704R
+     - Unknown: 111 conflicts with 236
+     - Unknown: 111 conflicts with 236
+     - Unknown: 111 conflicts with 240
      - Unknown: 111 conflicts with 256
+     - Unknown: 111 conflicts with 270
      - Unknown: 111 conflicts with 301R
-     - Unknown: 111 conflicts with 404
-     - Unknown: 111 conflicts with 470
-     - Unknown: 111 conflicts with 479
+     - Unknown: 111 conflicts with 466
+     - Unknown: 111 conflicts with 474
+     - Unknown: 111 conflicts with 677
+     - Unknown: 111 conflicts with 712
+     - Unknown: 111 conflicts with 180
+     - Unknown: 111 conflicts with 236
+     - Unknown: 111 conflicts with 301R
+     - Unknown: 111 conflicts with 324
+     - Unknown: 111 conflicts with 329
+     - Unknown: 111 conflicts with 452
+     - Unknown: 111 conflicts with 513
+     - Unknown: 111 conflicts with 575
+     - Unknown: 111 conflicts with 665
+     - Unknown: 111 conflicts with 224B
+     - Unknown: 111 conflicts with 235
      - Unknown: 111 conflicts with 240
      - Unknown: 111 conflicts with 270
      - Unknown: 111 conflicts with 312
-     - Unknown: 111 conflicts with 340
-     - Unknown: 111 conflicts with 401RT
-     - Unknown: 111 conflicts with 418
-     - Unknown: 111 conflicts with 430
-     - Unknown: 111 conflicts with 653
-     - Unknown: 111 conflicts with 673
-     - Unknown: 111 conflicts with 240
-     - Unknown: 111 conflicts with 260C
-     - Unknown: 111 conflicts with 401R
-     - Unknown: 111 conflicts with 404
-     - Unknown: 111 conflicts with 580
-     - Unknown: 111 conflicts with 670
-     - Unknown: 111 conflicts with 686
-     - Unknown: 111 conflicts with 224A
-     - Unknown: 111 conflicts with 235
-     - Unknown: 111 conflicts with 236
-     - Unknown: 111 conflicts with 236
-     - Unknown: 111 conflicts with 252B
-     - Unknown: 111 conflicts with 312B
-     - Unknown: 111 conflicts with 324
-     - Unknown: 111 conflicts with 329
-     - Unknown: 111 conflicts with 340
-     - Unknown: 111 conflicts with 356
-     - Unknown: 111 conflicts with 452
-     - Unknown: 111 conflicts with 574
-     - Unknown: 191/291T conflicts with 224A
+     - Unknown: 111 conflicts with 483T
+     - Unknown: 111 conflicts with 493
+     - Unknown: 111 conflicts with 655
+     - Unknown: 111E conflicts with 235E
+     - Unknown: 111E conflicts with 345E
+     - Unknown: 180 conflicts with 236
+     - Unknown: 180 conflicts with 301R
+     - Unknown: 180 conflicts with 324
+     - Unknown: 180 conflicts with 329
+     - Unknown: 180 conflicts with 452
+     - Unknown: 180 conflicts with 513
+     - Unknown: 180 conflicts with 575
+     - Unknown: 180 conflicts with 665
+     - Unknown: 180 conflicts with 224B
+     - Unknown: 180 conflicts with 235
+     - Unknown: 180 conflicts with 252A
+     - Unknown: 180 conflicts with 260
+     - Unknown: 180 conflicts with 312
+     - Unknown: 180 conflicts with 340
+     - Unknown: 180 conflicts with 474
+     - Unknown: 180 conflicts with 630
      - Unknown: 191/291T conflicts with 236
-     - Unknown: 191/291T conflicts with 236
-     - Unknown: 191/291T conflicts with 252B
-     - Unknown: 191/291T conflicts with 324
      - Unknown: 191/291T conflicts with 428
-     - Unknown: 224A conflicts with 235
-     - Unknown: 224A conflicts with 256
-     - Unknown: 224A conflicts with 301R
-     - Unknown: 224A conflicts with 404
-     - Unknown: 224A conflicts with 470
-     - Unknown: 224A conflicts with 479
-     - Unknown: 224A conflicts with 235
-     - Unknown: 224A conflicts with 236
-     - Unknown: 224A conflicts with 312B
-     - Unknown: 224A conflicts with 312B
      - Unknown: 224A conflicts with 324
-     - Unknown: 224A conflicts with 329
      - Unknown: 224A conflicts with 340
-     - Unknown: 224A conflicts with 356
-     - Unknown: 224A conflicts with 428
-     - Unknown: 224A conflicts with 452
-     - Unknown: 224A conflicts with 574
+     - Unknown: 224A conflicts with 393
+     - Unknown: 224A conflicts with 401R
+     - Unknown: 224A conflicts with 556
+     - Unknown: 224A conflicts with 704R
+     - Unknown: 224B conflicts with 235
+     - Unknown: 224B conflicts with 240
+     - Unknown: 224B conflicts with 270
+     - Unknown: 224B conflicts with 312
+     - Unknown: 224B conflicts with 483T
+     - Unknown: 224B conflicts with 493
+     - Unknown: 224B conflicts with 655
+     - Unknown: 224B conflicts with 235
+     - Unknown: 224B conflicts with 252A
+     - Unknown: 224B conflicts with 260
+     - Unknown: 224B conflicts with 312
+     - Unknown: 224B conflicts with 340
+     - Unknown: 224B conflicts with 474
+     - Unknown: 224B conflicts with 630
      - Unknown: 235 conflicts with 236
-     - Unknown: 235 conflicts with 236
-     - Unknown: 235 conflicts with 252B
-     - Unknown: 235 conflicts with 312B
-     - Unknown: 235 conflicts with 324
-     - Unknown: 235 conflicts with 329
-     - Unknown: 235 conflicts with 340
-     - Unknown: 235 conflicts with 356
-     - Unknown: 235 conflicts with 452
-     - Unknown: 235 conflicts with 574
-     - Unknown: 235 conflicts with 256
      - Unknown: 235 conflicts with 301R
-     - Unknown: 235 conflicts with 404
-     - Unknown: 235 conflicts with 470
-     - Unknown: 235 conflicts with 479
-     - Unknown: 235 conflicts with 236
-     - Unknown: 235 conflicts with 236
-     - Unknown: 235 conflicts with 240
-     - Unknown: 235 conflicts with 252B
-     - Unknown: 235 conflicts with 324
+     - Unknown: 235 conflicts with 330
+     - Unknown: 235 conflicts with 340
      - Unknown: 235 conflicts with 393
-     - Unknown: 235 conflicts with 401R
-     - Unknown: 235 conflicts with 460
+     - Unknown: 235 conflicts with 404
+     - Unknown: 235 conflicts with 405
      - Unknown: 235 conflicts with 473
-     - Unknown: 235 conflicts with 474
      - Unknown: 235 conflicts with 601R
      - Unknown: 235 conflicts with 240
-     - Unknown: 235 conflicts with 340
-     - Unknown: 235 conflicts with 452
-     - Unknown: 235 conflicts with 482T
+     - Unknown: 235 conflicts with 270
+     - Unknown: 235 conflicts with 312
+     - Unknown: 235 conflicts with 483T
      - Unknown: 235 conflicts with 493
-     - Unknown: 235 conflicts with 501R
-     - Unknown: 235 conflicts with 601RB
-     - Unknown: 235 conflicts with 704R
+     - Unknown: 235 conflicts with 655
+     - Unknown: 235 conflicts with 252A
+     - Unknown: 235 conflicts with 260
+     - Unknown: 235 conflicts with 312
+     - Unknown: 235 conflicts with 404
+     - Unknown: 235 conflicts with 452
+     - Unknown: 235 conflicts with 455
+     - Unknown: 235 conflicts with 465
+     - Unknown: 235 conflicts with 481T
+     - Unknown: 235 conflicts with 252A
+     - Unknown: 235 conflicts with 260
+     - Unknown: 235 conflicts with 312
+     - Unknown: 235 conflicts with 340
+     - Unknown: 235 conflicts with 474
+     - Unknown: 235 conflicts with 630
      - Unknown: 235E conflicts with 345E
      - Unknown: 236 conflicts with 240
-     - Unknown: 236 conflicts with 252B
-     - Unknown: 236 conflicts with 393
-     - Unknown: 236 conflicts with 401R
-     - Unknown: 236 conflicts with 473
+     - Unknown: 236 conflicts with 256
+     - Unknown: 236 conflicts with 270
+     - Unknown: 236 conflicts with 301R
+     - Unknown: 236 conflicts with 301R
+     - Unknown: 236 conflicts with 329
+     - Unknown: 236 conflicts with 452
+     - Unknown: 236 conflicts with 466
      - Unknown: 236 conflicts with 474
-     - Unknown: 236 conflicts with 601R
+     - Unknown: 236 conflicts with 513
+     - Unknown: 236 conflicts with 575
+     - Unknown: 236 conflicts with 665
+     - Unknown: 236 conflicts with 677
+     - Unknown: 236 conflicts with 712
      - Unknown: 236 conflicts with 240
-     - Unknown: 236 conflicts with 324
-     - Unknown: 236 conflicts with 393
-     - Unknown: 236 conflicts with 401R
-     - Unknown: 236 conflicts with 460
-     - Unknown: 236 conflicts with 473
+     - Unknown: 236 conflicts with 256
+     - Unknown: 236 conflicts with 270
+     - Unknown: 236 conflicts with 301R
+     - Unknown: 236 conflicts with 466
      - Unknown: 236 conflicts with 474
+     - Unknown: 236 conflicts with 677
+     - Unknown: 236 conflicts with 712
+     - Unknown: 236 conflicts with 301R
+     - Unknown: 236 conflicts with 330
+     - Unknown: 236 conflicts with 340
+     - Unknown: 236 conflicts with 393
+     - Unknown: 236 conflicts with 404
+     - Unknown: 236 conflicts with 405
+     - Unknown: 236 conflicts with 428
+     - Unknown: 236 conflicts with 473
      - Unknown: 236 conflicts with 601R
-     - Unknown: 236 conflicts with 252B
-     - Unknown: 236 conflicts with 312B
-     - Unknown: 236 conflicts with 329
-     - Unknown: 236 conflicts with 340
-     - Unknown: 236 conflicts with 356
-     - Unknown: 236 conflicts with 428
-     - Unknown: 236 conflicts with 452
-     - Unknown: 236 conflicts with 574
-     - Unknown: 236 conflicts with 312B
-     - Unknown: 236 conflicts with 312B
-     - Unknown: 236 conflicts with 324
-     - Unknown: 236 conflicts with 329
-     - Unknown: 236 conflicts with 340
-     - Unknown: 236 conflicts with 356
-     - Unknown: 236 conflicts with 428
-     - Unknown: 236 conflicts with 452
-     - Unknown: 236 conflicts with 574
-     - Unknown: 240 conflicts with 260
+     - Unknown: 240 conflicts with 270
+     - Unknown: 240 conflicts with 312
+     - Unknown: 240 conflicts with 483T
+     - Unknown: 240 conflicts with 493
+     - Unknown: 240 conflicts with 655
+     - Unknown: 240 conflicts with 256
      - Unknown: 240 conflicts with 270
      - Unknown: 240 conflicts with 301R
-     - Unknown: 240 conflicts with 312
-     - Unknown: 240 conflicts with 340
-     - Unknown: 240 conflicts with 355
-     - Unknown: 240 conflicts with 405
-     - Unknown: 240 conflicts with 465
-     - Unknown: 240 conflicts with 674
-     - Unknown: 240 conflicts with 270
-     - Unknown: 240 conflicts with 312
-     - Unknown: 240 conflicts with 340
-     - Unknown: 240 conflicts with 401RT
-     - Unknown: 240 conflicts with 418
-     - Unknown: 240 conflicts with 430
-     - Unknown: 240 conflicts with 653
-     - Unknown: 240 conflicts with 673
-     - Unknown: 240 conflicts with 340
-     - Unknown: 240 conflicts with 452
-     - Unknown: 240 conflicts with 482T
-     - Unknown: 240 conflicts with 493
-     - Unknown: 240 conflicts with 501R
-     - Unknown: 240 conflicts with 601RB
-     - Unknown: 240 conflicts with 704R
-     - Unknown: 240 conflicts with 260C
-     - Unknown: 240 conflicts with 401R
-     - Unknown: 240 conflicts with 404
-     - Unknown: 240 conflicts with 580
-     - Unknown: 240 conflicts with 670
-     - Unknown: 240 conflicts with 686
-     - Unknown: 240 conflicts with 252B
-     - Unknown: 240 conflicts with 324
-     - Unknown: 240 conflicts with 393
-     - Unknown: 240 conflicts with 401R
-     - Unknown: 240 conflicts with 460
-     - Unknown: 240 conflicts with 473
+     - Unknown: 240 conflicts with 466
      - Unknown: 240 conflicts with 474
-     - Unknown: 240 conflicts with 601R
-     - Unknown: 252B conflicts with 393
-     - Unknown: 252B conflicts with 401R
-     - Unknown: 252B conflicts with 473
-     - Unknown: 252B conflicts with 474
-     - Unknown: 252B conflicts with 601R
-     - Unknown: 252B conflicts with 312B
-     - Unknown: 252B conflicts with 329
-     - Unknown: 252B conflicts with 340
-     - Unknown: 252B conflicts with 356
-     - Unknown: 252B conflicts with 428
-     - Unknown: 252B conflicts with 452
-     - Unknown: 252B conflicts with 574
+     - Unknown: 240 conflicts with 677
+     - Unknown: 240 conflicts with 712
+     - Unknown: 252A conflicts with 260
+     - Unknown: 252A conflicts with 312
+     - Unknown: 252A conflicts with 404
+     - Unknown: 252A conflicts with 452
+     - Unknown: 252A conflicts with 455
+     - Unknown: 252A conflicts with 465
+     - Unknown: 252A conflicts with 481T
+     - Unknown: 252A conflicts with 260
+     - Unknown: 252A conflicts with 312
+     - Unknown: 252A conflicts with 340
+     - Unknown: 252A conflicts with 474
+     - Unknown: 252A conflicts with 630
+     - Unknown: 256 conflicts with 270
      - Unknown: 256 conflicts with 301R
-     - Unknown: 256 conflicts with 404
-     - Unknown: 256 conflicts with 470
-     - Unknown: 256 conflicts with 479
-     - Unknown: 260 conflicts with 270
-     - Unknown: 260 conflicts with 301R
+     - Unknown: 256 conflicts with 466
+     - Unknown: 256 conflicts with 474
+     - Unknown: 256 conflicts with 677
+     - Unknown: 256 conflicts with 712
+     - Unknown: 260 conflicts with 312
+     - Unknown: 260 conflicts with 404
+     - Unknown: 260 conflicts with 452
+     - Unknown: 260 conflicts with 455
+     - Unknown: 260 conflicts with 465
+     - Unknown: 260 conflicts with 481T
      - Unknown: 260 conflicts with 312
      - Unknown: 260 conflicts with 340
-     - Unknown: 260 conflicts with 355
-     - Unknown: 260 conflicts with 405
-     - Unknown: 260 conflicts with 465
-     - Unknown: 260 conflicts with 674
-     - Unknown: 260C conflicts with 401R
-     - Unknown: 260C conflicts with 404
-     - Unknown: 260C conflicts with 580
-     - Unknown: 260C conflicts with 670
-     - Unknown: 260C conflicts with 686
+     - Unknown: 260 conflicts with 474
+     - Unknown: 260 conflicts with 630
+     - Unknown: 270 conflicts with 312
+     - Unknown: 270 conflicts with 483T
+     - Unknown: 270 conflicts with 493
+     - Unknown: 270 conflicts with 655
      - Unknown: 270 conflicts with 301R
-     - Unknown: 270 conflicts with 312
-     - Unknown: 270 conflicts with 340
-     - Unknown: 270 conflicts with 355
-     - Unknown: 270 conflicts with 405
-     - Unknown: 270 conflicts with 465
-     - Unknown: 270 conflicts with 674
-     - Unknown: 270 conflicts with 312
-     - Unknown: 270 conflicts with 340
-     - Unknown: 270 conflicts with 401RT
-     - Unknown: 270 conflicts with 418
-     - Unknown: 270 conflicts with 430
-     - Unknown: 270 conflicts with 653
-     - Unknown: 270 conflicts with 673
-     - Unknown: 301R conflicts with 312
+     - Unknown: 270 conflicts with 466
+     - Unknown: 270 conflicts with 474
+     - Unknown: 270 conflicts with 677
+     - Unknown: 270 conflicts with 712
+     - Unknown: 301R conflicts with 330
      - Unknown: 301R conflicts with 340
-     - Unknown: 301R conflicts with 355
-     - Unknown: 301R conflicts with 405
-     - Unknown: 301R conflicts with 465
-     - Unknown: 301R conflicts with 674
+     - Unknown: 301R conflicts with 393
      - Unknown: 301R conflicts with 404
-     - Unknown: 301R conflicts with 470
-     - Unknown: 301R conflicts with 479
-     - Unknown: 312 conflicts with 340
-     - Unknown: 312 conflicts with 401RT
-     - Unknown: 312 conflicts with 418
-     - Unknown: 312 conflicts with 430
-     - Unknown: 312 conflicts with 653
-     - Unknown: 312 conflicts with 673
-     - Unknown: 312 conflicts with 340
-     - Unknown: 312 conflicts with 355
-     - Unknown: 312 conflicts with 405
+     - Unknown: 301R conflicts with 405
+     - Unknown: 301R conflicts with 473
+     - Unknown: 301R conflicts with 601R
+     - Unknown: 301R conflicts with 324
+     - Unknown: 301R conflicts with 329
+     - Unknown: 301R conflicts with 452
+     - Unknown: 301R conflicts with 513
+     - Unknown: 301R conflicts with 575
+     - Unknown: 301R conflicts with 665
+     - Unknown: 301R conflicts with 466
+     - Unknown: 301R conflicts with 474
+     - Unknown: 301R conflicts with 677
+     - Unknown: 301R conflicts with 712
+     - Unknown: 312 conflicts with 404
+     - Unknown: 312 conflicts with 452
+     - Unknown: 312 conflicts with 455
      - Unknown: 312 conflicts with 465
-     - Unknown: 312 conflicts with 674
-     - Unknown: 312B conflicts with 324
-     - Unknown: 312B conflicts with 329
-     - Unknown: 312B conflicts with 340
-     - Unknown: 312B conflicts with 356
-     - Unknown: 312B conflicts with 452
-     - Unknown: 312B conflicts with 574
-     - Unknown: 312B conflicts with 324
-     - Unknown: 312B conflicts with 340
+     - Unknown: 312 conflicts with 481T
+     - Unknown: 312 conflicts with 340
+     - Unknown: 312 conflicts with 474
+     - Unknown: 312 conflicts with 630
+     - Unknown: 312 conflicts with 483T
+     - Unknown: 312 conflicts with 493
+     - Unknown: 312 conflicts with 655
+     - Unknown: 324 conflicts with 340
      - Unknown: 324 conflicts with 393
      - Unknown: 324 conflicts with 401R
-     - Unknown: 324 conflicts with 460
-     - Unknown: 324 conflicts with 473
-     - Unknown: 324 conflicts with 474
-     - Unknown: 324 conflicts with 601R
-     - Unknown: 324 conflicts with 329
+     - Unknown: 324 conflicts with 486
+     - Unknown: 324 conflicts with 556
+     - Unknown: 324 conflicts with 704R
      - Unknown: 324 conflicts with 340
-     - Unknown: 324 conflicts with 356
-     - Unknown: 324 conflicts with 428
+     - Unknown: 324 conflicts with 393
+     - Unknown: 324 conflicts with 401R
+     - Unknown: 324 conflicts with 556
+     - Unknown: 324 conflicts with 704R
+     - Unknown: 324 conflicts with 329
      - Unknown: 324 conflicts with 452
-     - Unknown: 324 conflicts with 574
-     - Unknown: 329 conflicts with 340
-     - Unknown: 329 conflicts with 356
+     - Unknown: 324 conflicts with 513
+     - Unknown: 324 conflicts with 575
+     - Unknown: 324 conflicts with 665
      - Unknown: 329 conflicts with 452
-     - Unknown: 329 conflicts with 574
-     - Unknown: 340 conflicts with 356
-     - Unknown: 340 conflicts with 452
-     - Unknown: 340 conflicts with 574
-     - Unknown: 340 conflicts with 355
+     - Unknown: 329 conflicts with 513
+     - Unknown: 329 conflicts with 575
+     - Unknown: 329 conflicts with 665
+     - Unknown: 330 conflicts with 340
+     - Unknown: 330 conflicts with 393
+     - Unknown: 330 conflicts with 404
+     - Unknown: 330 conflicts with 405
+     - Unknown: 330 conflicts with 473
+     - Unknown: 330 conflicts with 601R
+     - Unknown: 340 conflicts with 393
+     - Unknown: 340 conflicts with 404
      - Unknown: 340 conflicts with 405
-     - Unknown: 340 conflicts with 465
-     - Unknown: 340 conflicts with 674
-     - Unknown: 340 conflicts with 401RT
-     - Unknown: 340 conflicts with 418
-     - Unknown: 340 conflicts with 430
-     - Unknown: 340 conflicts with 452
-     - Unknown: 340 conflicts with 482T
-     - Unknown: 340 conflicts with 493
-     - Unknown: 340 conflicts with 501R
-     - Unknown: 340 conflicts with 601RB
-     - Unknown: 340 conflicts with 653
-     - Unknown: 340 conflicts with 673
+     - Unknown: 340 conflicts with 473
+     - Unknown: 340 conflicts with 601R
+     - Unknown: 340 conflicts with 474
+     - Unknown: 340 conflicts with 630
+     - Unknown: 340 conflicts with 393
+     - Unknown: 340 conflicts with 401R
+     - Unknown: 340 conflicts with 486
+     - Unknown: 340 conflicts with 556
      - Unknown: 340 conflicts with 704R
-     - Unknown: 355 conflicts with 405
-     - Unknown: 355 conflicts with 465
-     - Unknown: 355 conflicts with 674
-     - Unknown: 356 conflicts with 452
-     - Unknown: 356 conflicts with 574
-     - Unknown: 393 conflicts with 401R
-     - Unknown: 393 conflicts with 460
+     - Unknown: 393 conflicts with 404
+     - Unknown: 393 conflicts with 405
      - Unknown: 393 conflicts with 473
-     - Unknown: 393 conflicts with 474
      - Unknown: 393 conflicts with 601R
-     - Unknown: 401R conflicts with 404
-     - Unknown: 401R conflicts with 580
-     - Unknown: 401R conflicts with 670
-     - Unknown: 401R conflicts with 686
-     - Unknown: 401R conflicts with 460
-     - Unknown: 401R conflicts with 473
-     - Unknown: 401R conflicts with 474
-     - Unknown: 401R conflicts with 601R
-     - Unknown: 401RT conflicts with 418
-     - Unknown: 401RT conflicts with 430
-     - Unknown: 401RT conflicts with 653
-     - Unknown: 401RT conflicts with 673
-     - Unknown: 404 conflicts with 470
-     - Unknown: 404 conflicts with 479
-     - Unknown: 404 conflicts with 580
-     - Unknown: 404 conflicts with 670
-     - Unknown: 404 conflicts with 686
-     - Unknown: 405 conflicts with 465
-     - Unknown: 405 conflicts with 674
-     - Unknown: 418 conflicts with 430
-     - Unknown: 418 conflicts with 653
-     - Unknown: 418 conflicts with 673
-     - Unknown: 430 conflicts with 653
-     - Unknown: 430 conflicts with 673
-     - Unknown: 452 conflicts with 482T
-     - Unknown: 452 conflicts with 493
-     - Unknown: 452 conflicts with 501R
-     - Unknown: 452 conflicts with 601RB
-     - Unknown: 452 conflicts with 704R
-     - Unknown: 452 conflicts with 574
-     - Unknown: 460 conflicts with 473
-     - Unknown: 460 conflicts with 474
-     - Unknown: 460 conflicts with 601R
-     - Unknown: 465 conflicts with 674
-     - Unknown: 470 conflicts with 479
-     - Unknown: 473 conflicts with 474
+     - Unknown: 393 conflicts with 401R
+     - Unknown: 393 conflicts with 486
+     - Unknown: 393 conflicts with 556
+     - Unknown: 393 conflicts with 704R
+     - Unknown: 401R conflicts with 486
+     - Unknown: 401R conflicts with 556
+     - Unknown: 401R conflicts with 704R
+     - Unknown: 404 conflicts with 452
+     - Unknown: 404 conflicts with 455
+     - Unknown: 404 conflicts with 465
+     - Unknown: 404 conflicts with 481T
+     - Unknown: 404 conflicts with 405
+     - Unknown: 404 conflicts with 473
+     - Unknown: 404 conflicts with 601R
+     - Unknown: 405 conflicts with 473
+     - Unknown: 405 conflicts with 601R
+     - Unknown: 452 conflicts with 513
+     - Unknown: 452 conflicts with 575
+     - Unknown: 452 conflicts with 665
+     - Unknown: 452 conflicts with 455
+     - Unknown: 452 conflicts with 465
+     - Unknown: 452 conflicts with 481T
+     - Unknown: 455 conflicts with 465
+     - Unknown: 455 conflicts with 481T
+     - Unknown: 465 conflicts with 481T
+     - Unknown: 466 conflicts with 474
+     - Unknown: 466 conflicts with 677
+     - Unknown: 466 conflicts with 712
      - Unknown: 473 conflicts with 601R
-     - Unknown: 474 conflicts with 601R
-     - Unknown: 482T conflicts with 493
-     - Unknown: 482T conflicts with 501R
-     - Unknown: 482T conflicts with 601RB
-     - Unknown: 482T conflicts with 704R
-     - Unknown: 493 conflicts with 501R
-     - Unknown: 493 conflicts with 601RB
-     - Unknown: 493 conflicts with 704R
-     - Unknown: 501R conflicts with 601RB
-     - Unknown: 501R conflicts with 704R
-     - Unknown: 580 conflicts with 670
-     - Unknown: 580 conflicts with 686
-     - Unknown: 601RB conflicts with 704R
-     - Unknown: 653 conflicts with 673
-     - Unknown: 670 conflicts with 686
+     - Unknown: 474 conflicts with 630
+     - Unknown: 474 conflicts with 677
+     - Unknown: 474 conflicts with 712
+     - Unknown: 483T conflicts with 493
+     - Unknown: 483T conflicts with 655
+     - Unknown: 486 conflicts with 556
+     - Unknown: 486 conflicts with 704R
+     - Unknown: 493 conflicts with 655
+     - Unknown: 513 conflicts with 575
+     - Unknown: 513 conflicts with 665
+     - Unknown: 556 conflicts with 704R
+     - Unknown: 575 conflicts with 665
+     - Unknown: 677 conflicts with 712
 
 
 6. ROOM UTILIZATION BY PRIORITY
 --------------------------------------------------------------------------------
    Priority   Sections   Students   Avg Utilization
    --------------------------------------------------
-          1         40       1416          45.5%
-          2         40       2301          35.4%
-          3          1         30           8.8%
-         99          2          6           0.3%
+          1         43       1279          34.0%
+          2         26       1596          30.8%
+          3          7        490          20.5%
+         99          1         38           3.8%
 
 7. MEETING PATTERN DISTRIBUTION
 --------------------------------------------------------------------------------
    Pattern              Sections
    ------------------------------
-   T,Th                       35  (42.2%)
-   M,W                        33  (39.8%)
-   M,W,F                      13  (15.7%)
-   F                           2  (2.4%)
+   M,W                        35  (45.5%)
+   T,Th                       32  (41.6%)
+   M,W,F                       8  (10.4%)
+   F                           2  (2.6%)
 
 8. TOP INSTRUCTOR TEACHING LOADS
 --------------------------------------------------------------------------------
    Instructor                      Sections   Students
    -------------------------------------------------------
-   Reynolds                                   5        343
-   Barker                                     4        182
-   Jensen                                     4        159
-   Bean                                       3        221
+   Bean                                       4        268
    Dougal, Duane                              3         90
-   Crandall                                   3         90
-   Goodrich                                   3         90
-   Wilkerson                                  3        101
-   MJ                                         3        114
-   Farrell                                    3         90
-   Williams                                   3        120
-   Page                                       2        215
-   Richardson                                 2        230
-   Stephens                                   2        180
-   Mercer                                     2        174
+   Stephens                                   3        396
+   MJ                                         3         60
+   Barker                                     3        239
+   Wilkerson                                  3        255
+   Jensen                                     3        160
+   Reynolds                                   3        156
+   Jenkins                                    3        120
+   Richardson                                 2        222
+   Ringger                                    2        117
+   Mercer                                     2         76
+   Archibald                                  2         60
+   Rodham                                     2        111
+   Ng                                         2         67
 
 9. OUTPUT FILES GENERATED
 --------------------------------------------------------------------------------
 
    Schedule files (sorted by course):
-     - results2/schedule_Fall_2026.csv
+     - results2/schedule_Winter_2027.csv
 
    Schedule files (sorted by instructor):
-     - results2/schedule_Fall_2026_by_instructor.csv
+     - results2/schedule_Winter_2027_by_instructor.csv
 
    Conflict reports:
-     - results2/conflicts_Fall_2026.csv
+     - results2/conflicts_Winter_2027.csv
 
    Room schedule grids:
-     - results2/room_schedule_Fall_2026.csv
+     - results2/room_schedule_Winter_2027.csv
 
 ================================================================================
 END OF REPORT
