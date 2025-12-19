@@ -8,9 +8,9 @@ Winter 2027,235E,1,"Barton, Dylan",0,TMCB,120,41,1,"T,Th",05:00 PM,06:15 PM,0.0%
 Winter 2027,110,1,Bean,200,JKB,1102,285,2,"M,W",09:30 AM,10:45 AM,70.2%
 Winter 2027,301R,1,Bean,0,JKB,3106,92,2,"M,W",02:00 PM,03:15 PM,0.0%
 Winter 2027,312,1,Bean,30,JKB,3108,306,2,"T,Th",02:00 PM,03:15 PM,9.8%
-Winter 2027,401R,1,Bean,38,JKB,3106,92,2,"M,W",11:00 AM,12:15 PM,41.3%
+Winter 2027,401R,1,Bean,38,TBD,TBD,999,99,"M,W",11:00 AM,12:15 PM,3.8%
 Winter 2027,465,1,"Clift, Fred",0,TMCB,120,41,1,"T,Th",02:00 PM,03:15 PM,0.0%
-Winter 2027,111E,1,"Cluff, Andrew",0,TMCB,134,42,1,"T,Th",06:30 PM,07:45 PM,0.0%
+Winter 2027,111E,1,"Cluff, Andrew",0,CB,377,342,1,"T,Th",05:00 PM,06:15 PM,0.0%
 Winter 2027,324,1,Deccio,55,TMCB,1170,203,1,"M,W,F",10:00 AM,10:50 AM,27.1%
 Winter 2027,324,2,Deccio,74,TMCB,1170,203,1,"M,W,F",09:00 AM,09:50 AM,36.5%
 Winter 2027,110,2,"Dougal, Duane",30,TMCB,1170,203,1,"T,Th",02:00 PM,03:15 PM,14.8%
@@ -65,12 +65,12 @@ Winter 2027,111,2,Stephens,200,JKB,3108,306,2,"M,W",11:00 AM,12:15 PM,65.4%
 Winter 2027,235,4,Stephens,180,JKB,1102,285,2,"T,Th",02:00 PM,03:15 PM,63.2%
 Winter 2027,301R,3,Stephens,16,MARB,130,72,1,"M,W",12:30 PM,01:45 PM,22.2%
 Winter 2027,483T,1,Team:MJ/Snell,30,MARB,130,72,1,"T,Th",09:30 AM,10:45 AM,41.7%
-Winter 2027,480T,1,"Team:Rodham/Sillito/Baird, Brad",30,MARB,130,72,1,"T,Th",02:00 PM,03:15 PM,41.7%
-Winter 2027,481T,1,"Team:Rodham/Sillito/Baird, Brad",30,TMCB,134,42,1,"T,Th",12:30 PM,01:45 PM,71.4%
+Winter 2027,480T,1,"Team:Rodham/Sillito/Baird, Brad",30,MARB,130,72,1,"T,Th",03:30 PM,04:45 PM,41.7%
+Winter 2027,481T,1,"Team:Rodham/Sillito/Baird, Brad",30,MARB,130,72,1,"T,Th",02:00 PM,03:15 PM,41.7%
 Winter 2027,191/291T,1,"Team:Zappala/Dougal, Duane",200,TMCB,1170,203,1,F,02:00 PM,04:30 PM,98.5%
 Winter 2027,401R,2,Toborg,0,TMCB,120,41,1,"M,W",09:30 AM,10:45 AM,0.0%
 Winter 2027,513,1,Warnick,11,HBLL,3718,59,1,"M,W",11:00 AM,12:15 PM,18.6%
-Winter 2027,712,1,Warnick,30,TMCB,134,42,1,"T,Th",09:30 AM,10:45 AM,71.4%
+Winter 2027,712,1,Warnick,30,TMCB,197,30,2,"M,W",12:30 PM,01:45 PM,100.0%
 Winter 2027,428,1,"Webster, Bruce",0,TMCB,120,41,1,F,02:00 PM,04:30 PM,0.0%
 Winter 2027,240,3,Wilkerson,195,CB,377,342,3,"M,W",12:30 PM,01:45 PM,57.0%
 Winter 2027,340,2,Wilkerson,30,JKB,1102,285,2,"T,Th",12:00 PM,01:50 PM,10.5%
