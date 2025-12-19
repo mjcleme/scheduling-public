@@ -7,6 +7,7 @@
 
 - See if the [classes](faculty_teaching_summary.csv) you are scheduled to teach are what you expected.
 - See if the time and location will work for you.
+- You can also look at the labs if you are interested for [Fall](lab_schedule_Fall_2026.csv), [Winter](lab_schedule_Winter_2026.csv), [Spring](lab_schedule_Spring_2026.csv), [Summer](lab_schedule_Summer_2026.csv)
 
 ### Notation
 The room schedule files show when rooms are used ([Fall](room_schedule_Fall_2026.csv), [Winter](room_schedule_Winter_2027.csv), [Spring](room_schedule_Spring_2027.csv), [Summer](room_schedule_Summer_2027.csv))
