@@ -1,8 +1,8 @@
-Building,Room,Priority,F 02:00 PM-04:30 PM,"M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W 02:00 PM-03:50 PM","M,W 03:30 PM-04:45 PM","M,W 05:00 PM-06:15 PM","M,W,F 09:00 AM-09:50 AM","M,W,F 10:00 AM-10:50 AM","M,W,F 11:00 AM-11:50 AM","M,W,F 12:30 PM-01:45 PM","M,W,F 01:00 PM-01:50 PM","M,W,F 02:00 PM-02:50 PM","M,W,F 03:00 PM-03:50 PM","T,Th 09:00 AM-10:50 AM","T,Th 09:30 AM-10:45 AM","T,Th 12:30 PM-01:45 PM","T,Th 01:00 PM-02:50 PM","T,Th 02:00 PM-03:15 PM","T,Th 03:30 PM-04:45 PM","T,Th 05:00 PM-06:15 PM",Online
+Building,Room,Priority,F 02:00 PM-04:30 PM,"M,W 09:30 AM-10:45 AM","M,W 11:00 AM-12:15 PM","M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:50 PM","M,W 02:00 PM-03:15 PM","M,W 03:30 PM-04:45 PM","M,W 05:00 PM-06:15 PM","M,W,F 09:00 AM-09:50 AM","M,W,F 10:00 AM-10:50 AM","M,W,F 11:00 AM-11:50 AM","M,W,F 12:30 PM-01:45 PM","M,W,F 01:00 PM-01:50 PM","M,W,F 02:00 PM-02:50 PM","M,W,F 03:00 PM-03:50 PM","T,Th 09:00 AM-10:50 AM","T,Th 09:30 AM-10:45 AM","T,Th 12:30 PM-01:45 PM","T,Th 01:00 PM-02:50 PM","T,Th 02:00 PM-03:15 PM","T,Th 03:30 PM-04:45 PM","T,Th 05:00 PM-06:15 PM",Online
 BRMB,240,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 CB,377,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 ESC,C215,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-HBLL,3718,1,,X,,,CS 574-1 (Snell),X,,"CS 110E-1 (Hansen, Bruce)",,CS 460-1 (Deccio),,,,X,X,X,CS 312-2 (Farrell),,X,CS 673-1 (Ventura),,,
+HBLL,3718,1,,X,,,X,CS 574-1 (Snell),,"CS 110E-1 (Hansen, Bruce)",,CS 460-1 (Deccio),,,,X,X,X,CS 312-2 (Farrell),,X,CS 673-1 (Ventura),,,
 JFSB,B037,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 JFSB,B092,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 JKB,1102,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -11,8 +11,8 @@ JKB,3108,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 MARB,130,1,,CS 393-1 (Reynolds),CS 256-1 (Hughes),CS 260C-1 (Clement),,,,,X,X,X,X,X,,,X,CS 355-1 (Egbert),CS 704R-1 (Richardson),X,CS 418-1 (Williams),,,
 MCKB,220,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 TBD,TBD,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-TMCB,1170,1,"CS 191/291T-1 (Team:Zappala/Dougal, Duane)",X,CS 110-1 (Bean),CS 240-4 (Rodham),"CS 111-5 (Giles, Steven)",X,,,CS 236-1 (Goodrich),CS 236-2 (Goodrich),X,X,X,X,X,CS 340-2 (Wilkerson),X,"CS 110-4 (Dougal, Duane)",X,"CS 110-3 (Dougal, Duane)",,,
-TMCB,120,1,"CS 428-1 (Webster, Bruce)",CS 401R-3 (Toborg),CS 301R-2 (MJ),X,CS 356-1 (Jones MD),X,,,X,X,X,CS 580-1 (Warnick),X,X,X,X,"CS 405-1 (Earnshaw, Craig)",CS 493-1 (Farrell),X,CS 312-1 (Farrell),,"CS 345E-1 (Judd, Glenn)",
-TMCB,134,1,,CS 601R-1 (Ringger),CS 479-1 (Ringger),CS 401R-2 (Hughes),CS 312B-1 (Williams),X,CS 312B-2 (Williams),,X,X,X,X,X,X,X,X,CS 674-1 (Wingate),CS 501R-1 (Grimsman),X,CS 401RT-1 (Team:Grimsman/Killian),,"CS 235E-1 (Barton, Dylan)",
+TMCB,1170,1,"CS 191/291T-1 (Team:Zappala/Dougal, Duane)",X,CS 110-1 (Bean),CS 240-4 (Rodham),X,"CS 111-5 (Giles, Steven)",,,CS 236-1 (Goodrich),CS 236-2 (Goodrich),X,X,X,X,X,CS 340-2 (Wilkerson),X,"CS 110-4 (Dougal, Duane)",X,"CS 110-3 (Dougal, Duane)",,,
+TMCB,120,1,"CS 428-1 (Webster, Bruce)",CS 401R-3 (Toborg),CS 301R-2 (MJ),X,X,CS 356-1 (Jones MD),,,X,X,X,CS 580-1 (Warnick),X,X,X,X,"CS 405-1 (Earnshaw, Craig)",CS 493-1 (Farrell),X,CS 312-1 (Farrell),,"CS 345E-1 (Judd, Glenn)",
+TMCB,134,1,,CS 601R-1 (Ringger),CS 479-1 (Ringger),CS 401R-2 (Hughes),X,CS 312B-1 (Williams),CS 312B-2 (Williams),,X,X,X,X,X,X,X,X,CS 674-1 (Wingate),CS 501R-1 (Grimsman),X,CS 401RT-1 (Team:Grimsman/Killian),,"CS 235E-1 (Barton, Dylan)",
 TMCB,SMALL1,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 Online,Online,,,,,,,,,,,,,,,,,,,,,,,,"CS 110-O (Jones, Angela); CS 235-O (Crandall); CS 240-O (Rodham); CS 111-O (Stephens); CS 260-O (Ventura)"
