@@ -1,17 +1,17 @@
 ================================================================================
 COURSE SCHEDULING SYSTEM - SUMMARY REPORT
 ================================================================================
-Generated: 2025-12-19 14:24:01
+Generated: 2025-12-19 14:39:43
 
 1. OVERALL SUMMARY
 --------------------------------------------------------------------------------
-   Total sections scheduled:  77
-   Total students enrolled:   3,403
-   Average room utilization:  31.3%
+   Total sections scheduled:  76
+   Total students enrolled:   3,393
+   Average room utilization:  31.5%
 
    Semester        Sections   Students   Utilization   Conflicts
    --------------------------------------------------------------
-   Winter 2027           77       3403        31.3%         317
+   Winter 2027           76       3393        31.5%         307
 
 2. GLOBAL CONSTRAINTS
 --------------------------------------------------------------------------------
@@ -67,7 +67,7 @@ Generated: 2025-12-19 14:24:01
 
 5. INSTRUCTOR CONFLICTS
 --------------------------------------------------------------------------------
-   Total conflicts: 317
+   Total conflicts: 307
 
    Winter 2027:
      - Unknown: 110 conflicts with 110A
@@ -79,7 +79,6 @@ Generated: 2025-12-19 14:24:01
      - Unknown: 110 conflicts with 401R
      - Unknown: 110 conflicts with 486
      - Unknown: 110 conflicts with 556
-     - Unknown: 110 conflicts with 704R
      - Unknown: 110 conflicts with 235
      - Unknown: 110 conflicts with 252A
      - Unknown: 110 conflicts with 260
@@ -97,7 +96,6 @@ Generated: 2025-12-19 14:24:01
      - Unknown: 110A conflicts with 401R
      - Unknown: 110A conflicts with 486
      - Unknown: 110A conflicts with 556
-     - Unknown: 110A conflicts with 704R
      - Unknown: 111 conflicts with 236
      - Unknown: 111 conflicts with 236
      - Unknown: 111 conflicts with 240
@@ -150,7 +148,6 @@ Generated: 2025-12-19 14:24:01
      - Unknown: 224A conflicts with 393
      - Unknown: 224A conflicts with 401R
      - Unknown: 224A conflicts with 556
-     - Unknown: 224A conflicts with 704R
      - Unknown: 224B conflicts with 235
      - Unknown: 224B conflicts with 240
      - Unknown: 224B conflicts with 270
@@ -308,12 +305,10 @@ Generated: 2025-12-19 14:24:01
      - Unknown: 324 conflicts with 401R
      - Unknown: 324 conflicts with 486
      - Unknown: 324 conflicts with 556
-     - Unknown: 324 conflicts with 704R
      - Unknown: 324 conflicts with 340
      - Unknown: 324 conflicts with 393
      - Unknown: 324 conflicts with 401R
      - Unknown: 324 conflicts with 556
-     - Unknown: 324 conflicts with 704R
      - Unknown: 324 conflicts with 329
      - Unknown: 324 conflicts with 452
      - Unknown: 324 conflicts with 513
@@ -340,7 +335,6 @@ Generated: 2025-12-19 14:24:01
      - Unknown: 340 conflicts with 401R
      - Unknown: 340 conflicts with 486
      - Unknown: 340 conflicts with 556
-     - Unknown: 340 conflicts with 704R
      - Unknown: 393 conflicts with 404
      - Unknown: 393 conflicts with 405
      - Unknown: 393 conflicts with 473
@@ -348,10 +342,8 @@ Generated: 2025-12-19 14:24:01
      - Unknown: 393 conflicts with 401R
      - Unknown: 393 conflicts with 486
      - Unknown: 393 conflicts with 556
-     - Unknown: 393 conflicts with 704R
      - Unknown: 401R conflicts with 486
      - Unknown: 401R conflicts with 556
-     - Unknown: 401R conflicts with 704R
      - Unknown: 404 conflicts with 452
      - Unknown: 404 conflicts with 455
      - Unknown: 404 conflicts with 465
@@ -380,11 +372,9 @@ Generated: 2025-12-19 14:24:01
      - Unknown: 483T conflicts with 493
      - Unknown: 483T conflicts with 655
      - Unknown: 486 conflicts with 556
-     - Unknown: 486 conflicts with 704R
      - Unknown: 493 conflicts with 655
      - Unknown: 513 conflicts with 575
      - Unknown: 513 conflicts with 665
-     - Unknown: 556 conflicts with 704R
      - Unknown: 575 conflicts with 665
      - Unknown: 677 conflicts with 712
 
@@ -393,7 +383,7 @@ Generated: 2025-12-19 14:24:01
 --------------------------------------------------------------------------------
    Priority   Sections   Students   Avg Utilization
    --------------------------------------------------
-          1         43       1279          34.0%
+          1         42       1269          34.5%
           2         26       1596          30.8%
           3          7        490          20.5%
          99          1         38           3.8%
@@ -402,9 +392,9 @@ Generated: 2025-12-19 14:24:01
 --------------------------------------------------------------------------------
    Pattern              Sections
    ------------------------------
-   M,W                        35  (45.5%)
-   T,Th                       32  (41.6%)
-   M,W,F                       8  (10.4%)
+   M,W                        34  (44.7%)
+   T,Th                       32  (42.1%)
+   M,W,F                       8  (10.5%)
    F                           2  (2.6%)
 
 8. TOP INSTRUCTOR TEACHING LOADS
