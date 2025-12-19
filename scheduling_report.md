@@ -1,17 +1,17 @@
 ================================================================================
 COURSE SCHEDULING SYSTEM - SUMMARY REPORT
 ================================================================================
-Generated: 2025-12-19 14:39:43
+Generated: 2025-12-19 14:47:59
 
 1. OVERALL SUMMARY
 --------------------------------------------------------------------------------
    Total sections scheduled:  76
    Total students enrolled:   3,393
-   Average room utilization:  31.5%
+   Average room utilization:  31.1%
 
    Semester        Sections   Students   Utilization   Conflicts
    --------------------------------------------------------------
-   Winter 2027           76       3393        31.5%         307
+   Winter 2027           76       3393        31.1%         310
 
 2. GLOBAL CONSTRAINTS
 --------------------------------------------------------------------------------
@@ -67,11 +67,10 @@ Generated: 2025-12-19 14:39:43
 
 5. INSTRUCTOR CONFLICTS
 --------------------------------------------------------------------------------
-   Total conflicts: 307
+   Total conflicts: 310
 
    Winter 2027:
      - Unknown: 110 conflicts with 110A
-     - Unknown: 110 conflicts with 224A
      - Unknown: 110 conflicts with 324
      - Unknown: 110 conflicts with 324
      - Unknown: 110 conflicts with 340
@@ -88,7 +87,6 @@ Generated: 2025-12-19 14:39:43
      - Unknown: 110 conflicts with 455
      - Unknown: 110 conflicts with 465
      - Unknown: 110 conflicts with 481T
-     - Unknown: 110A conflicts with 224A
      - Unknown: 110A conflicts with 324
      - Unknown: 110A conflicts with 324
      - Unknown: 110A conflicts with 340
@@ -96,6 +94,7 @@ Generated: 2025-12-19 14:39:43
      - Unknown: 110A conflicts with 401R
      - Unknown: 110A conflicts with 486
      - Unknown: 110A conflicts with 556
+     - Unknown: 111 conflicts with 224A
      - Unknown: 111 conflicts with 236
      - Unknown: 111 conflicts with 236
      - Unknown: 111 conflicts with 240
@@ -143,11 +142,15 @@ Generated: 2025-12-19 14:39:43
      - Unknown: 180 conflicts with 630
      - Unknown: 191/291T conflicts with 236
      - Unknown: 191/291T conflicts with 428
-     - Unknown: 224A conflicts with 324
-     - Unknown: 224A conflicts with 340
-     - Unknown: 224A conflicts with 393
-     - Unknown: 224A conflicts with 401R
-     - Unknown: 224A conflicts with 556
+     - Unknown: 224A conflicts with 236
+     - Unknown: 224A conflicts with 240
+     - Unknown: 224A conflicts with 256
+     - Unknown: 224A conflicts with 270
+     - Unknown: 224A conflicts with 301R
+     - Unknown: 224A conflicts with 466
+     - Unknown: 224A conflicts with 474
+     - Unknown: 224A conflicts with 677
+     - Unknown: 224A conflicts with 712
      - Unknown: 224B conflicts with 235
      - Unknown: 224B conflicts with 240
      - Unknown: 224B conflicts with 270
@@ -383,7 +386,7 @@ Generated: 2025-12-19 14:39:43
 --------------------------------------------------------------------------------
    Priority   Sections   Students   Avg Utilization
    --------------------------------------------------
-          1         42       1269          34.5%
+          1         42       1269          33.7%
           2         26       1596          30.8%
           3          7        490          20.5%
          99          1         38           3.8%
