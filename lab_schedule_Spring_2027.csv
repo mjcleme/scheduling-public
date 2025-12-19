@@ -1,0 +1,6 @@
+Semester,Course,Section,Instructor,Enrollment,Building,Room,Capacity,Priority,Days,Start Time,End Time,Utilization %
+Spring 2027,110L,1,TBD,24,MCKB,331,28,2,"T,Th",09:00 AM,10:50 AM,85.7%
+Spring 2027,110L,2,TBD,24,MCKB,331,28,2,"M,W",05:00 PM,06:50 PM,85.7%
+Spring 2027,111L,1,TBD,24,MCKB,26,30,2,"T,Th",09:00 AM,10:50 AM,80.0%
+Spring 2027,111L,2,TBD,24,TMCB,197,30,2,"T,Th",09:00 AM,10:50 AM,80.0%
+Spring 2027,111L,3,TBD,24,MCKB,220,32,2,"T,Th",09:00 AM,10:50 AM,75.0%
