@@ -1,4 +1,4 @@
-Building,Room,Priority,"M,W 12:30 PM-01:45 PM","M,W 02:00 PM-03:15 PM","M,W,F 12:00 PM-12:50 PM","M,W,F 01:00 PM-01:50 PM",Online
-JKB,3104,1,X,"CS 404-1 (Gates, Darin)",CS 224A-1 (Barker),CS 236-1 (Barker),
-TMCB,136,1,"CS 235-1 (Dougal, Duane)","CS 110-1 (Dougal, Duane)",X,X,
-Online,Online,,,,,,CS 240-O (Rodham)
+Building,Room,Priority,"M,W 08:00 AM-10:30 AM","M,W 11:00 AM-01:30 PM","M,W 02:00 PM-04:30 PM","M,W,F 09:00 AM-10:40 AM","M,W,F 11:00 AM-12:40 PM",Online
+JKB,3104,1,X,X,"CS 404-1 (Gates, Darin)",CS 224A-1 (Barker),CS 236-1 (Barker),
+TMCB,136,1,"CS 235-1 (Dougal, Duane)","CS 110-1 (Dougal, Duane)",,X,X,
+Online,Online,,,,,,,CS 240-O (Rodham)

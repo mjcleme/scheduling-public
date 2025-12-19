@@ -1,7 +1,7 @@
 ================================================================================
 COURSE SCHEDULING SYSTEM - SUMMARY REPORT
 ================================================================================
-Generated: 2025-12-10 23:30:31
+Generated: 2025-12-19 13:02:33
 
 1. OVERALL SUMMARY
 --------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ Generated: 2025-12-10 23:30:31
      - Page: 09:00-12:30
      - Angela: 09:00-12:15
      - Goodrich: 09:00-15:00
-     - Mercer: 09:00-17:00
+     - Mercer: 10:00-17:00
      - Deccio: 9:00-12:00
      - Clift: 14:00-16:00
      - Seamons: 9:00-15:00
@@ -94,16 +94,16 @@ Generated: 2025-12-10 23:30:31
 --------------------------------------------------------------------------------
 
    Schedule files (sorted by course):
-     - results/schedule_Summer_2027.csv
+     - results2/schedule_Summer_2027.csv
 
    Schedule files (sorted by instructor):
-     - results/schedule_Summer_2027_by_instructor.csv
+     - results2/schedule_Summer_2027_by_instructor.csv
 
    Conflict reports:
-     - results/conflicts_Summer_2027.csv
+     - results2/conflicts_Summer_2027.csv
 
    Room schedule grids:
-     - results/room_schedule_Summer_2027.csv
+     - results2/room_schedule_Summer_2027.csv
 
 ================================================================================
 END OF REPORT
