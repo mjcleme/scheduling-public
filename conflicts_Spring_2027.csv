@@ -1,1 +1,4 @@
-Semester,Instructor,Course 1,Time 1,Room 1,Course 2,Time 2,Room 2
+Semester,Course 1,Section 1,Days 1,Time 1,Room 1,Course 2,Section 2,Days 2,Time 2,Room 2
+Spring 2027,235,1,"M,W",08:00 AM-10:30 AM,JFSB B106,240,1,"M,W",08:00 AM-10:30 AM,JKB 3104
+Spring 2027,111,1,"M,W",11:00 AM-01:30 PM,JKB 3104,270,1,"M,W",11:00 AM-01:30 PM,JFSB B106
+Spring 2027,404,1,"M,W",02:00 PM-04:30 PM,JKB 3104,453,1,"M,W,F",03:00 PM-04:40 PM,JFSB B106
