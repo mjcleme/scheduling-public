@@ -7,9 +7,11 @@ Winter 2027,236,2,Barker,80,TMCB,1170,203,1,"M,W,F",01:00 PM,01:50 PM,39.4%
 Winter 2027,236,3,Barker,99,JKB,3108,306,2,"M,W,F",03:00 PM,03:50 PM,32.4%
 Winter 2027,235E,1,"Barton, Dylan",0,TMCB,120,41,1,"T,Th",05:00 PM,06:15 PM,0.0%
 Winter 2027,110,1,Bean,200,MARB,222,269,2,"M,W",11:00 AM,12:15 PM,74.3%
-Winter 2027,301R,1,Bean,0,JKB,3106,92,2,"M,W",02:00 PM,03:15 PM,0.0%
 Winter 2027,312,1,Bean,30,JKB,2113,85,1,"T,Th",02:00 PM,03:15 PM,35.3%
 Winter 2027,401R,1,Bean,38,MARB,130,72,1,"M,W,F",10:00 AM,10:50 AM,52.8%
+Winter 2027,401RB,1,Bean,15,TMCB,120,41,1,"M,W,F",8:00 AM,8:50 AM,36.6%
+Winter 2027,301R,1,Bean/MJ,0,JKB,3106,92,2,"M,W",02:00 PM,03:15 PM,0.0%
+Winter 2027,456,1,Carroll,30,TMCB,120,41,1,"T,Th",8:00 AM,9:15 AM,73.2%
 Winter 2027,224,O,"Clement, Mark",0,Online,Online,,,,,,
 Winter 2027,235,O,"Clement, Mark",0,Online,Online,,,,,,
 Winter 2027,465,1,"Clift, Fred",0,TMCB,120,41,1,"T,Th",02:00 PM,03:15 PM,0.0%
@@ -45,9 +47,9 @@ Winter 2027,110,O,"Jones, Angela",0,Online,Online,,,,,,
 Winter 2027,110A,1,"Jones, Angela",0,JFSB,B092,125,2,"M,W",09:30 AM,10:45 AM,0.0%
 Winter 2027,345E,1,"Judd, Glenn",0,TMCB,134,42,1,"T,Th",05:00 PM,06:15 PM,0.0%
 Winter 2027,474,2,Killian,30,JFSB,B092,125,2,"M,W",12:30 PM,01:45 PM,24.0%
+Winter 2027,356,1,Larsen,17,TMCB,120,41,1,"M,W",3:30 PM,4:45 PM,41.5%
 Winter 2027,235,2,MJ,30,CB,377,342,3,"M,W",02:00 PM,03:15 PM,8.8%
 Winter 2027,235,3,MJ,30,JKB,1102,285,2,"T,Th",09:30 AM,10:45 AM,10.5%
-Winter 2027,301R,2,MJ,0,TMCB,134,42,1,"M,W",11:00 AM,12:15 PM,0.0%
 Winter 2027,224A,1,Mercer,59,JKB,2113,85,1,"M,W,F",01:00 PM,01:50 PM,69.4%
 Winter 2027,486,1,Mercer,17,HBLL,3718,59,1,"M,W,F",10:00 AM,10:50 AM,28.8%
 Winter 2027,252A,1,Ng,37,TMCB,134,42,1,"T,Th",02:00 PM,03:15 PM,88.1%
@@ -83,3 +85,5 @@ Winter 2027,340,2,Wilkerson,30,JKB,1102,285,2,"T,Th",12:00 PM,01:50 PM,10.5%
 Winter 2027,340,3,Wilkerson,30,JKB,3108,306,2,"M,W",09:00 AM,10:50 AM,9.8%
 Winter 2027,240,O,"Wilkerson, Jerod",0,Online,Online,,,,,,
 Winter 2027,473,1,Wingate,32,HBLL,3718,59,1,"M,W",02:00 PM,03:15 PM,54.2%
+Winter 2027,110,3,Zappala,80,TMCB,1170,203,1,"M,W",08:00 AM,09:15 AM,39.4%
+Winter 2027,356,2,Larsen,30,TMCB,120,41,1,"T,Th",08:00 AM,09:15 AM,73.2%
