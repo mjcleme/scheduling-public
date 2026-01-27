@@ -19,3 +19,9 @@ Please check the conflicts files for [Fall](conflicts_Fall_2026.csv), [Winter](c
 
 ### Report
 This [report](scheduling_system.md) will show you all of the details of the scheduling software along with the constraints that it is using for scheduling rooms.  I find it very interesting to see the improvement in room utilization and times that has occured using an automated scheduler.
+
+### Department Scheduler should use
+- [Fall Schedule](schedule_Fall_2026.csv)
+- [Winter Schedule](schedule_Winter_2027.csv)
+- [Spring Schedule](schedule_Spring_2027.csv)
+- [Summer Schedule ](schedule_Summer_2027.csv)
