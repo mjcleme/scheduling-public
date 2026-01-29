@@ -1,277 +1,339 @@
-# Course Scheduling System Documentation
+# Course Scheduling System
+
+*Generated: 2026-01-28 17:22:05*
 
 ## Overview
 
-This scheduling system uses a **hybrid multi-phase architecture** combining template-based scheduling with Integer Linear Programming (ILP) optimization to assign courses to rooms and time slots while respecting various constraints.
+The Course Scheduling System is an automated solution for assigning university courses to classrooms and time slots. It uses Integer Linear Programming (ILP) to find optimal room and time assignments while respecting a comprehensive set of hard and soft constraints.
 
----
+## System Architecture
 
-## Scheduling Modes
+### Core Components
 
-### 1. ILP-Only Mode (Default)
-Pure optimization using PULP solver (supports Gurobi/CBC backends).
+| Component | File | Description |
+|-----------|------|-------------|
+| Main Entry Point | `main.py` | CLI interface and orchestration |
+| ILP Scheduler | `scheduler.py` | Core optimization engine using PuLP |
+| Template Scheduler | `template_scheduler.py` | Historical data-based scheduling |
+| Phased Scheduler | `phased_scheduler.py` | Three-phase scheduling approach |
+| Data Parser | `parser_faculty.py` | CSV parsing for courses, rooms, patterns |
+| Constraint Weights | `constraint_weights.py` | Configurable constraint priorities |
 
-### 2. Template-Based Mode
-Uses historical enrollment data to seed assignments, then ILP for remaining courses.
+### Scheduling Modes
 
-### 3. Phased Mode (Most Sophisticated)
-Three sequential phases with different room priority levels:
-
-| Phase | Description | Rooms Used |
-|-------|-------------|------------|
-| Phase 1 | Template-based scheduling from historical data | All rooms |
-| Phase 2 | ILP optimization for unscheduled courses | Priority 1-2 only |
-| Phase 3 | ILP optimization for remaining courses | Priority 3-4 only |
-
----
+1. **ILP-Only Mode** (default): Uses pure optimization to find assignments
+2. **Template-Based Mode** (`--use-template`): Uses historical enrollment data as templates
+3. **Phased Mode** (`--use-phased`): Three-phase approach:
+   - Phase 1: Template-based scheduling
+   - Phase 2: ILP with Priority 1-2 rooms only
+   - Phase 3: ILP with Priority 3-4 rooms only
+4. **Equal Sections Mode** (`--equal-sections`): Distributes enrollment equally across sections
 
 ## Constraints
 
 ### Hard Constraints (Must Be Satisfied)
 
-#### 1. Room Conflicts
-- No double-booking of rooms at same day/time
-- Room available days must include pattern days
-- Pattern times must fit within room's available hours
+| Constraint | Weight | Description |
+|------------|--------|-------------|
+| Each Section Scheduled Once | 100 | Every section must be assigned to exactly one room-pattern combination |
+| Room Conflicts | 100 | Prevent room double-booking at same day/time |
+| Instructor Conflicts | 100 | Prevent instructor double-booking |
+| Enrollment Conservation | 100 | Sum of section enrollments must equal course total |
+| Linearized Capacity | 95 | Enrollment must fit in assigned room capacity |
+| Fixed Enrollment | 85 | Equal-sections mode: enforce specific enrollment values per section |
+| Same-Course Section Conflicts | 80 | Ensure sections of same course are at different times |
+| Equal Enrollment Same Instructor | 75 | Sections by same instructor must have similar enrollment (±20) |
+| Instructor Building Restrictions | 70 | Prevent specific instructors from teaching in certain buildings |
+| Same-Course Same-Day Pattern | 40 | Force same day pattern for multiple sections by same instructor |
+| Same-Course Same-Room | 35 | Force same room for multiple sections of same course |
+| Large Section Preference | 25 | Force large-preference instructors to get higher enrollment |
 
-#### 2. Instructor Conflicts
-- No instructor can teach two courses at overlapping times
-- Prevents faculty double-booking
-
-#### 3. Capacity Constraints
-- Section enrollment cannot exceed room capacity
-- No section can exceed 200 students
-- Uses Big-M linearization for optimization
-
-#### 4. Meeting Pattern Matching
-- Course pattern must match available meeting patterns
-- Lab courses (suffix 'L') restricted to MW or TTh patterns
-- Evening classes (suffix 'E') must start at 5:00 PM or later
-- Regular daytime classes must end by 4:30 PM
-
-#### 5. Time Window Constraints
-- Earliest start: 9:00 AM (global)
-- Latest end: 8:00 PM (global)
-- Evening classes: 5:00 PM - 8:00 PM
-- Daytime classes: 9:00 AM - 4:30 PM
-
-#### 6. Same-Course Section Conflicts
-- Different sections of the same course cannot meet at the same time
-- Ensures students can choose between sections
-
-### Soft Constraints (Preferences with Penalties)
+### Soft Constraints (Optimized in Objective)
 
 | Constraint | Weight | Description |
 |------------|--------|-------------|
-| Priority Room Usage | 60 | Fill Priority 1 rooms before Priority 2/3 |
-| Capacity Matching | varies | Match class size to appropriate room size |
-| Same Room Preference | 50 | Same instructor's courses in same room |
-| Same Day Pattern | 25 | Instructor's courses on same days |
-| Time Proximity | 30 | Instructor's courses within N hours |
-| Adjacent Slots | 15 | Same-course sections in adjacent times |
+| Template Room/Time Preference | 95 | PREFER matching template room/time for courses (positive bonus) |
+| Template Instructor Preference | 90 | PREFER matching template time/room for instructors (positive bonus) |
+| Priority 1 Room Slot Coverage | 60 | Encourage filling Priority 1 room slots |
+| Faculty Teaching Preferences | 50 | Link preference variables to actual room and pattern assignments |
+| Adjacent Time Slots Preference | 45 | Encourage consecutive time slots for same-course sections |
+| Course Conflicts | 20 | Ensure conflict-free path exists between conflicting courses |
 
----
+### Disabled Constraints
 
-## Room Priority System
+| Constraint | Weight | Description |
+|------------|--------|-------------|
+| Priority Room Restrictions | 30 | Labs → P3/P4 only; Regular → P1/P2 only |
 
-| Priority | Description | Usage |
-|----------|-------------|-------|
-| 1 | Department primary rooms | Scheduled first, highest preference |
-| 2 | Secondary/shared rooms | Used when Priority 1 full |
-| 3-4 | Labs and overflow | Used for remaining courses |
-| 99 | TBD (To Be Determined) | Placeholder for unassigned rooms |
-| 100 | Virtual/Not Available | Excluded from scheduling |
+## Global Constraints
 
----
+| Constraint | Value | Description |
+|------------|-------|-------------|
+| `earliest_start_time` | 09:00 | No classes start before 9:00 AM |
+| `latest_end_time` | 20:00 | No classes end after 8:00 PM |
+| `daytime_end_by` | 16:30 | Daytime classes (non-E suffix) must finish by 4:30 PM |
+| `evening_start_at` | 17:00 | Evening classes (E suffix) must start at or after 5:00 PM |
+| `lab_patterns_only` | MW|TTh | Lab classes (L suffix) can only use MW or TTh patterns |
+| `pattern_match_strict` | TRUE | TTh courses only use 75-min TTh pattern (not TTH-L 110-min) |
+
+## Faculty Constraints
+
+### Building Restrictions
+
+- Mercer: Cannot teach in MARB
+
+### Required Time Ranges
+
+| Instructor | Time Range |
+|------------|------------|
+| Page | 09:00-12:30 |
+| Angela | 09:00-12:15 |
+| Goodrich | 09:00-15:00 |
+| Mercer | 10:00-17:00 |
+| Deccio | 9:00-12:00 |
+| Clift | 14:00-16:00 |
+| Seamons | 9:00-15:00 |
+| Wilkerson | 9:00-15:15 |
+
+### Time Block (Avoid)
+
+| Instructor | Blocked Time |
+|------------|--------------|
+| Stephens | 08:00-09:00 |
+
+### Time Proximity (Classes within N hours)
+
+| Instructor | Hours |
+|------------|-------|
+| Crandall | 1 |
+| Ng | 1 |
+
+### Prefer Same Room
+
+- Mercer, Crandall, Ng
+
+## Course Constraints
+
+| Course | Constraint | Value |
+|--------|------------|-------|
+| 191/291T | room_requirement | TMCB 1170 |
+| 191/291T | required_time_range | 14:00-16:30 |
+| 235E | required_time_range | 17:00-18:15 |
 
 ## Meeting Patterns
 
-Standard meeting patterns available:
-
-### 75-Minute Patterns (MW, TTh)
-| Pattern | Days | Time Examples |
-|---------|------|---------------|
-| MW | Monday, Wednesday | 9:30-10:45, 11:00-12:15, 12:30-1:45, 2:00-3:15, 3:30-4:45 |
-| TTh | Tuesday, Thursday | 9:30-10:45, 11:00-12:15, 12:30-1:45, 2:00-3:15, 3:30-4:45 |
-
 ### 50-Minute Patterns (MWF)
-| Pattern | Days | Time Examples |
-|---------|------|---------------|
-| MWF | Mon, Wed, Fri | 9:00-9:50, 10:00-10:50, 11:00-11:50, 12:00-12:50, 1:00-1:50, 2:00-2:50, 3:00-3:50 |
 
-### Extended Patterns
-| Pattern | Days | Duration | Use Case |
-|---------|------|----------|----------|
-| MW-L | Mon, Wed | 110 min | Labs |
-| TTh-L | Tue, Thu | 110 min | Labs |
-| F-LONG | Friday | 150 min | Seminars |
+- 8:00 AM - 8:50 AM, 9:00 AM - 9:50 AM, 10:00 AM - 10:50 AM, 11:00 AM - 11:50 AM, 12:00 PM - 12:50 PM...
 
-### Evening Patterns
-| Pattern | Days | Time |
-|---------|------|------|
-| MW-E | Mon, Wed | 5:00-6:15 PM, 6:30-7:45 PM |
-| TTh-E | Tue, Thu | 5:00-6:15 PM, 6:30-7:45 PM |
+### 75-Minute Patterns (MW/TTh)
 
----
+| Pattern | Time Slots |
+|---------|------------|
+| MW | 8:00 AM-9:15AM, 9:30 AM-10:45AM, 11:00 AM-12:15PM, 12:30 PM-1:45PM, 2:00 PM-3:15PM, 3:30 PM-4:45PM, 5:00 PM-6:15PM, 6:30 PM-7:45PM, 8:00 PM-9:15PM |
+| TTh | 8:00 AM-9:15AM, 9:30 AM-10:45AM, 12:30 PM-1:45PM, 2:00 PM-3:15PM, 3:30 PM-4:45PM, 5:00 PM-6:15PM, 6:30 PM-7:45PM, 8:00 PM-9:15PM |
 
-## ILP Optimization Model
+### 110-Minute Lab Patterns (MW-L/TTh-L)
 
-### Decision Variables
+- 8:00 AM - 4:50 PM
 
-```
-x[course, section, room, pattern]  : Binary - assignment decision
-enrollment[course, section]        : Integer (0-200) - students in section
-slot_used[room, pattern]           : Binary - room-time slot occupied
-same_room[instructor, pair]        : Binary - preference indicator
-same_pattern[instructor, pair]     : Binary - preference indicator
-```
+### 150-Minute Patterns
 
-### Objective Function
+| Pattern | Time |
+|---------|------|
+| F-LONG | 2:00 PM - 4:30 PM |
+| F-LONG2 | 9:00 AM - 12:30 PM |
 
-Maximize the weighted sum of:
+## Available Rooms
 
-```
-= capacity_efficiency    (prefer appropriately-sized rooms)
-+ priority_bonus         (P1: 10,000; P2: 5,000; P3: 2,000)
-+ prime_time_bonus       (P1 during 9 AM-4 PM: +15,000)
-+ capacity_match_bonus   (large classes → large rooms: +100,000)
-+ faculty_preferences    (same room, pattern, proximity bonuses)
-```
+### Fall 2026 Rooms
 
-### Time Limits
-- Phase 2 ILP: 3600 seconds (1 hour)
-- Phase 3 ILP: 3600 seconds (1 hour)
-- Regular ILP: 300 seconds (5 minutes)
+| Building | Room | Capacity | Priority |
+|----------|------|----------|----------|
+| TBD | TBD | 999 | 99 |
+| CB | 377 | 342 | 1 |
+| JKB | 3108 | 306 | 2 |
+| JKB | 1102 | 285 | 2 |
+| MARB | 222 | 269 | 2 |
+| TMCB | 1170 | 203 | 1 |
+| TMCB | 1170 | 203 | 2 |
+| ESC | C215 | 170 | 2 |
+| JFSB | B092 | 125 | 2 |
+| JFSB | B037 | 120 | 2 |
+| JKB | 3106 | 92 | 2 |
+| JKB | 2113 | 85 | 1 |
+| TMCB | 111 | 77 | 2 |
+| MARB | 130 | 72 | 1 |
+| TMCB | 135 | 69 | 2 |
+| HBLL | 3718 | 59 | 1 |
+| ESC | C285 | 50 | 2 |
+| BRMB | 240 | 48 | 2 |
+| ESC | C247 | 48 | 2 |
+| TMCB | 134 | 42 | 1 |
+| TMCB | 104 | 42 | 2 |
+| TMCB | 108 | 42 | 2 |
+| TMCB | 112 | 42 | 2 |
+| TMCB | 116 | 42 | 2 |
+| TMCB | 121 | 42 | 2 |
+| TMCB | 134 | 42 | 2 |
+| TMCB | 120 | 41 | 1 |
+| TMCB | 120 | 41 | 2 |
+| SFH | 37 | 34 | 2 |
+| MCKB | 220 | 32 | 2 |
+| MCKB | 280 | 32 | 2 |
+| MCKB | 331 | 32 | 2 |
+| MCKB | 26 | 30 | 2 |
 
----
+### Winter 2027 Rooms
 
-## Individual Faculty Constraints
+| Building | Room | Capacity | Priority |
+|----------|------|----------|----------|
+| TBD | TBD | 999 | 99 |
+| CB | 377 | 342 | 1 |
+| JKB | 3108 | 306 | 2 |
+| JKB | 1102 | 285 | 2 |
+| MARB | 222 | 269 | 2 |
+| TMCB | 1170 | 203 | 1 |
+| TMCB | 1170 | 203 | 2 |
+| JFSB | B092 | 125 | 2 |
+| JKB | 3106 | 92 | 2 |
+| JKB | 2113 | 85 | 1 |
+| TMCB | 111 | 77 | 2 |
+| MARB | 130 | 72 | 1 |
+| TMCB | 135 | 69 | 2 |
+| HBLL | 3718 | 59 | 1 |
+| ESC | C285 | 50 | 2 |
+| BRMB | 240 | 48 | 2 |
+| ESC | C247 | 48 | 2 |
+| TMCB | 134 | 42 | 1 |
+| TMCB | 104 | 42 | 2 |
+| TMCB | 108 | 42 | 2 |
+| TMCB | 112 | 42 | 2 |
+| TMCB | 116 | 42 | 2 |
+| TMCB | 121 | 42 | 2 |
+| TMCB | 134 | 42 | 2 |
+| TMCB | 120 | 41 | 1 |
+| TMCB | 120 | 41 | 2 |
+| TMCB | 136 | 40 | 2 |
+| SFH | 37 | 34 | 2 |
+| MCKB | 220 | 32 | 2 |
+| MCKB | 280 | 32 | 2 |
+| MCKB | 26 | 30 | 2 |
+| TMCB | 197 | 30 | 2 |
+| MCKB | 331 | 28 | 2 |
 
-The system supports individual faculty constraints:
+### Spring 2027 Rooms
 
-| Constraint Type | Description | Example |
-|-----------------|-------------|---------|
-| `required_time_range` | Must teach within time window | 9:00 AM - 12:30 PM |
-| `building_restriction` | Cannot use specific building | Not MARB |
-| `prefer_same_room` | All courses in same room | Ng |
-| `prefer_same_pattern` | All courses same days | Crandall |
-| `time_proximity` | Courses within N hours | 1 hour gap max |
+| Building | Room | Capacity | Priority |
+|----------|------|----------|----------|
+| TBD | TBD | 999 | 99 |
+| JKB | 1102 | 285 | 2 |
+| JFSB | B037 | 120 | 1 |
+| JKB | 3104 | 94 | 1 |
+| JFSB | B106 | 87 | 1 |
+| JKB | 2111 | 85 | 1 |
+| HBLL | 3718 | 59 | 1 |
+| TMCB | 134 | 42 | 1 |
+| TMCB | 120 | 41 | 1 |
+| TMCB | 136 | 40 | 1 |
 
----
+### Summer 2027 Rooms
 
-## Conflict Detection
-
-### Course Time Conflicts
-The system generates conflict reports showing all pairs of courses offered at overlapping times. This helps identify:
-- Courses students cannot take together
-- Scheduling bottlenecks in popular time slots
-- Potential issues for degree planning
-
-### Conflict Report Format
-```csv
-Semester, Course 1, Section 1, Days 1, Time 1, Room 1, Course 2, Section 2, Days 2, Time 2, Room 2
-```
-
----
-
-## Input Files
-
-| File | Purpose |
-|------|---------|
-| `Teaching Assignments*.csv` | Faculty, courses, enrollments by semester |
-| `Priority 1 Classrooms.csv` | Room inventory with capacity and priority |
-| `Meeting Patterns.csv` | Available time slots and patterns |
-| `Enrollment Templates*.csv` | Historical data for template scheduling |
-| `Faculty Constraints.csv` | Individual time/building restrictions |
-| `Course Constraints.csv` | Per-course requirements |
-
----
-
-## Output Files
-
-| File | Description |
-|------|-------------|
-| `schedule_[Semester].csv` | Final course schedule |
-| `conflicts_[Semester].csv` | Course time conflicts |
-| `room_schedule_[Semester].csv` | Room-centric view |
-| `faculty_schedule_pivot.csv` | Faculty-centric view |
-| `faculty_teaching_summary.csv` | Teaching load summary |
-
----
-
-## Algorithms Summary
-
-### Template Scheduling Algorithm
-1. Load historical enrollment template data
-2. Match current courses to templates by course number
-3. Detect room/instructor conflicts
-4. Filter invalid matches (pattern violations, capacity issues)
-5. Output scheduled sections + unscheduled list
-
-### ILP Scheduling Algorithm
-1. Build constraint matrix from inputs
-2. Define decision variables and bounds
-3. Add hard constraints (room conflicts, instructor conflicts, capacity)
-4. Add soft constraint bonuses to objective
-5. Solve using PULP/Gurobi optimizer
-6. Extract assignments from solution
-
-### Phased Scheduling Algorithm
-1. **Phase 1**: Run template scheduler → scheduled + unscheduled
-2. **Phase 2**: Run ILP on unscheduled with Priority 1-2 rooms only
-3. **Phase 3**: Run ILP on remaining with Priority 3-4 rooms only
-4. **Combine**: Merge all phases into final schedule
-
----
-
-## Special Handling
-
-### Online Courses
-- Suffix `-O` indicates online course
-- Completely excluded from room scheduling
-- Do not consume classroom resources
-
-### Lab Courses
-- Suffix `L` indicates lab section
-- Restricted to lab-appropriate patterns (MW-L, TTh-L)
-- Often assigned to Priority 3-4 rooms
-
-### Evening Courses
-- Suffix `E` indicates evening section
-- Must use patterns starting at 5:00 PM or later
-- Cannot be scheduled during daytime hours
-
-### TBD Room Assignment
-- Building: TBD, Room: TBD
-- Priority 99
-- Used when room is to be determined later
-- Placeholder that doesn't block actual rooms
-
----
+| Building | Room | Capacity | Priority |
+|----------|------|----------|----------|
+| TBD | TBD | 999 | 99 |
+| JKB | 1102 | 285 | 2 |
+| JFSB | B037 | 120 | 1 |
+| JKB | 3104 | 94 | 1 |
+| JFSB | B106 | 87 | 1 |
+| JKB | 2111 | 85 | 1 |
+| HBLL | 3718 | 59 | 1 |
+| TMCB | 134 | 42 | 1 |
+| TMCB | 120 | 41 | 1 |
+| TMCB | 136 | 40 | 1 |
 
 ## Usage
 
-### Move a Class
+### Basic Usage
 ```bash
-python3 move_class.py "Fall 2026" 235 1 MW 9:30am "[TMCB, JKB]" 50
-python3 move_class.py "Fall 2026" 401R 1 MW 9:30am "[TBD]" 60  # Room TBD
+# Schedule Fall 2026 (default)
+python main.py
+
+# Schedule specific semester
+python main.py "Winter 2027"
+python main.py "Spring 2027"
+python main.py "Summer 2027"
 ```
 
-### Regenerate Reports
+### Advanced Options
 ```bash
-python3 -c "from move_class import regenerate_reports; regenerate_reports('Fall 2026')"
+# Use template-based scheduling
+python main.py "Fall 2026" --use-template
+
+# Use phased scheduling
+python main.py "Fall 2026" --use-phased
+
+# Equal section distribution
+python main.py "Fall 2026" --equal-sections
 ```
 
-### Generate Conflict Report
-```bash
-python3 create_conflict_report.py
-```
+## Current Schedule Statistics
 
----
+| Semester | Sections | Students |
+|----------|----------|----------|
+| Fall 2026 | 125 | 5,602 |
+| Winter 2027 | 117 | 5,182 |
+| Spring 2027 | 10 | 354 |
+| Summer 2027 | 5 | 59 |
+| **Total** | **257** | **11,197** |
 
-## Performance Considerations
+### Meeting Pattern Distribution
 
-- ILP solver time increases exponentially with problem size
-- Template scheduling provides warm start for better solutions
-- Phased approach reduces problem complexity at each stage
-- Priority stratification ensures important rooms filled first
+| Pattern | Sections | Percentage |
+|---------|----------|------------|
+| T,Th | 130 | 50.6% |
+| M,W | 75 | 29.2% |
+| M,W,F | 28 | 10.9% |
+| W | 8 | 3.1% |
+| Th | 6 | 2.3% |
+| T | 6 | 2.3% |
+| F | 4 | 1.6% |
+
+### Top Instructor Loads
+
+| Instructor | Sections | Students |
+|------------|----------|----------|
+| TBD | 74 | 3234 |
+| Bean | 9 | 586 |
+| Reynolds | 9 | 529 |
+| Barker | 9 | 470 |
+| Dougal, Duane | 8 | 180 |
+| Stephens | 7 | 701 |
+| Jensen | 7 | 319 |
+| Wilkerson | 7 | 420 |
+| Ringger | 6 | 212 |
+| Gates, Darin | 6 | 187 |
+
+## Output Files
+
+### Per-Semester Schedule Files
+- `results2/schedule_{Semester}.csv` - Main schedule sorted by course
+- `results2/schedule_{Semester}_by_instructor.csv` - Schedule sorted by instructor
+- `results2/conflicts_{Semester}.csv` - Conflict report
+- `results2/room_schedule_{Semester}.csv` - Room utilization grid
+
+### Analysis Files
+- `results2/scheduling_report.txt` - Summary report (text)
+- `results2/scheduling_report.md` - Summary report (markdown)
+- `results2/scheduling_system.md` - System documentation (this file)
+
+## Technical Details
+
+### Solver
+- **Library**: PuLP (Python Linear Programming)
+- **Default Solver**: CBC (COIN-OR Branch and Cut)
+- **Time Limit**: 300 seconds (5 minutes)
+
+### Parameters
+- **Minimum Section Size**: 30 students (configurable)
+- **Enrollment Tolerance**: +/- 20 students for same-instructor sections
